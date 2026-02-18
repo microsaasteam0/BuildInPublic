@@ -147,8 +147,8 @@ async def rate_limit_middleware(request: Request, call_next):
     client_ip = request.client.host
     current_time = time.time()
     
-    # Skip rate limiting for health checks and static files
-    if request.url.path in ["/health", "/docs", "/openapi.json"] or request.url.path.startswith("/static"):
+    # Skip rate limiting for health checks, static files, and OPTIONS requests
+    if request.method == "OPTIONS" or request.url.path in ["/health", "/docs", "/openapi.json"] or request.url.path.startswith("/static"):
         response = await call_next(request)
         return response
     
@@ -201,6 +201,7 @@ allowed_origins = [
     "https://buildinpublic-alpha.vercel.app",
     "https://build-in-public.vercel.app",
     "https://build-in-public-alpha.vercel.app",
+    "https://build-in-public-app.vercel.app",
     "http://localhost:3000",
     "http://localhost:8000"
 ]
