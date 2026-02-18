@@ -206,14 +206,14 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
               <button
                 onClick={onClose}
                 disabled={isLoading}
-                className="w-full sm:w-auto text-[10px] font-black text-slate-400 hover:text-white uppercase tracking-widest px-4 py-2.5 transition-colors font-mono"
+                className="w-full sm:w-auto text-[10px] font-black text-slate-400 hover:text-white uppercase tracking-wider px-6 py-2.5 transition-colors font-mono whitespace-nowrap"
               >
                 ABORT_TERMINATION
               </button>
               <button
                 onClick={onConfirm}
                 disabled={isLoading}
-                className="w-full sm:w-auto group relative py-3 sm:py-3.5 px-6 sm:px-8 bg-red-600 text-white rounded-xl font-black text-[10px] shadow-2xl shadow-red-600/30 transition-all hover:scale-[1.02] hover:bg-red-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden uppercase tracking-widest font-mono"
+                className="w-full sm:w-auto group relative py-3.5 px-10 bg-red-600 text-white rounded-xl font-black text-[10px] shadow-2xl shadow-red-600/30 transition-all hover:scale-[1.02] hover:bg-red-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden uppercase tracking-wider font-mono"
               >
                 <div className="absolute inset-0 shimmer-text opacity-30" />
                 <span className="relative flex items-center justify-center gap-2 whitespace-nowrap">

@@ -21,7 +21,7 @@ function PricingContent() {
 
   const handleSignUp = (plan: string) => {
     if (plan === 'free') {
-      router.push('/dashboard')
+      router.push('/')
     }
   }
 
