@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { X, AlertTriangle, Crown, Users, FileText, Download, Zap, Shield } from 'lucide-react'
+import { X, AlertTriangle, Crown, Users, FileText, Download, Zap, Shield, Loader2, Activity, Box, Terminal } from 'lucide-react'
 
 interface DowngradeModalProps {
   isOpen: boolean
@@ -62,39 +62,60 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
   ]
 
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[999999] flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-xl z-[2000000] flex items-center justify-center p-4">
+      <div className="relative bg-slate-900 rounded-[2.5rem] border border-red-500/30 max-w-xl w-full max-h-[90vh] overflow-hidden shadow-3xl animate-kinetic-glow">
+
+        {/* Innovative 'Builder' Background Matrix */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-grid-blueprint-light opacity-[0.10]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 via-transparent to-transparent pointer-events-none" />
+
+          {/* Moving Scanline */}
+          <div className="absolute inset-0 overflow-hidden opacity-5">
+            <div className="w-full h-1 bg-red-500 animate-scanline" />
+          </div>
+        </div>
+
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center">
-              <AlertTriangle className="w-6 h-6 text-red-500" />
+        <div className="relative p-8 pb-4 flex items-center justify-between z-10 border-b border-white/5">
+          <div className="flex flex-col gap-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-red-500/20 mb-2">
+              <Activity className="w-3 h-3 animate-pulse" />
+              TERMINATION_PHASE.ACTIVE
             </div>
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">Downgrade to Free_Build</h2>
-              <p className="text-gray-600 dark:text-gray-400 text-[10px] font-black uppercase tracking-widest mt-1">Status: DEPLOY_TERMINATION_PROTOCOL</p>
+            <div className="flex items-center gap-3 text-white">
+              <div className="p-2.5 bg-red-500/20 rounded-xl border border-red-500/30">
+                <AlertTriangle className="w-5 h-5 text-red-500" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black tracking-tight uppercase">Downgrade Core</h2>
+                <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.1em] mt-0.5">ID: DEPLOY_TERMINATION_PROTOCOL</p>
+              </div>
             </div>
           </div>
           <button
             onClick={onClose}
             disabled={isLoading}
-            className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors disabled:opacity-50"
+            className="text-slate-400 hover:text-white hover:bg-white/10 rounded-full p-2.5 transition-all active:scale-90"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[60vh]">
+        <div className="relative p-8 pt-6 overflow-y-auto max-h-[60vh] z-10 custom-scrollbar">
           {/* Warning Message */}
-          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 rounded-xl p-4 mb-6">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+          <div className="relative bg-red-500/10 backdrop-blur-md border border-red-500/20 rounded-2xl p-5 mb-8 overflow-hidden group">
+            <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 transition-opacity" />
+            <div className="relative flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 border border-red-500/30">
+                <Terminal className="w-5 h-5 text-red-500" />
+              </div>
               <div>
-                <h3 className="font-black text-red-800 dark:text-red-400 mb-1 uppercase tracking-tight">
-                  CRITICAL: IRREVERSIBLE_ACTION
+                <h3 className="font-black text-red-500 mb-1.5 uppercase tracking-tighter text-sm flex items-center gap-2">
+                  <span className="animate-pulse">●</span> ERROR: IRREVERSIBLE_ACTION
                 </h3>
-                <p className="text-red-700 dark:text-red-300 text-xs font-medium leading-relaxed">
+                <p className="text-red-400/80 text-xs font-medium leading-relaxed">
                   Your Pro_Engine environment will be terminated. Access to neural synthesis vaults and personalization schematics will be restricted. Data in your permanent vault may be archived or inaccessible.
                 </p>
               </div>
@@ -102,80 +123,113 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
           </div>
 
           {/* Features You'll Lose */}
-          <div className="mb-6">
-            <h3 className="text-lg font-black text-gray-900 dark:text-white mb-4 flex items-center gap-2 uppercase tracking-tighter">
-              <Crown className="w-5 h-5 text-indigo-500" />
+          <div className="mb-8">
+            <h3 className="text-xs font-black text-slate-400 mb-4 flex items-center gap-2 uppercase tracking-[0.2em] font-mono">
+              <Crown className="w-3.5 h-3.5 text-indigo-500" />
               DEPRECATED_CAPABILITIES
             </h3>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {featuresYouWillLose.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
-                  {feature.icon}
+                <div key={index} className="flex flex-col gap-2 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/5 hover:border-red-500/20 hover:bg-white/10 transition-all duration-300 group/item">
+                  <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center border border-red-500/20 group-hover/item:scale-110 transition-transform">
+                    {React.cloneElement(feature.icon as React.ReactElement, { className: 'w-4 h-4 text-red-500' })}
+                  </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white text-sm">{feature.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs">{feature.description}</p>
+                    <h4 className="font-black text-white text-[11px] uppercase tracking-tight group-hover/item:text-red-400 transition-colors">{feature.title}</h4>
+                    <p className="text-slate-500 text-[10px] leading-snug mt-1">{feature.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* What You'll Keep */}
-          <div className="mb-6">
-            <h3 className="text-lg font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tighter">
-              RETAINED_RESOURCES [FREE_BUILD]
-            </h3>
-            <div className="bg-green-50 dark:bg-emerald-900/10 border border-green-200 dark:border-emerald-800/50 rounded-lg p-4 font-mono">
-              <ul className="space-y-2 text-[10px] text-green-800 dark:text-emerald-400 font-bold uppercase tracking-wide">
-                <li>• 2 DAILY SYNTHESES [STABLE_BUILD]</li>
-                <li>• CORE BUILD-LOG PROCESSING</li>
-                <li>• X/TWITTER THREAD SCHEMATICS</li>
-                <li>• SECURE_COPY PROTOCOL</li>
-                <li>• 24-HOUR HISTORY BUFFER</li>
-              </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* What You'll Keep */}
+            <div>
+              <h3 className="text-xs font-black text-slate-400 mb-4 uppercase tracking-[0.2em] font-mono">
+                RETAINED_RESOURCES
+              </h3>
+              <div className="bg-emerald-500/5 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-5 font-mono">
+                <ul className="space-y-3">
+                  {[
+                    '2 DAILY SYNTHESES',
+                    'CORE BUILD-LOGS',
+                    'X_THREAD SCHEMATICS',
+                    'SECURE_COPY PROTOCOL',
+                    '24HR HISTORY BUFFER'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-[10px] text-emerald-500 font-bold tracking-widest uppercase">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Alternative Options */}
-          <div className="bg-indigo-50 dark:bg-indigo-900/10 border border-indigo-200 dark:border-indigo-800/50 rounded-lg p-4">
-            <h4 className="font-black text-indigo-800 dark:text-indigo-400 mb-2 uppercase text-xs tracking-widest">
-              ALTERNATIVE_PROTOCOLS
-            </h4>
-            <ul className="space-y-1 text-xs text-indigo-700 dark:text-indigo-300 font-medium">
-              <li>• SUSPEND_SYNAPSE_STREAM temporarily instead of termination</li>
-              <li>• CONTACT_MISSION_CONTROL for billing schematic issues</li>
-              <li>• DUMP_VAULT_SCHEMATICS before environment wipe</li>
-            </ul>
+            {/* Alternative Options */}
+            <div>
+              <h3 className="text-xs font-black text-slate-400 mb-4 uppercase tracking-[0.2em] font-mono">
+                SAFETY_PROTOCOLS
+              </h3>
+              <div className="bg-indigo-500/5 backdrop-blur-sm border border-indigo-500/20 rounded-2xl p-5">
+                <ul className="space-y-3">
+                  {[
+                    'SUSPEND_SYNAPSE_STREAM',
+                    'MISSION_CONTROL_SYNC',
+                    'VAULT_SCHEMATIC_DUMP'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-[10px] text-indigo-400 font-bold tracking-widest uppercase">
+                      <Terminal className="w-3 h-3 text-indigo-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-          <div className="text-[10px] font-black text-red-500 uppercase tracking-widest">
-            TERMINATION_IMMEDIATE_EFFECT
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onClose}
-              disabled={isLoading}
-              className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium transition-colors disabled:opacity-50"
-            >
-              Keep Pro Plan
-            </button>
-            <button
-              onClick={onConfirm}
-              disabled={isLoading}
-              className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              {isLoading ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Downgrading...
-                </>
-              ) : (
-                'YES, INITIALIZE_DOWNGRADE'
-              )}
-            </button>
+        {/* Action Pillar */}
+        <div className="relative p-8 bg-black/40 border-t border-white/5 z-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col gap-1">
+              <div className="text-[10px] font-black text-red-500 uppercase tracking-widest flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                TERMINATION_IMMEDIATE_EFFECT
+              </div>
+              <p className="text-slate-500 text-[9px] uppercase font-bold tracking-tighter">ENVIRONMENT_WIPE_SCHEDULED_T-0</p>
+            </div>
+
+            <div className="flex items-center gap-4 w-full sm:w-auto">
+              <button
+                onClick={onClose}
+                disabled={isLoading}
+                className="flex-1 sm:flex-none text-[10px] font-black text-slate-400 hover:text-white uppercase tracking-widest px-6 py-3 transition-colors font-mono"
+              >
+                ABORT_TERMINATION
+              </button>
+              <button
+                onClick={onConfirm}
+                disabled={isLoading}
+                className="flex-1 sm:flex-none group relative py-3.5 px-8 bg-red-600 text-white rounded-xl font-black text-[10px] shadow-2xl shadow-red-600/30 transition-all hover:scale-105 hover:bg-red-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden uppercase tracking-widest font-mono"
+              >
+                <div className="absolute inset-0 shimmer-text opacity-30" />
+                <span className="relative flex items-center justify-center gap-2">
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      DOWNGRADING...
+                    </>
+                  ) : (
+                    <>
+                      CONFIRM_DOWNGRADE
+                      <Box className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
+                    </>
+                  )}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
