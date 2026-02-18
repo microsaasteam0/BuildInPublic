@@ -1,151 +1,108 @@
-# Reword
+# BuildInPublic 🚀
+**Industrial-Grade Distribution Engine for Visionary Founders**
 
-**Transform long-form content into engaging social media posts for X/Twitter, LinkedIn, and Instagram.**
+BuildInPublic is a modern, high-authority distribution engine designed to help founders and creators post updates on social media by transforming their daily activities, build logs, and journal entries into ready-to-upload, platform-optimized content.
 
-Reword (formerly SnippetStream) is a modern web application that takes your long-form content (Markdown, text, or URLs) and repurposes it into platform-optimized social media posts using AI.
+---
 
-## 🚀 Features
+## 🛠️ The Mission Schematic
+Creation should not be bottlenecked by distribution. BuildInPublic automates the friction of reformatting intellectual assets into social-ready threads, preserving your unique nuance and authority while maximizing velocity.
 
-- **User Authentication**: Secure Google OAuth login system
-- **Subscription Management**: Free and Pro tiers with Dodo Payments integration
-- **Content Generation**: AI-powered social media content creation
-- **Template System**: Custom and community templates
-- **Content Library**: Save, organize, and manage generated content
-- **Profile Management**: User profiles with avatar upload
-- **Real-time Updates**: Webhook-based payment processing
-- **Modern UI**: Beautiful, responsive Next.js frontend with light/dark themes
+## 🚀 Core Features
+- **Neural_Sync Engine**: Semantic parsing of daily building milestones and logs.
+- **High-Authority Synthesis**: Manufacturing professional social storylines from raw data.
+- **X (Twitter) Thread Optimization**: Strategic reach engineered for high-engagement velocity.
+- **LIFETIME Project Trace**: Permanent vault saving of your building journey.
+- **Industrial Authentication**: Secure Google OAuth integration for founders.
+- **Subscription Protocols**: Stable and Pro building tiers with Dodo Payments logic.
+- **Universal Schematic**: Beautiful, responsive Next.js frontend with industrial "Blueprint" aesthetics.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack Architecture
 
-### Frontend (`/frontend`)
-- **Next.js 14** - React framework with App Router
-- **Tailwind CSS** - Utility-first CSS framework
-- **TypeScript** - Type-safe JavaScript
-- **React Context** - State management for auth and preferences
+### Frontend Layer (`/frontend`)
+- **Next.js 14** (App Router)
+- **Tailwind CSS** (Industrial Aesthetic)
+- **Framer Motion** (Kinetic Animations)
+- **Lucide React** (System Icons)
+- **TypeScript** (Type-Safe Protocols)
 
-### Backend (`/backend`)
-- **FastAPI** - High-performance Python web framework
-- **PostgreSQL** - Production database with SQLAlchemy ORM
-- **Dodo Payments** - Payment processing with webhook support
-- **Google OAuth** - Secure authentication
-- **JWT** - Token-based authentication
+### Backend Logic (`/backend`)
+- **FastAPI** (High-Performance Python)
+- **SQLAlchemy** (ORM Schematic)
+- **PostgreSQL** (Production DB)
+- **Google OAuth / JWT** (Identity Protocols)
+- **smtplib** (SMTP Diagnosis & Support Sync)
 
-### Deployment
-- **Backend**: Deployed on Railway (https://snippetstream-api22-production.up.railway.app)
-- **Frontend**: Deployed on Vercel/Netlify
-- **GitHub**: Source code management (Monorepo)
+### Deployment & Maintenance
+- **Infrastructure**: Railway (Backend), Vercel (Frontend)
+- **Database**: Neon DB / PostgreSQL
+- **Monitoring**: Industrial SMTP Diagnostics (`/api/v1/dev/test-smtp-network`)
 
-## 📋 Setup Instructions
+## 📋 Initialization Protocols
 
 ### Prerequisites
-- Node.js 18+ and npm
+- Node.js 18+ & npm
 - Python 3.11+
-- PostgreSQL database
-- Google OAuth credentials
-- Dodo Payments account
+- PostgreSQL Environment
+- Google OAuth API Credentials
 
-### Local Development
-
-1. **Clone the repository**
+### Step 1: Clone Repository
 ```bash
-git clone https://github.com/microsaasteam0/Reword.git
-cd Reword
+git clone https://github.com/microsaasteam0/BuildInPublic.git
+cd BuildInPublic
 ```
 
-2. **Backend Setup**
+### Step 2: Backend Deployment (Local)
 ```bash
 cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-# Ensure .env is set in the root directory
 python main.py
 ```
 
-3. **Frontend Setup**
+### Step 3: Frontend Initialization
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## 🔗 API Endpoints
-
-### Authentication
-- `POST /api/v1/auth/google` - Google OAuth login
-- `GET /api/v1/auth/me` - Get current user
-- `GET /api/v1/auth/feature-limits` - Get user feature limits
-
-### Content Generation
-- `POST /api/v1/content/generate` - Generate social media content
-- `GET /api/v1/content/history` - Get user's content history
-- `POST /api/v1/content/save` - Save generated content
-
-### Payments
-- `POST /api/v1/payment/create-checkout` - Create payment checkout
-- `POST /api/v1/payment/check-status` - Check payment status
-- `POST /api/v1/payment/webhook` - Webhook endpoint for Dodo Payments
-
-## 🔧 Environment Variables
-
-The project uses a unified `.env` file in the root directory for both frontend and backend configuration.
+## 🔧 Environment Configuration
+The system utilizes a unified `.env` schematic in the root directory.
 
 ```env
-# BACKEND CONFIGURATION
-DATABASE_URL=postgresql://...
+# SYSTEM IDENTITY
 GOOGLE_CLIENT_ID=...
 GOOGLE_CLIENT_SECRET=...
 SECRET_KEY=...
-BACKEND_URL=https://snippetstream-api22-production.up.railway.app/
-FRONTEND_URL=http://localhost:3000
 
-# FRONTEND CONFIGURATION
-NEXT_PUBLIC_API_URL=https://snippetstream-api22-production.up.railway.app
-NEXT_PUBLIC_GOOGLE_CLIENT_ID=...
+# DATABASE SCHEMATIC
+DATABASE_URL=postgresql://...
+
+# DISPATCH PROTOCOLS (SMTP)
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=587
+SMTP_EMAIL=...
+SMTP_PASSWORD=...
+SMTP_RECEIVER=support@...
+
+# API ENDPOINTS
+NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-## 🚀 Deployment Architecture
+## 📊 Maintenance & Diagnostics
+BuildInPublic includes dedicated diagnostic protocols for cloud-environment stability:
+- **SMTP Network Test**: `/api/v1/dev/test-smtp-network` - Validates DNS, port connectivity, and auth protocols.
+- **Local Diagnostic**: `python backend/test_smtp.py`
 
-```
-Frontend (Vercel/Netlify)
-    ↓ HTTPS API calls
-Backend API (Railway)
-    ↓ Database queries
-PostgreSQL (Neon)
-    ↓ Webhook notifications
-Dodo Payments
-```
+## 🤝 Build Together
+BuildInPublic is co-engineered with direct input from the world's most transparent builders. 
 
-## 📝 Project Structure
-
-```
-Reword/
-├── frontend/          # Next.js Application
-│   ├── app/
-│   ├── components/
-│   ├── contexts/
-│   └── ...
-│
-├── backend/           # FastAPI Application
-│   ├── routes/
-│   ├── api/
-│   ├── models.py
-│   ├── main.py
-│   └── ...
-│
-├── .env               # Unified Configuration
-└── README.md
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
+1. **Fork** the Repository
+2. **Commit** your Schematic Improvements
+3. **Dispatch** a Pull Request
 
 ---
-
-**Ready to transform your content? Start repurposing with Reword! ✨**
+© 2026 BuildInPublic · **Entrext Labs**
+*Ready to scale your distribution? Initialize your engine today.* 🚀

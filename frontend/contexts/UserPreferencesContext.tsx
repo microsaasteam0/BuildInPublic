@@ -60,7 +60,8 @@ export function UserPreferencesProvider({ children }: UserPreferencesProviderPro
       }
     } catch (error: any) {
       console.error('Error loading user preferences:', error)
-      setHasLoaded(false) // Allow retry on error
+      // Set to true to prevent infinite retry loops if the API returns 400/500
+      setHasLoaded(true)
       // Use defaults if loading fails
       setAutoSaveEnabledState(true)
       setEmailNotificationsEnabledState(true)

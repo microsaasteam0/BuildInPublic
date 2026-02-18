@@ -199,6 +199,8 @@ async def normalize_path_middleware(request: Request, call_next):
 allowed_origins = [
     "https://buildinpublic.entrext.com",
     "https://buildinpublic-alpha.vercel.app",
+    "https://build-in-public.vercel.app",
+    "https://build-in-public-alpha.vercel.app",
     "http://localhost:3000",
     "http://localhost:8000"
 ]
