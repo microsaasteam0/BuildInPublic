@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { createPortal } from 'react-dom'
 import { X, AlertTriangle, Crown, Users, FileText, Download, Zap, Shield, Loader2, Activity, Box, Terminal } from 'lucide-react'
 
 interface DowngradeModalProps {
@@ -61,7 +62,7 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
     }
   ]
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-xl z-[2000000] flex items-center justify-center p-4">
       <div className="relative bg-slate-900 rounded-[2.5rem] border border-red-500/30 max-w-xl w-full max-h-[90vh] overflow-hidden shadow-3xl animate-kinetic-glow">
 
@@ -233,6 +234,7 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
