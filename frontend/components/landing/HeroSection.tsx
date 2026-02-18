@@ -47,8 +47,8 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                 >
                     <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-500 mr-1.5 sm:mr-2" />
-                    <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-[0.15em] sm:tracking-[0.2em] relative">
-                        Share Your Build Journey
+                    <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 tracking-[0.1em] relative">
+                        Share your build journey
                     </span>
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3 animate-ping" />
                 </motion.div>
@@ -99,7 +99,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             <div className="absolute inset-0 shimmer-text opacity-20" />
                             <div className="flex items-center justify-center gap-2 sm:gap-3 relative z-10">
                                 <Box className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform" />
-                                <span className="tracking-tight uppercase text-xs sm:text-sm">Open Workspace</span>
+                                <span className="tracking-tight text-xs sm:text-sm">Open workspace</span>
                                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </button>
@@ -111,7 +111,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             >
                                 <div className="absolute inset-0 shimmer-text opacity-20" />
                                 <div className="flex items-center justify-center gap-2 sm:gap-3 relative z-10">
-                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Get Started</span>
+                                    <span className="tracking-tight text-xs sm:text-sm">Get started</span>
                                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </button>
@@ -122,7 +122,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             >
                                 <div className="flex items-center justify-center gap-2 sm:gap-3">
                                     <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />
-                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Sign In</span>
+                                    <span className="tracking-tight text-xs sm:text-sm">Sign in</span>
                                 </div>
                             </button>
                         </>

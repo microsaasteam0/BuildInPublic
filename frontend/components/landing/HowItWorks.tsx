@@ -41,7 +41,7 @@ export default function HowItWorks() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight"
                     >
-                        How It <span className="text-indigo-500">Works</span>
+                        How it <span className="text-indigo-500">works</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

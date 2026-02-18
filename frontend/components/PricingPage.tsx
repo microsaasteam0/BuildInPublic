@@ -29,7 +29,7 @@ function FAQItem({ faq }: FAQItemProps) {
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full px-6 md:px-10 py-6 md:py-8 text-left flex items-center justify-between hover:bg-indigo-500/[0.02] transition-colors duration-200"
       >
-        <span className="text-lg md:text-xl font-black text-slate-900 dark:text-white pr-6 tracking-tight uppercase">
+        <span className="text-lg md:text-xl font-black text-slate-900 dark:text-white pr-6 tracking-tight">
           {faq.question}
         </span>
         <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${isExpanded ? "bg-indigo-600 text-white rotate-180 shadow-lg shadow-indigo-600/20" : "bg-slate-100 dark:bg-slate-800 text-slate-400"
@@ -207,16 +207,16 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
 
       {/* Header Section - Builder Aesthetic */}
       <div className="text-center space-y-6 sm:space-y-10 max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 text-[9px] sm:text-[10px] font-black uppercase tracking-widest sm:tracking-[0.4em] font-mono shadow-sm">
+        <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 text-[9px] sm:text-[10px] font-black tracking-widest sm:tracking-[0.4em] font-mono shadow-sm">
           <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 sm:mr-3" />
-          {user?.is_premium ? 'PRO PLAN ACTIVE' : 'FREE PLAN ACTIVE'}
+          {user?.is_premium ? 'Pro plan active' : 'Free plan active'}
         </div>
 
         <div className="relative inline-block w-full">
-          <h1 className="text-4xl sm:text-6xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter uppercase leading-none relative z-20">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-display font-black text-slate-900 dark:text-white tracking-tighter leading-none relative z-20">
             Select your <br />
             <span className="text-indigo-600 dark:text-indigo-400 inline-block font-black">
-              Ideal Plan.
+              ideal plan
             </span>
           </h1>
         </div>
@@ -226,26 +226,26 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
         </p>
 
         {/* Improved Billing Toggle - Industrial Design */}
-        <div className="flex justify-center pt-8 sm:pt-12">
+        <div className="flex justify-center pt-6 sm:pt-8">
           <div className="bg-zinc-200/50 dark:bg-slate-900/50 p-1.5 sm:p-2 rounded-[1.5rem] sm:rounded-3xl border-2 border-zinc-200 dark:border-slate-800 inline-flex shadow-inner backdrop-blur-3xl relative overflow-hidden group max-w-full">
             <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 pointer-events-none" />
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 sm:px-10 py-3 sm:py-4 rounded-2xl font-black text-[10px] sm:text-sm uppercase tracking-widest transition-all duration-500 relative z-10 ${billingCycle === 'monthly'
+              className={`px-6 sm:px-10 py-3 sm:py-4 rounded-2xl font-black text-[10px] sm:text-sm tracking-widest transition-all duration-500 relative z-10 ${billingCycle === 'monthly'
                 ? 'bg-indigo-600 text-white shadow-2xl shadow-indigo-600/40'
                 : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                 }`}
             >
-              Cycle: Monthly
+              Monthly
             </button>
             <button
               onClick={() => setBillingCycle('yearly')}
-              className={`px-6 sm:px-10 py-3 sm:py-4 rounded-2xl font-black text-[10px] sm:text-sm uppercase tracking-widest transition-all duration-500 flex items-center gap-2 sm:gap-3 relative z-10 ${billingCycle === 'yearly'
+              className={`px-6 sm:px-10 py-3 sm:py-4 rounded-2xl font-black text-[10px] sm:text-sm tracking-widest transition-all duration-500 flex items-center gap-2 sm:gap-3 relative z-10 ${billingCycle === 'yearly'
                 ? 'bg-indigo-600 text-white shadow-2xl shadow-indigo-600/40'
                 : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                 }`}
             >
-              Cycle: Yearly
+              Yearly
               <span className="text-[9px] sm:text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 border border-emerald-500/30 font-black">
                 -20%
               </span>
@@ -261,7 +261,7 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`relative p-6 sm:p-8 md:p-12 rounded-[2.5rem] sm:rounded-[3rem] md:rounded-[4rem] flex flex-col group overflow-hidden ${plan.popular
+            className={`relative p-6 sm:p-8 md:p-10 rounded-[2.5rem] sm:rounded-[3rem] md:rounded-[4rem] flex flex-col group overflow-hidden ${plan.popular
               ? 'bg-zinc-50 dark:bg-[#020617] border-2 border-indigo-600 shadow-4xl shadow-indigo-600/20 md:scale-[1.02] z-20'
               : 'bg-zinc-100/40 dark:bg-slate-900/40 backdrop-blur-3xl border border-zinc-200 dark:border-slate-800/80'
               }`}
@@ -272,14 +272,14 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
             {/* Horizontal Scanline */}
             <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500/50 blur-sm opacity-0 group-hover:opacity-100 group-hover:animate-scanline pointer-events-none" />
 
-            <div className="flex justify-between items-start mb-8 sm:mb-12 relative z-10 gap-4">
+            <div className="flex justify-between items-start mb-6 sm:mb-8 relative z-10 gap-4">
               <div className="space-y-3 min-w-0">
-                <span className={`px-4 py-1.5 rounded-xl text-[10px] sm:text-[11px] font-black tracking-[0.1em] sm:tracking-[0.2em] uppercase border ${plan.popular ? "bg-indigo-600/10 text-indigo-500 border-indigo-500/20" : "bg-slate-500/10 text-slate-500 border-slate-500/20"
+                <span className={`px-4 py-1.5 rounded-xl text-[10px] sm:text-[11px] font-black tracking-[0.1em] sm:tracking-[0.2em] border ${plan.popular ? "bg-indigo-600/10 text-indigo-500 border-indigo-500/20" : "bg-slate-500/10 text-slate-500 border-slate-500/20"
                   }`}>
-                  {plan.badge || "STABLE_BUILD"}
+                  {plan.badge || "Stable build"}
                 </span>
-                <h3 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tighter uppercase truncate">{plan.name}</h3>
-                <p className="text-slate-500 font-bold uppercase text-[10px] sm:text-xs tracking-widest">{plan.description}</p>
+                <h3 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tighter truncate">{plan.name}</h3>
+                <p className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-widest">{plan.description}</p>
               </div>
 
               <div className={`p-4 rounded-[1.5rem] sm:rounded-[2rem] flex-shrink-0 ${plan.popular ? "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30" : "bg-slate-100 dark:bg-slate-800 text-slate-400"}`}>
@@ -287,37 +287,37 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
               </div>
             </div>
 
-            <div className="mb-10 sm:mb-14 p-8 sm:p-12 rounded-[2.5rem] sm:rounded-[3.5rem] bg-zinc-200/50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 relative overflow-hidden group/price">
+            <div className="mb-6 sm:mb-8 p-6 sm:p-8 rounded-[2.5rem] sm:rounded-[3.5rem] bg-zinc-200/50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 relative overflow-hidden group/price">
               <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 pointer-events-none" />
               <div className="relative z-10 flex items-center justify-center gap-4">
                 <div className="text-center">
                   <span className="text-2xl sm:text-4xl font-black text-slate-900/40 dark:text-white/20 mr-2">$</span>
-                  <span className="text-6xl sm:text-8xl md:text-9xl font-black text-slate-900 dark:text-white tracking-tighter transition-transform group-hover/price:scale-110 duration-700 inline-block">
+                  <span className="text-6xl sm:text-8xl font-black text-slate-900 dark:text-white tracking-tighter transition-transform group-hover/price:scale-110 duration-700 inline-block">
                     {plan.price[billingCycle]}
                   </span>
-                  <span className="text-slate-500 font-black uppercase text-[10px] sm:text-xs tracking-widest block mt-3 sm:mt-4">
-                    / {billingCycle === 'monthly' ? 'month_cycle' : 'year_cycle'}
+                  <span className="text-slate-500 font-black text-[10px] sm:text-xs tracking-widest block mt-3 sm:mt-4">
+                    / {billingCycle === 'monthly' ? 'month' : 'year'}
                   </span>
                 </div>
               </div>
             </div>
 
-            <ul className="space-y-6 mb-16 flex-1 relative z-10">
+            <ul className="space-y-4 mb-8 flex-1 relative z-10">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center text-sm group/feat">
-                  <div className={`mr-5 p-1.5 rounded-xl border transition-all ${plan.popular ? "bg-indigo-600/10 border-indigo-500/20 text-indigo-500" : "bg-slate-100 dark:bg-slate-800 border-transparent text-slate-400"
+                  <div className={`mr-4 p-1.5 rounded-xl border transition-all ${plan.popular ? "bg-indigo-600/10 border-indigo-500/20 text-indigo-500" : "bg-slate-100 dark:bg-slate-800 border-transparent text-slate-400"
                     }`}>
                     <Check className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-700 dark:text-slate-300 font-bold tracking-tight uppercase text-xs group-hover/feat:text-indigo-500 transition-colors">{feature}</span>
+                  <span className="text-slate-700 dark:text-slate-300 font-bold tracking-tight text-xs group-hover/feat:text-indigo-500 transition-colors">{feature}</span>
                 </li>
               ))}
               {plan.limitations.map((limitation, i) => (
                 <li key={i} className="flex items-center text-sm opacity-30 grayscale blur-[0.5px]">
-                  <div className="mr-5 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-transparent text-slate-400">
+                  <div className="mr-4 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-transparent text-slate-400">
                     <X className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-500 font-black uppercase text-[10px] tracking-widest">{limitation}</span>
+                  <span className="text-slate-500 font-black text-[10px] tracking-widest">{limitation}</span>
                 </li>
               ))}
             </ul>
@@ -328,8 +328,8 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
                 (plan.id === 'free' && !user?.is_premium) ||
                 (plan.id === 'pro' && user?.is_premium)
               )}
-              className={`w-full py-5 sm:py-7 rounded-[1.5rem] sm:rounded-[2.5rem] font-black text-base sm:text-lg uppercase tracking-tight sm:tracking-[0.2em] transition-all duration-500 relative overflow-hidden flex items-center justify-center gap-3 sm:gap-4 ${isAuthenticated && ((plan.id === 'free' && !user?.is_premium) || (plan.id === 'pro' && user?.is_premium))
-                ? 'bg-emerald-500/10 text-emerald-500 border-2 border-emerald-500/20 cursor-not-allowed uppercase'
+              className={`w-full py-4 sm:py-5 rounded-[1.5rem] sm:rounded-[2.5rem] font-black text-base sm:text-lg tracking-tight sm:tracking-[0.1em] transition-all duration-500 relative overflow-hidden flex items-center justify-center gap-3 sm:gap-4 ${isAuthenticated && ((plan.id === 'free' && !user?.is_premium) || (plan.id === 'pro' && user?.is_premium))
+                ? 'bg-emerald-500/10 text-emerald-500 border-2 border-emerald-500/20 cursor-not-allowed'
                 : plan.popular
                   ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-3xl shadow-indigo-600/40 hover:scale-[1.03] active:scale-95 group/btn'
                   : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 hover:scale-[1.03] active:scale-95 group/btn'
@@ -338,7 +338,7 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
               {isAuthenticated && ((plan.id === 'free' && !user?.is_premium) || (plan.id === 'pro' && user?.is_premium)) ? (
                 <span className="flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base tracking-tight sm:tracking-widest">
                   <Lock className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-                  <span className="whitespace-nowrap">Current Build Active</span>
+                  <span className="whitespace-nowrap">Current plan active</span>
                 </span>
               ) : (
                 <>
@@ -365,17 +365,17 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
             {/* Kinetic Scanline for Header */}
             <div className="absolute inset-x-0 h-[1px] bg-indigo-500/20 top-0 animate-scanline pointer-events-none" />
 
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-500 text-[10px] sm:text-[11px] font-black uppercase tracking-widest sm:tracking-[0.3em] mb-6 border border-indigo-500/20 relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-indigo-600/10 text-indigo-500 text-[10px] sm:text-[11px] font-black tracking-widest border border-indigo-500/20 mb-6 relative z-10">
               <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              PLAN_COMPARISON
+              Plan comparison
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white tracking-tighter uppercase relative z-10 leading-[0.85]">
-              <span className="text-indigo-500">Feature</span>_Matrix
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white tracking-tighter relative z-10 leading-[0.85]">
+              Feature_<span className="text-indigo-500">matrix</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest sm:tracking-[0.4em] mt-8 flex items-center justify-center gap-4 px-2">
+            <p className="text-slate-500 dark:text-slate-400 font-bold text-[9px] sm:text-[10px] md:text-xs tracking-widest sm:tracking-[0.4em] mt-4 flex items-center justify-center gap-4 px-2">
               <span className="hidden md:block w-12 h-[1px] bg-slate-200 dark:bg-white/10" />
-              Complete Feature Comparison
+              Complete feature comparison
               <span className="hidden md:block w-12 h-[1px] bg-slate-200 dark:bg-white/10" />
             </p>
           </div>
@@ -384,14 +384,14 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
             <table className="w-full text-sm text-center border-collapse min-w-[600px] md:min-w-0">
               <thead>
                 <tr className="bg-slate-50 dark:bg-white/[0.02] border-b border-slate-200 dark:border-white/5">
-                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 text-left font-black text-[9px] sm:text-[11px] uppercase tracking-widest sm:tracking-[0.4em] text-zinc-400 dark:text-slate-400 font-mono">
-                    [00] PARAMETER
+                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 text-left font-black text-[9px] sm:text-[11px] tracking-widest sm:tracking-[0.4em] text-zinc-400 dark:text-slate-400 font-mono">
+                    [00] Parameter
                   </th>
-                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 font-black text-[9px] sm:text-[11px] uppercase tracking-widest sm:tracking-[0.4em] text-zinc-400 dark:text-slate-400 font-mono">
-                    [01] STARTER
+                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 font-black text-[9px] sm:text-[11px] tracking-widest sm:tracking-[0.4em] text-zinc-400 dark:text-slate-400 font-mono">
+                    [01] Starter
                   </th>
-                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 font-black text-[9px] sm:text-[11px] uppercase tracking-widest sm:tracking-[0.4em] text-indigo-500 font-mono bg-indigo-500/[0.02]">
-                    [02] PRO_V1
+                  <th className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 font-black text-[9px] sm:text-[11px] tracking-widest sm:tracking-[0.4em] text-indigo-500 font-mono bg-indigo-500/[0.02]">
+                    [02] Pro_v1
                   </th>
                 </tr>
               </thead>
@@ -405,11 +405,11 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
                   { name: 'DISTRIBUTION', free: false, pro: true, icon: Network },
                 ].map((row, i) => (
                   <tr key={i} className="hover:bg-indigo-600/[0.04] border-b border-slate-200/50 dark:border-white/[0.03] last:border-0 transition-all group/row font-mono relative overflow-hidden">
-                    <td className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 text-left font-black text-[12px] sm:text-[13px] text-slate-800 dark:text-slate-100 group-hover/row:text-indigo-500 transition-colors uppercase flex items-center gap-3 sm:gap-6">
+                    <td className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 text-left font-black text-[12px] sm:text-[13px] text-slate-800 dark:text-slate-100 group-hover/row:text-indigo-500 transition-colors flex items-center gap-3 sm:gap-6">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-white/5 flex items-center justify-center opacity-70 group-hover/row:opacity-100 group-hover/row:scale-110 group-hover/row:bg-indigo-500/10 transition-all border border-transparent group-hover/row:border-indigo-500/20 shadow-inner shrink-0">
                         {row.icon && <row.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-zinc-500 dark:text-slate-300 group-hover/row:text-indigo-500" />}
                       </div>
-                      <span className="tracking-tight uppercase text-[10px] sm:text-xs md:text-sm truncate">{row.name.replace(/_/g, ' ')}</span>
+                      <span className="tracking-tight text-[10px] sm:text-xs md:text-sm truncate">{row.name.replace(/_/g, ' ')}</span>
                     </td>
                     <td className="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 text-slate-500 dark:text-slate-500 font-bold text-[10px] sm:text-xs">
                       {typeof row.free === 'boolean' ? (
@@ -434,14 +434,14 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
                             <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-indigo-600 text-white shadow-xl shadow-indigo-600/40">
                               <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
                             </div>
-                            <span className="text-[11px] sm:text-[13px] font-black uppercase tracking-widest sm:tracking-[0.2em]">ACT</span>
+                            <span className="text-[11px] sm:text-[13px] font-black tracking-widest sm:tracking-[0.2em]">ACT</span>
                           </div>
                         ) : (
                           <Minus className="w-5 h-5 sm:w-6 sm:h-6 mx-auto opacity-10" />
                         )
                       ) : (
                         <div className="flex flex-col items-center gap-1 sm:gap-2">
-                          <span className="uppercase text-[11px] sm:text-sm md:text-base font-black tracking-tight sm:tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-indigo-300 to-indigo-600 truncate max-w-[80px] sm:max-w-none">{row.pro}</span>
+                          <span className="text-[11px] sm:text-sm md:text-base font-black tracking-tight sm:tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-indigo-300 to-indigo-600 truncate max-w-[80px] sm:max-w-none">{row.pro}</span>
                           <div className="flex gap-1 justify-center">
                             {[1, 2, 3].map(d => (
                               <div key={d} className="w-3 sm:w-4 h-1 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
@@ -458,8 +458,8 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
 
           {/* Footer Technical Note */}
           <div className="p-6 bg-zinc-100/50 dark:bg-white/[0.02] border-t border-zinc-200 dark:border-white/5 text-center">
-            <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.5em]">
-              [ SECURE_ENVIRONMENT_STABLE_V1.04 ]
+            <p className="text-[11px] font-black text-slate-400 tracking-[0.5em]">
+              [ Secure environment stable v1.04 ]
             </p>
           </div>
         </div>
@@ -468,12 +468,12 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       {/* Engineering FAQ Section */}
       <div className="max-w-5xl mx-auto px-6 pb-40">
         <div className="text-center mb-24 space-y-6">
-          <div className="inline-flex items-center gap-3 px-4 py-1 rounded-lg bg-indigo-600/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest border border-indigo-500/20">
+          <div className="inline-flex items-center gap-3 px-4 py-1 rounded-lg bg-indigo-600/10 text-indigo-500 text-[10px] font-black tracking-widest border border-indigo-500/20">
             <Workflow className="w-3.5 h-3.5" />
-            HELP_CENTER
+            Help center
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.9]">Common Questions</h2>
-          <p className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Everything you need to know</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-900 dark:text-white tracking-tighter leading-[0.9]">Common questions</h2>
+          <p className="text-slate-500 font-bold text-[10px] tracking-widest">Everything you need to know</p>
         </div>
         <div className="grid md:grid-cols-1 gap-8">
           {faqs.map((faq, index) => (

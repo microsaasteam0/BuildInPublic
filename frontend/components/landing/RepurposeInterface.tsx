@@ -197,17 +197,17 @@ export default function RepurposeInterface({
                     {/* Header Area */}
                     <div className="p-6 sm:p-10 pb-0 text-center relative z-10">
                         <div className="inline-flex items-center justify-center px-4 py-1.5 bg-zinc-100 dark:bg-slate-900/50 rounded-lg mb-6 sm:mb-8 border border-zinc-200 dark:border-slate-800">
-                            <span className="text-[9px] sm:text-[10px] font-black text-zinc-500 dark:text-slate-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] flex items-center gap-2 sm:gap-3">
+                            <span className="text-[9px] sm:text-[10px] font-black text-zinc-500 dark:text-slate-400 tracking-[0.2em] sm:tracking-[0.3em] flex items-center gap-2 sm:gap-3">
                                 <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                WORKSPACE
+                                Workspace
                             </span>
                         </div>
                     </div>
 
                     <div className="p-6 sm:p-10 pt-4 relative z-10">
                         <div className="text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
-                            <p className="text-zinc-500 dark:text-slate-400 font-bold uppercase text-[10px] sm:text-[11px] tracking-widest leading-relaxed px-2">
-                                <span className="text-indigo-600 dark:text-indigo-400">TIP:</span> Share your progress to build trust with your audience.
+                            <p className="text-zinc-500 dark:text-slate-400 font-bold text-[10px] sm:text-[11px] tracking-widest leading-relaxed px-2">
+                                <span className="text-indigo-600 dark:text-indigo-400 lowercase">tip:</span> Share your progress to build trust with your audience.
                                 <br className="hidden sm:block" /> We create the posts. You focus on building.
                             </p>
                         </div>
@@ -227,7 +227,7 @@ export default function RepurposeInterface({
                                             <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Morning To-Do List</span>
                                         </div>
                                         <div className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 px-3 py-1 bg-indigo-500/10 rounded-lg border border-indigo-500/20 whitespace-nowrap">
-                                            {tasks.filter(t => t.completed).length}/{tasks.length} TASKS
+                                            {tasks.filter(t => t.completed).length}/{tasks.length} tasks
                                         </div>
                                     </div>
 
@@ -237,7 +237,7 @@ export default function RepurposeInterface({
                                             <input
                                                 type="text"
                                                 placeholder="Add a task..."
-                                                className="flex-1 min-w-0 bg-zinc-200/50 dark:bg-slate-800/50 border border-zinc-300 dark:border-slate-700 rounded-xl px-4 sm:px-5 py-3 text-xs font-bold uppercase tracking-widest focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-400/50 dark:placeholder:text-slate-600 truncate"
+                                                className="flex-1 min-w-0 bg-zinc-200/50 dark:bg-slate-800/50 border border-zinc-300 dark:border-slate-700 rounded-xl px-4 sm:px-5 py-3 text-xs font-bold tracking-widest focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-400/50 dark:placeholder:text-slate-600 truncate"
                                                 onKeyDown={(e) => {
                                                     if (e.key === 'Enter') {
                                                         const target = e.target as HTMLInputElement;
@@ -293,7 +293,7 @@ export default function RepurposeInterface({
                                                         >
                                                             <Check className={`w-3.5 h-3.5 transition-opacity ${task.completed ? 'opacity-100' : 'opacity-0 group-hover/item:opacity-30'}`} />
                                                         </button>
-                                                        <span className={`flex-1 text-xs font-black uppercase tracking-widest transition-all ${task.completed
+                                                        <span className={`flex-1 text-xs font-black tracking-widest transition-all ${task.completed
                                                             ? 'text-slate-400 dark:text-slate-600 line-through'
                                                             : 'text-zinc-900 dark:text-slate-300'
                                                             }`}>
@@ -325,7 +325,7 @@ export default function RepurposeInterface({
                                         <div className="p-2 bg-indigo-500/10 rounded-xl">
                                             <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                                         </div>
-                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">End of Day Summary</span>
+                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] tracking-widest">End of day summary</span>
                                     </div>
                                     <textarea
                                         value={eveningReflection}
@@ -344,14 +344,14 @@ export default function RepurposeInterface({
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                                     <button
                                         onClick={() => setShowPersonalization(!showPersonalization)}
-                                        className="flex items-center text-xs sm:text-sm font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 transition-colors uppercase tracking-widest"
+                                        className="flex items-center text-xs sm:text-sm font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 transition-colors tracking-widest"
                                     >
                                         <Settings className="w-3.5 h-3.5 mr-2" />
                                         {showPersonalization ? 'Hide' : 'Show'} Parameters
                                     </button>
 
                                     <div className="flex gap-2">
-                                        <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/5 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-500/10 dark:border-slate-700 text-[10px] font-black uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/5 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-500/10 dark:border-slate-700 text-[10px] font-black tracking-widest">
                                             <Twitter className="w-3.5 h-3.5" />
                                             Platform: Twitter
                                         </div>
@@ -368,7 +368,7 @@ export default function RepurposeInterface({
                                         >
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-muted/30 rounded-2xl border border-border/50">
                                                 <div>
-                                                    <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">Curent Audience</label>
+                                                    <label className="text-xs font-semibold text-muted-foreground tracking-wider mb-2 block">Curent audience</label>
                                                     <input
                                                         type="text"
                                                         value={personalization.audience}
@@ -413,7 +413,7 @@ export default function RepurposeInterface({
                                             Create Posts
                                         </div>
                                     </button>
-                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 uppercase tracking-widest sm:tracking-[0.4em] px-2 truncate">FREE TO USE • NO CREDIT CARD REQUIRED</p>
+                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 tracking-widest sm:tracking-[0.4em] px-2 truncate">Free to use • No credit card required</p>
                                 </div>
                             ) : (
                                 <div className="w-full flex flex-col items-center">
@@ -455,8 +455,8 @@ export default function RepurposeInterface({
                                                     <span className="text-sm sm:text-base">Create Posts</span>
                                                 </div>
                                                 {usageStats && (
-                                                    <span className="text-[9px] sm:text-[10px] opacity-80 font-black bg-black/20 px-2.5 py-1 rounded-lg border border-white/10 uppercase tracking-tighter">
-                                                        ({usageStats.remaining_requests}/{usageStats.rate_limit} Posts)
+                                                    <span className="text-[9px] sm:text-[10px] opacity-80 font-black bg-black/20 px-2.5 py-1 rounded-lg border border-white/10 tracking-tighter">
+                                                        ({usageStats.remaining_requests}/{usageStats.rate_limit} posts)
                                                     </span>
                                                 )}
                                             </div>
@@ -509,14 +509,14 @@ export default function RepurposeInterface({
                         id="results-section"
                     >
                         <div className="text-center mb-16 space-y-4">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest border border-indigo-500/20 mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-500 text-[10px] font-black tracking-widest border border-indigo-500/20 mb-4">
                                 <TrendingUp className="w-3.5 h-3.5" />
-                                YOUR GENERATED CONTENT
+                                Your generated content
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-display font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
-                                Ready to Post
+                            <h2 className="text-4xl md:text-6xl font-display font-black text-zinc-900 dark:text-white tracking-tighter">
+                                Ready to post
                             </h2>
-                            <p className="text-zinc-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-[0.4em]">Your social media posts are ready to share.</p>
+                            <p className="text-zinc-500 dark:text-slate-400 font-bold text-[10px] tracking-[0.4em]">Your social media posts are ready to share.</p>
                         </div>
 
                         <div className="max-w-4xl mx-auto">
@@ -535,10 +535,10 @@ export default function RepurposeInterface({
                                                 <Twitter className="w-6 h-6 text-[#1DA1F2]" />
                                             </div>
                                             <div>
-                                                <h3 className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
-                                                    Twitter Thread
+                                                <h3 className="text-xl font-black text-zinc-900 dark:text-white tracking-tighter">
+                                                    Twitter thread
                                                 </h3>
-                                                <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">
+                                                <div className="text-[10px] font-bold text-zinc-500 tracking-widest mt-1">
                                                     Ready to share • v1.0.4
                                                 </div>
                                             </div>
@@ -575,10 +575,10 @@ export default function RepurposeInterface({
 
                                             <button
                                                 onClick={() => copyToClipboard(results.twitter_thread.join('\n\n'), 'twitter')}
-                                                className="px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-slate-900 font-black rounded-xl text-[10px] uppercase tracking-widest flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl"
+                                                className="px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-slate-900 font-black rounded-xl text-[10px] tracking-widest flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl"
                                             >
                                                 {copiedStates['twitter'] ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                                                {copiedStates['twitter'] ? 'COPIED!' : 'COPY CONTENT'}
+                                                {copiedStates['twitter'] ? 'Copied!' : 'Copy content'}
                                             </button>
                                         </div>
                                     </div>
