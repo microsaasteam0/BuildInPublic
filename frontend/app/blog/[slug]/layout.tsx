@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     if (!post) {
         return {
-            title: 'Post Not Found | Reword Blog',
+            title: 'Schematic Not Found | BuildInPublic Blog',
         }
     }
 
     return {
-        title: `${post.title} | Reword Blog`,
+        title: `${post.title} | BuildInPublic Blog`,
         description: post.excerpt,
         keywords: post.tags.join(', '),
         openGraph: {

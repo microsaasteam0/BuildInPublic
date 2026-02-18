@@ -193,7 +193,7 @@ export default function RootLayout({
                 "@type": "AggregateOffer",
                 "priceCurrency": "USD",
                 "lowPrice": "0",
-                "highPrice": "14.00",
+                "highPrice": "15.00",
                 "offerCount": "2",
                 "offers": [
                   {
@@ -205,7 +205,7 @@ export default function RootLayout({
                   {
                     "@type": "Offer",
                     "name": "Pro Plan",
-                    "price": "14.00",
+                    "price": "15.00",
                     "priceCurrency": "USD"
                   }
                 ]

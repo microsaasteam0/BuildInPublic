@@ -31,33 +31,33 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
   const featuresYouWillLose = [
     {
       icon: <Zap className="w-5 h-5 text-red-400" />,
-      title: 'Unlimited Content Generations',
-      description: 'Back to 2 generations per day'
+      title: '20 Daily Neural Syntheses',
+      description: 'Back to 2 generations per day [Basic Build-Log]'
     },
     {
       icon: <FileText className="w-5 h-5 text-red-400" />,
-      title: 'URL Processing',
+      title: 'Multi-Thread URL Synthesis',
       description: 'No more direct URL content extraction'
     },
     {
       icon: <Shield className="w-5 h-5 text-red-400" />,
-      title: 'Content Saving & Organization',
-      description: 'Cannot save, organize, or search content'
+      title: 'Permanent Vault Storage',
+      description: 'Lose access to your historical project memory'
     },
     {
       icon: <Download className="w-5 h-5 text-red-400" />,
-      title: 'Export Features',
-      description: 'No TXT, JSON, or CSV file exports'
+      title: 'Technical Data Export',
+      description: 'No Markdown, JSON, or CSV schema exports'
     },
     {
       icon: <FileText className="w-5 h-5 text-red-400" />,
-      title: 'Custom Templates',
-      description: 'Cannot create or manage templates'
+      title: 'Brand-Voice Profiles',
+      description: 'Cannot utilize personalized AI personas'
     },
     {
       icon: <Users className="w-5 h-5 text-red-400" />,
-      title: 'Community Templates',
-      description: 'No access to shared templates'
+      title: 'Priority Schematic Execution',
+      description: 'Slower processing speeds on peak loads'
     }
   ]
 
@@ -71,8 +71,8 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
               <AlertTriangle className="w-6 h-6 text-red-500" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white">Downgrade to Free Plan</h2>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">This action will cancel your Pro subscription</p>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">Downgrade to Free_Build</h2>
+              <p className="text-gray-600 dark:text-gray-400 text-[10px] font-black uppercase tracking-widest mt-1">Status: DEPLOY_TERMINATION_PROTOCOL</p>
             </div>
           </div>
           <button
@@ -91,12 +91,11 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
             <div className="flex items-start gap-3">
               <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-red-800 dark:text-red-400 mb-1">
-                  Important: This action cannot be undone
+                <h3 className="font-black text-red-800 dark:text-red-400 mb-1 uppercase tracking-tight">
+                  CRITICAL: IRREVERSIBLE_ACTION
                 </h3>
-                <p className="text-red-700 dark:text-red-300 text-sm">
-                  Your subscription will be cancelled immediately and you'll lose access to all Pro features.
-                  Any saved content, templates, and settings will be permanently deleted.
+                <p className="text-red-700 dark:text-red-300 text-xs font-medium leading-relaxed">
+                  Your Pro_Engine environment will be terminated. Access to neural synthesis vaults and personalization schematics will be restricted. Data in your permanent vault may be archived or inaccessible.
                 </p>
               </div>
             </div>
@@ -126,14 +125,13 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               What You'll Keep (Free Plan)
             </h3>
-            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-lg p-4">
-              <ul className="space-y-2 text-sm text-green-800 dark:text-green-300">
-                <li>• 2 content generations per day</li>
-                <li>• Transform text content only</li>
-                <li>• X/Twitter thread format</li>
-                <li>• Copy to clipboard</li>
-                <li>• Basic content history (view only)</li>
-                <li>• Community support</li>
+            <div className="bg-green-50 dark:bg-emerald-900/10 border border-green-200 dark:border-emerald-800/50 rounded-lg p-4 font-mono">
+              <ul className="space-y-2 text-[10px] text-green-800 dark:text-emerald-400 font-bold uppercase tracking-wide">
+                <li>• 2 DAILY SYNTHESES [STABLE_BUILD]</li>
+                <li>• CORE BUILD-LOG PROCESSING</li>
+                <li>• X/TWITTER THREAD SCHEMATICS</li>
+                <li>• SECURE_COPY PROTOCOL</li>
+                <li>• 24-HOUR HISTORY BUFFER</li>
               </ul>
             </div>
           </div>
@@ -175,7 +173,7 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
                   Downgrading...
                 </>
               ) : (
-                'Yes, Downgrade to Free'
+                'YES, INITIALIZE_DOWNGRADE'
               )}
             </button>
           </div>

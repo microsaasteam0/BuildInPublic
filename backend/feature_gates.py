@@ -156,41 +156,41 @@ class FeatureGate:
         """Get upgrade prompt for specific feature"""
         prompts = {
             "save_content": {
-                "title": "Save Your Content",
-                "message": "Upgrade to Pro to save unlimited content and access your history anytime.",
-                "cta": "Upgrade to Pro"
+                "title": "Vault Your Neural Syntheses",
+                "message": "Deploy Pro_Engine to save unlimited generations to your permanent vault and access narrative history anytime.",
+                "cta": "Deploy Pro_Engine"
             },
             "url_processing": {
-                "title": "Process URLs",
-                "message": "Transform content from any URL with Pro. Paste links to articles, blogs, and more.",
-                "cta": "Unlock URL Processing"
+                "title": "URL Content Ingestion",
+                "message": "Initialize Multi-Thread URL Synthesis with Pro_Engine. Deep-ingest content from articles, blogs, and technical logs.",
+                "cta": "Unlock URL Synthesis"
             },
             "export": {
-                "title": "Export Your Content",
-                "message": "Export to TXT, JSON, CSV and more formats with Pro. Perfect for backups and sharing.",
+                "title": "Technical Schematic Export",
+                "message": "Export to TXT, JSON, and CSV schematics with Pro_Engine. Perfect for advanced distribution workflows.",
                 "cta": "Get Export Features"
             },
             "analytics": {
-                "title": "Content Analytics",
-                "message": "Track performance, engagement metrics, and optimize your content strategy with Pro.",
+                "title": "Performance Analytics",
+                "message": "Track engine performance, engagement metrics, and optimize your distribution strategy with Pro_Engine.",
                 "cta": "View Analytics"
             },
             "advanced_templates": {
-                "title": "Advanced AI Templates",
-                "message": "Access premium AI templates and custom styles to create unique content.",
-                "cta": "Unlock Advanced AI"
+                "title": "Personalized Brand-Voice",
+                "message": "Access advanced AI personas and custom schematics to create high-authority distribution content.",
+                "cta": "Unlock Brand-Voice Profiles"
             },
             "bulk_processing": {
-                "title": "Bulk Processing",
-                "message": "Process up to 50 items at once and save hours of work with Pro.",
+                "title": "High-Velocity Bulk Ingestion",
+                "message": "Process up to 50 items simultaneously and maximize your builder velocity with Pro_Engine.",
                 "cta": "Enable Bulk Processing"
             }
         }
         
         return prompts.get(feature, {
-            "title": "Upgrade to Pro",
-            "message": "Unlock this feature and many more with Pro.",
-            "cta": "Upgrade Now"
+            "title": "Deploy Pro_Engine",
+            "message": "Unlock this schematic and many more with the full Pro_Engine protocol.",
+            "cta": "Deploy Now"
         })
 
 

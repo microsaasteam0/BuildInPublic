@@ -34,7 +34,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   }
 
   const planNames = {
-    pro: 'Creator Pro'
+    pro: 'Pro_Engine'
   }
 
   const amount = pricing[selectedPlan as keyof typeof pricing]?.[billingCycle] || 0
@@ -151,11 +151,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             {/* Feature Matrix */}
             <ul className="grid gap-4">
               {[
-                "20 content generations per day",
-                "Full URL neural extraction",
-                "Infinite content repository",
-                "Advanced Builder templates",
-                "Priority 24/7 technical sync"
+                "20 Daily Neural Syntheses",
+                "Deep Multi-Thread URL Ingestion",
+                "Unlimited Permanent Vault",
+                "Personalized Brand-Voice Profiles",
+                "Priority Schematic Execution"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4 text-sm text-slate-300 font-medium group/item">
                   <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-indigo-500/10 flex items-center justify-center border border-indigo-500/30 group-hover/item:bg-indigo-500/20 transition-colors">
