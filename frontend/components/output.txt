@@ -1,0 +1,49 @@
+DashboardModal.tsx(1043,9): error TS1005: ')' expected.
+DashboardModal.tsx(1045,12): error TS1136: Property assignment expected.
+DashboardModal.tsx(1047,10): error TS1005: ';' expected.
+DashboardModal.tsx(1048,13): error TS1005: ';' expected.
+DashboardModal.tsx(1049,16): error TS1005: ';' expected.
+DashboardModal.tsx(1050,19): error TS1005: ';' expected.
+DashboardModal.tsx(1051,21): error TS1005: ';' expected.
+DashboardModal.tsx(1052,24): error TS1005: ';' expected.
+DashboardModal.tsx(1053,29): error TS1005: ';' expected.
+DashboardModal.tsx(1054,35): error TS1005: ';' expected.
+DashboardModal.tsx(1055,30): error TS1005: ';' expected.
+DashboardModal.tsx(1056,33): error TS1005: ';' expected.
+DashboardModal.tsx(1059,7): error TS1109: Expression expected.
+DashboardModal.tsx(1063,12): error TS1136: Property assignment expected.
+DashboardModal.tsx(1063,16): error TS1005: ';' expected.
+DashboardModal.tsx(1063,38): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1064,10): error TS1136: Property assignment expected.
+DashboardModal.tsx(1066,13): error TS1005: ';' expected.
+DashboardModal.tsx(1067,16): error TS1005: ';' expected.
+DashboardModal.tsx(1068,14): error TS1005: ';' expected.
+DashboardModal.tsx(1069,17): error TS1005: ';' expected.
+DashboardModal.tsx(1070,19): error TS1005: ';' expected.
+DashboardModal.tsx(1071,22): error TS1005: ';' expected.
+DashboardModal.tsx(1072,2): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1073,9): error TS1109: Expression expected.
+DashboardModal.tsx(1075,9): error TS1005: ';' expected.
+DashboardModal.tsx(1238,11): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1241,9): error TS1005: ';' expected.
+DashboardModal.tsx(1243,11): error TS1005: ';' expected.
+DashboardModal.tsx(1244,15): error TS2657: JSX expressions must have one parent element.
+DashboardModal.tsx(1308,13): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1311,9): error TS1005: ';' expected.
+DashboardModal.tsx(1359,13): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1397,11): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1400,9): error TS1005: ';' expected.
+DashboardModal.tsx(1402,11): error TS1005: ';' expected.
+DashboardModal.tsx(1403,15): error TS2657: JSX expressions must have one parent element.
+DashboardModal.tsx(1471,13): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1476,10): error TS1136: Property assignment expected.
+DashboardModal.tsx(1478,19): error TS1005: ';' expected.
+DashboardModal.tsx(1479,2): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(1480,13): error TS1109: Expression expected.
+DashboardModal.tsx(1481,19): error TS1005: ',' expected.
+DashboardModal.tsx(1690,4): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(2918,13): error TS1128: Declaration or statement expected.
+DashboardModal.tsx(2919,11): error TS1109: Expression expected.
+DashboardModal.tsx(2920,9): error TS1109: Expression expected.
+DashboardModal.tsx(2921,7): error TS1109: Expression expected.
+DashboardModal.tsx(2924,1): error TS1128: Declaration or statement expected.

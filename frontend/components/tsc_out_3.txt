@@ -1,0 +1,932 @@
+DashboardModal.tsx(3,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+DashboardModal.tsx(3,44): error TS1261: Already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' differs from file name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+DashboardModal.tsx(4,30): error TS1261: Already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' differs from file name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react-dom/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react-dom' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+    Type library referenced via 'react-dom' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react-dom/ndex.d.ts@18.3.7+@types/react@18.3.27'
+    Entry point for implicit type library 'react-dom' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+DashboardModal.tsx(8,25): error TS6142: Module '../contexts/AuthContext' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/contexts/AuthContext.tsx', but '--jsx' is not set.
+DashboardModal.tsx(10,36): error TS6142: Module '../contexts/UserPreferencesContext' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/contexts/UserPreferencesContext.tsx', but '--jsx' is not set.
+DashboardModal.tsx(11,35): error TS6142: Module './CustomTemplateManager' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/CustomTemplateManager.tsx', but '--jsx' is not set.
+DashboardModal.tsx(12,28): error TS6142: Module './LoadingSpinner' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/LoadingSpinner.tsx', but '--jsx' is not set.
+DashboardModal.tsx(13,24): error TS6142: Module './Pagination' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/Pagination.tsx', but '--jsx' is not set.
+DashboardModal.tsx(14,25): error TS6142: Module './ImageEditor' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/ImageEditor.tsx', but '--jsx' is not set.
+DashboardModal.tsx(15,30): error TS2307: Cannot find module '@/lib/cache-util' or its corresponding type declarations.
+DashboardModal.tsx(16,25): error TS2307: Cannot find module '@/lib/api-config' or its corresponding type declarations.
+DashboardModal.tsx(1041,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1060,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1074,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1075,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1076,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1077,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1079,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1080,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1108,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1116,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1123,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1124,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1126,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1127,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1131,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1137,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1138,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1146,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1148,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1152,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1158,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1159,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1166,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1170,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1180,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1181,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1183,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1191,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1201,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1202,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1204,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1212,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1219,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1220,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1221,38): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1226,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1233,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1240,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1242,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1243,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1245,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1246,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1274,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1282,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1289,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1290,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1292,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1293,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1297,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1302,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1303,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1304,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1310,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1311,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1319,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1332,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1338,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1339,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1342,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1345,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1353,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1363,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1364,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1365,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1366,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1368,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1369,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1375,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1386,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1393,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1399,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1401,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1402,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1405,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1408,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1415,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1418,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1427,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1430,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1460,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1463,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1467,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1473,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1481,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1487,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1488,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1489,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1490,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1491,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1493,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1494,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1495,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1498,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1504,34): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1506,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1513,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1515,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1516,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1517,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1518,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1520,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1521,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1522,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1527,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1531,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1532,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1533,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1534,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1535,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1545,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1547,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1548,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1550,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1552,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1553,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1555,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1557,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1567,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1568,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1569,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1570,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1574,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1575,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1582,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1586,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1587,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1588,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1589,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1590,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1590,157): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1594,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1595,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1596,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1597,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1599,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1600,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1601,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1609,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1610,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1611,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1613,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1614,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1615,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1617,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1617,101): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1618,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1620,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1621,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1622,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1628,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1630,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1631,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1632,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1633,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1640,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1643,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1644,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1645,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1646,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1648,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1649,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1652,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1653,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1653,77): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1654,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1661,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1662,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1669,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1670,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1671,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1672,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1673,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1675,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1676,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1677,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1679,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1693,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1695,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1696,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1697,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1699,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1700,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1703,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1711,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1712,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1713,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1716,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1717,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1718,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1719,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1721,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1722,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1727,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1729,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1730,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1731,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1732,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1740,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1741,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1746,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1747,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1748,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1749,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1750,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1756,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1759,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1760,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1761,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1762,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1763,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1764,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1767,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1769,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1775,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1780,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1789,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1791,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1798,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1800,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1801,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1802,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1805,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1806,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1809,73): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1810,74): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1811,48): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1815,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1816,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1820,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1821,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1822,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1828,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1829,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1834,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1839,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1840,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1841,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1843,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1845,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1851,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1858,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1865,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1867,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1871,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1876,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1880,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1881,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1888,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1898,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1914,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1916,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1917,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1918,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1921,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1922,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1923,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1925,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1926,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1931,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1933,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1935,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1942,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1943,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1944,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1945,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1946,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1948,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1949,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1950,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1953,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1955,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1956,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1960,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1964,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1965,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1966,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1967,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1970,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1971,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1975,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1985,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1991,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1993,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1994,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1995,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(1997,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2003,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2004,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2005,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2007,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2019,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2020,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2021,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2023,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2024,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2028,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2048,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2054,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2055,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2056,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2057,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2067,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2068,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2069,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2076,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2078,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2109,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2112,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2120,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2136,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2138,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2139,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2140,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2141,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2142,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2144,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2145,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2146,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2149,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2153,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2158,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2166,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2168,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2169,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2170,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2173,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2174,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2175,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2176,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2179,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2183,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2187,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2188,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2193,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2196,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2201,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2208,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2210,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2211,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2212,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2213,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2214,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2217,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2218,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2232,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2237,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2243,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2251,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2255,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2256,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2257,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2260,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2262,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2266,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2275,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2276,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2277,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2279,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2287,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2292,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2293,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2295,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2303,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2308,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2309,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2310,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2312,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2313,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2322,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2323,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2324,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2325,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2326,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2327,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2328,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2335,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2349,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2355,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2356,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2357,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2358,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2360,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2365,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2378,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2381,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2382,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2389,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2396,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2397,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2399,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2400,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2403,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2404,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2407,65): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2408,66): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2409,40): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2418,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2423,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2425,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2432,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2435,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2439,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2445,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2446,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2448,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2449,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2450,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2453,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2461,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2466,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2468,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2469,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2470,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2472,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2473,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2475,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2481,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2482,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2483,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2485,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2486,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2488,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2500,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2501,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2502,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2506,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2527,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2551,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2552,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2553,73): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2554,74): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2555,75): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2556,41): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2560,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2562,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2563,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2564,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2565,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2566,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2569,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2576,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2580,47): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2595,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2596,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2597,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2635,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2640,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2641,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2647,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2653,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2669,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2684,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2685,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2686,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2689,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2690,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2696,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2711,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2726,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2727,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2728,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2729,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2737,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2741,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2743,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2744,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2745,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2746,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2753,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2757,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2758,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2759,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2760,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2762,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2763,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2765,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2770,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2771,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2774,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2782,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2783,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2785,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2786,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2812,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2820,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2827,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2828,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2829,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2835,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2836,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2849,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2863,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2877,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2892,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2893,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2894,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2897,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2898,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+DashboardModal.tsx(2905,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+../hooks/useFeatureGate.ts(4,25): error TS2307: Cannot find module '@/contexts/AuthContext' or its corresponding type declarations.
+../hooks/useFeatureGate.ts(5,38): error TS6142: Module '../contexts/PaymentProcessingContext' was resolved to 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/contexts/PaymentProcessingContext.tsx', but '--jsx' is not set.
+../hooks/useFeatureGate.ts(6,30): error TS2307: Cannot find module '@/lib/cache-util' or its corresponding type declarations.
+../hooks/useFeatureGate.ts(7,25): error TS2307: Cannot find module '@/lib/api-config' or its corresponding type declarations.
+../node_modules/@types/react/index.d.ts(8,28): error TS1261: Already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/prop-types/index.d.ts' differs from file name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/prop-types/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via "prop-types" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' with packageId '@types/prop-types/index.d.ts@15.7.15'
+    Entry point for implicit type library 'prop-types' with packageId '@types/prop-types/index.d.ts@15.7.15'
+../node_modules/framer-motion/dist/types/index.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/build/templates/app-page.d.ts(10,40): error TS2307: Cannot find module 'VAR_MODULE_GLOBAL_ERROR' or its corresponding type declarations.
+../node_modules/next/dist/build/webpack-config.d.ts(11,104): error TS2694: Namespace '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/compiled/webpack/webpack".webpack' has no exported member 'RuleSetUseItem'.
+../node_modules/next/dist/build/webpack/loaders/next-app-loader.d.ts(1,13): error TS2613: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/compiled/webpack/webpack"' has no default export. Did you mean to use 'import { webpack } from "e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/compiled/webpack/webpack"' instead?
+../node_modules/next/dist/build/webpack/plugins/define-env-plugin.d.ts(26,86): error TS2694: Namespace '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/compiled/webpack/webpack".webpack' has no exported member 'DefinePlugin'.
+../node_modules/next/dist/client/components/client-page.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/client/components/error-boundary.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/client/components/layout-router.d.ts(3,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/client/components/not-found-boundary.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/client/components/render-from-template-context.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/client/with-router.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/server/app-render/entry-base.d.ts(1,85): error TS2307: Cannot find module 'react-server-dom-webpack/server.edge' or its corresponding type declarations.
+../node_modules/next/dist/server/app-render/types.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/server/render.d.ts(17,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts(4,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts(1,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts(21,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts(1,8): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+../node_modules/next/dist/shared/lib/utils.d.ts(12,13): error TS1192: Module '"fs"' has no default export.
+../node_modules/next/types/index.d.ts(2,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/app-render/types.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/canary.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/experimental.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/router/router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/with-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/page-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/route-loader.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/server/render.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "react" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/utils.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/app-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/error-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via "./" from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/jsx-runtime.d.ts' with packageId '@types/react/ndex.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/layout-router.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/render-from-template-context.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/client-page.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/client/components/not-found-boundary.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/lucide-react/dist/lucide-react.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Type library referenced via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/framer-motion/dist/types.d-CQ4vRM6h.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/hooks/useFeatureGate.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Imported via 'react' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/react-hot-toast/dist/index.d.ts' with packageId '@types/react/index.d.ts@18.3.27'
+    Entry point for implicit type library 'react' with packageId '@types/react/index.d.ts@18.3.27'
+../node_modules/next/types/index.d.ts(4,23): error TS1149: File name 'E:/Hairscope/Work-Entrext/BuildInPublic/frontend/node_modules/@types/react-dom/index.d.ts' differs from already included file name 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/index.d.ts' only in casing.
+  The file is in the program because:
+    Imported via 'react-dom' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/components/DashboardModal.tsx' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+    Type library referenced via 'react-dom' from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/next/types/index.d.ts' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+    Imported via "." from file 'e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react-dom/canary.d.ts' with packageId '@types/react-dom/ndex.d.ts@18.3.7+@types/react@18.3.27'
+    Entry point for implicit type library 'react-dom' with packageId '@types/react-dom/index.d.ts@18.3.7+@types/react@18.3.27'
+../node_modules/next/types/index.d.ts(10,13): error TS1259: Module '"e:/Hairscope/Work-Entrext/BUILDINPUBLIC/frontend/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag

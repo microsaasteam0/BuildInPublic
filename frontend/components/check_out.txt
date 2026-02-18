@@ -1,0 +1,9 @@
+Checking syntax up to line 1045 (char count 35071)
+Mismatch: expected ] for [ at 28448, found ) at 32402
+See Line 845:           const csvRows = [
+Col: 26
+See Line 953:             ])
+Col: 13
+After checking, still unclosed: ['{', '{', '{', '{']
+Last unclosed item { at index 27039
+Line 812:       switch (format) {
