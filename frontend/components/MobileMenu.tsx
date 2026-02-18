@@ -119,7 +119,7 @@ export default function MobileMenu({
                   <div className="w-8 h-8 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center p-1.5 border border-zinc-200 dark:border-slate-800 shadow-sm">
                     <Image src="/logo.png" alt="BuildInPublic" width={28} height={28} className="w-full h-full object-contain" />
                   </div>
-                  <span className="text-base font-black tracking-tighter text-slate-900 dark:text-white uppercase">
+                  <span className="text-base font-black tracking-tighter text-slate-900 dark:text-white">
                     Build<span className="text-indigo-600 dark:text-indigo-400">In</span>Public
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export default function MobileMenu({
                         {user.email}
                       </p>
                       {user.is_premium && (
-                        <span className="inline-flex items-center gap-1 mt-1 px-2 py-0.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-[9px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">
+                        <span className="inline-flex items-center gap-1 mt-1 px-2 py-0.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-[9px] font-black text-amber-600 dark:text-amber-400 tracking-widest">
                           <Crown className="w-2.5 h-2.5" /> Pro
                         </span>
                       )}
@@ -167,7 +167,7 @@ export default function MobileMenu({
 
                   <button
                     onClick={() => { onDashboard?.(); closeMenu(); }}
-                    className="w-full py-2.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 border border-indigo-500/20 uppercase tracking-widest"
+                    className="w-full py-2.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 border border-indigo-500/20 tracking-widest"
                   >
                     <LayoutDashboard className="w-3.5 h-3.5" /> Dashboard
                   </button>
@@ -184,7 +184,7 @@ export default function MobileMenu({
                       key={link.name}
                       href={link.href}
                       onClick={closeMenu}
-                      className={`flex items-center gap-3.5 px-4 py-3.5 rounded-2xl transition-all font-black text-sm uppercase tracking-wide ${active
+                      className={`flex items-center gap-3.5 px-4 py-3.5 rounded-2xl transition-all font-black text-sm tracking-wide ${active
                         ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20'
                         : 'text-slate-500 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white border border-transparent'
                         }`}
@@ -207,21 +207,21 @@ export default function MobileMenu({
                 {isAuthenticated ? (
                   <button
                     onClick={() => { logout(); closeMenu(); }}
-                    className="w-full px-4 py-3 rounded-2xl bg-red-500/10 text-red-500 dark:text-red-400 font-black text-xs uppercase tracking-widest hover:bg-red-500/20 transition-all flex items-center justify-center gap-2 border border-red-500/20"
+                    className="w-full px-4 py-3 rounded-2xl bg-red-500/10 text-red-500 dark:text-red-400 font-black text-xs tracking-widest hover:bg-red-500/20 transition-all flex items-center justify-center gap-2 border border-red-500/20"
                   >
-                    <LogOut className="w-4 h-4" /> Sign Out
+                    <LogOut className="w-4 h-4" /> Sign out
                   </button>
                 ) : (
                   <div className="space-y-3">
                     <button
                       onClick={() => { onSignUp?.(); closeMenu(); }}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 active:scale-95"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs tracking-widest transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 active:scale-95"
                     >
-                      Get Started Free 🚀
+                      Get started free 🚀
                     </button>
                     <button
                       onClick={() => { onSignIn?.(); closeMenu(); }}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-zinc-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black text-xs uppercase tracking-widest hover:bg-zinc-200 dark:hover:bg-slate-700 transition-all border border-zinc-200 dark:border-slate-700"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-zinc-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black text-xs tracking-widest hover:bg-zinc-200 dark:hover:bg-slate-700 transition-all border border-zinc-200 dark:border-slate-700"
                     >
                       Sign In
                     </button>

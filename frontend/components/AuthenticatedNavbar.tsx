@@ -222,11 +222,11 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
 
               <button
                 onClick={logout}
-                className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full text-xs font-bold transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
+                className="hidden md:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full text-xs font-bold transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
                 title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />
-                <span className="hidden xl:inline">Sign Out</span>
+                <span>Sign Out</span>
               </button>
 
               {/* User Avatar */}

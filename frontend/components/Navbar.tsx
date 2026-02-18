@@ -1,6 +1,6 @@
 'use client'
 
-import { Sparkles, Users, Crown, Menu, X, Rocket, Zap, LogIn } from 'lucide-react'
+import { Sparkles, Users, Crown, Menu, X, Rocket, Zap, LogIn, LogOut } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import axios from 'axios'
 import { API_URL } from '@/lib/api-config'
 import { requestCache } from '@/lib/cache-util'
-// import { useAuth } from '../contexts/AuthContext' // Removed unused import
+import { useAuth } from '../contexts/AuthContext'
 
 interface NavbarProps {
   showAuthButtons?: boolean
@@ -37,6 +37,7 @@ export default function Navbar({
   onUserDashboard,
   onTabChange
 }: NavbarProps) {
+  const { logout } = useAuth()
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
 
@@ -132,7 +133,7 @@ export default function Navbar({
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent pointer-events-none" />
             </div>
-            <span className="text-base sm:text-xl md:text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white uppercase whitespace-nowrap">
+            <span className="text-base sm:text-xl md:text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white whitespace-nowrap">
               BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>
             </span>
           </Link>
@@ -152,7 +153,7 @@ export default function Navbar({
                   >
                     <Link
                       href={link.href}
-                      className={`relative px-3 lg:px-5 py-2 rounded-xl text-xs sm:text-sm font-black transition-all duration-300 uppercase tracking-tight ${isActive
+                      className={`relative px-3 lg:px-5 py-2 rounded-xl text-xs sm:text-sm font-black transition-all duration-300 tracking-tight ${isActive
                         ? 'text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-800 shadow-sm border border-zinc-200 dark:border-slate-700'
                         : 'text-zinc-500 dark:text-slate-500 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-slate-800/50'
                         }`}
@@ -191,8 +192,8 @@ export default function Navbar({
                       className="hidden lg:flex items-center px-2 lg:px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-lg border border-indigo-500/20"
                     >
                       <Zap className={`w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1.5 lg:mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
-                      <span className="text-[10px] lg:text-[12px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest font-mono">
-                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} POSTS LEFT
+                      <span className="text-[10px] lg:text-[12px] font-black text-indigo-600 dark:text-indigo-400 tracking-widest font-mono">
+                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} posts left
                       </span>
                     </motion.div>
                   )}
@@ -201,9 +202,19 @@ export default function Navbar({
                   {!user?.is_premium && (
                     <Link href="/pricing" className="px-2 lg:px-3 py-1.5 bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center gap-1.5 lg:gap-2 hover:bg-amber-500/20 transition-all hover:scale-105 group/upgrade">
                       <Crown className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-amber-500 group-hover:rotate-12 transition-transform" />
-                      <span className="text-[10px] lg:text-[12px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest font-mono hidden lg:inline">UPGRADE</span>
+                      <span className="text-[10px] lg:text-[12px] font-black text-amber-600 dark:text-amber-500 tracking-widest font-mono hidden lg:inline">Upgrade</span>
                     </Link>
                   )}
+
+                  {/* Sign Out Button */}
+                  <button
+                    onClick={logout}
+                    className="hidden md:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg text-xs font-black transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
+                    title="Sign Out"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span className="hidden xl:inline">Sign out</span>
+                  </button>
 
                   {/* User Avatar */}
                   <motion.button
@@ -234,17 +245,17 @@ export default function Navbar({
                 <div className="flex items-center gap-2 lg:gap-3">
                   <button
                     onClick={handleSignIn}
-                    className="text-[10px] lg:text-xs font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 uppercase tracking-[0.15em] lg:tracking-[0.2em] px-3 lg:px-4 py-2 transition-colors font-mono whitespace-nowrap"
+                    className="text-[10px] lg:text-xs font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 tracking-[0.15em] lg:tracking-[0.2em] px-3 lg:px-4 py-2 transition-colors font-mono whitespace-nowrap"
                   >
-                    Log In
+                    Log in
                   </button>
                   <button
                     onClick={handleSignUp}
-                    className="group relative px-4 lg:px-6 py-2.5 lg:py-3 bg-indigo-600 text-white text-[10px] lg:text-xs font-black rounded-2xl shadow-xl shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all hover:-translate-y-1 uppercase tracking-widest overflow-hidden font-mono whitespace-nowrap"
+                    className="group relative px-4 lg:px-6 py-2.5 lg:py-3 bg-indigo-600 text-white text-[10px] lg:text-xs font-black rounded-2xl shadow-xl shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all hover:-translate-y-1 tracking-widest overflow-hidden font-mono whitespace-nowrap"
                   >
                     <div className="absolute inset-0 shimmer-text opacity-20 pointer-events-none" />
                     <span className="flex items-center gap-1.5 lg:gap-2 relative z-10">
-                      Sign Up <Rocket className="w-3 h-3 lg:w-3.5 lg:h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      Sign up <Rocket className="w-3 h-3 lg:w-3.5 lg:h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
                   </button>
                 </div>
