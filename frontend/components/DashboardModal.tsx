@@ -636,10 +636,10 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
         requestCache.invalidate(`usage-stats-${user.id}`)
       }
 
-      toast.success('CONTENT_PURGE_SUCCESS')
+      toast.success('Deleted successfully')
     } catch (error) {
       console.error('Error deleting content:', error)
-      toast.error('ERROR_CONTENT_PURGE_FAILURE')
+      toast.error('Failed to delete')
     }
   }
 
@@ -661,7 +661,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
     }
 
     // Show immediate feedback
-    toast.success(newFavoriteState ? 'NODE_FAVORITE_STABLE' : 'NODE_FAVORITE_REMOVED')
+    toast.success(newFavoriteState ? 'Added to favorites' : 'Removed from favorites')
 
     // Make API call in background
     try {
@@ -718,7 +718,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
           detail: { is_premium: false }
         }))
 
-        toast.success('SESSION_TERMINATED_SUCCESS')
+        toast.success('Subscription cancelled')
         setShowCancelModal(false)
       } else {
         toast.error(response.data.message || 'ERROR_SESSION_TERMINATION_FAILURE')
@@ -754,7 +754,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
         })
 
         setIsEditingProfile(false)
-        toast.success('IDENTITY_SYNC_COMPLETE')
+        toast.success('Profile updated')
       }
     } catch (error: any) {
       console.error('Error updating profile:', error)
@@ -1706,7 +1706,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full animate-pulse" />
                         <Crown className="w-10 h-10 sm:w-12 sm:h-12 text-amber-500 relative z-10" />
                       </div>
-                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-4 font-mono truncate px-2">RESTRICTED_ACCESS</h4>
+                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-4 font-mono truncate px-2">PRO FEATURE</h4>
                       <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tighter">Premium Vault Access</h3>
                       <p className="text-slate-500 dark:text-slate-400 max-w-xs mx-auto font-mono text-xs uppercase tracking-wider leading-relaxed mb-8 px-2">
                         Persistent archiving and database synchronization require an active Pro License.
@@ -1726,7 +1726,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                   ) : isLoadingContent ? (
                     <div className="text-center py-20">
                       <LoadingSpinner />
-                      <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.2em] mt-6">SYNCHRONIZING_VAULT...</p>
+                      <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.2em] mt-6">LOADING SAVED POSTS...</p>
                     </div>
                   ) : savedContent.length === 0 ? (
                     <div className="text-center py-20 border-2 border-dashed border-zinc-200 dark:border-white/5 rounded-[3rem] bg-zinc-50 dark:bg-slate-900/50">
@@ -1734,7 +1734,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         <div className="absolute inset-0 bg-indigo-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                         <Save className="w-10 h-10 text-indigo-500 relative z-10" />
                       </div>
-                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">VAULT_EMPTY</h3>
+                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">NO SAVED POSTS</h3>
                       <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto font-mono text-xs uppercase tracking-[0.2em] leading-relaxed">
                         No persistent data detected. Start generating and archive your results here.
                       </p>
@@ -1747,7 +1747,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                           <Filter className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
                           <input
                             type="text"
-                            placeholder="QUERY_VAULT_FILESYSTEM..."
+                            placeholder="Search saved posts..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full pl-14 pr-6 py-4 bg-zinc-100 dark:bg-slate-900/50 border border-zinc-200 dark:border-slate-800 rounded-[1.5rem] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-mono text-sm tracking-tight transition-all"
@@ -1759,9 +1759,9 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                             onChange={(e) => setFilterType(e.target.value)}
                             className="px-6 py-4 bg-zinc-100 dark:bg-slate-900/50 border border-zinc-200 dark:border-slate-800 rounded-[1.5rem] text-zinc-900 dark:text-white focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-black text-[11px] uppercase tracking-widest transition-all cursor-pointer hover:border-indigo-500/30"
                           >
-                            <option value="all">ALL_RECORDS</option>
-                            <option value="twitter">X_THREADS</option>
-                            <option value="auto-generated">AUTO_ARCHIVED</option>
+                            <option value="all">ALL POSTS</option>
+                            <option value="twitter">TWITTER THREADS</option>
+                            <option value="auto-generated">AUTO SAVED</option>
                           </select>
                         </div>
                       </div>
@@ -1776,15 +1776,15 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                               <div>
                                 <h4 className="text-white font-black uppercase tracking-[0.3em] text-[10px] mb-2 font-mono flex items-center gap-2">
                                   <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                                  SYSTEM_BULK_EXPORT_PROTOCOL
+                                  SYSTEM_EXPORT_ALL
                                 </h4>
                                 <p className="text-indigo-100/70 text-sm font-bold">Compressing {savedContent.length} X threads for external migration</p>
                               </div>
                               <div className="flex items-center gap-4">
                                 {[
-                                  { format: 'txt', icon: FileText, label: 'EXPORT_TXT' },
-                                  { format: 'json', icon: Download, label: 'EXPORT_JSON' },
-                                  { format: 'csv', icon: Filter, label: 'EXPORT_CSV' }
+                                  { format: 'txt', icon: FileText, label: 'TEXT' },
+                                  { format: 'json', icon: Download, label: 'JSON' },
+                                  { format: 'csv', icon: Filter, label: 'CSV' }
                                 ].map((btn) => (
                                   <button
                                     key={btn.format}

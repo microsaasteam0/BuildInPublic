@@ -95,7 +95,7 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({
       setTemplates(response.data)
     } catch (error: any) {
       console.error('Error loading templates:', error)
-      toast.error('ERROR_TEMPLATE_SYNC_FAILURE')
+      toast.error('Failed to load templates')
     } finally {
       setIsLoading(false)
     }
@@ -117,7 +117,7 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({
       onClose()
     } catch (error: any) {
       console.error('Error using template:', error)
-      toast.error('ERROR_TEMPLATE_EXEC_FAILURE')
+      toast.error('Failed to use template')
     }
   }
 
@@ -125,7 +125,7 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({
     e.stopPropagation()
     try {
       await navigator.clipboard.writeText(content)
-      toast.success('PROTOCOL_CLIPBOARD_SUCCESS')
+      toast.success('Template copied to clipboard!')
     } catch (error) {
       // Fallback for older browsers
       const textArea = document.createElement('textarea')
@@ -198,7 +198,7 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({
               <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" />
               <input
                 type="text"
-                placeholder="Search templates by name, description, or tags..."
+                placeholder="Search templates..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 sm:py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"

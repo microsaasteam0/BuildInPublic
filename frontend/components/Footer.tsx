@@ -19,25 +19,25 @@ export default function Footer({ onSupportClick }: FooterProps) {
   const handleNewsletterSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!newsletterEmail.trim()) {
-      toast.error('ERROR_IDENTITY_REQUIRED')
+      toast.error('Please enter your email')
       return
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(newsletterEmail)) {
-      toast.error('ERROR_INVALID_IDENTITY_FORMAT')
+      toast.error('Invalid email address')
       return
     }
     setIsSubscribing(true)
     try {
       const encodedEmail = encodeURIComponent(newsletterEmail)
       const substackUrl = `https://entrextlabs.substack.com/subscribe?email=${encodedEmail}`
-      toast.success('DISPATCH_REDIRECT_INITIATED')
+      toast.success('Redirecting to Substack...')
       setTimeout(() => {
         window.open(substackUrl, '_blank')
         setNewsletterEmail('')
       }, 1000)
     } catch (error) {
-      toast.error('SYSTEM_DISPATCH_FAILURE')
+      toast.error('Something went wrong')
     } finally {
       setIsSubscribing(false)
     }
@@ -45,28 +45,28 @@ export default function Footer({ onSupportClick }: FooterProps) {
 
   const sections = [
     {
-      title: 'Distribution_Engine',
+      title: 'Product',
       links: [
-        { name: 'Pricing_Plans', href: '/pricing', external: false },
-        { name: 'Operation_Features', href: '/features', external: false },
-        { name: 'Build_History', href: isAuthenticated ? '/dashboard' : '/pricing', external: false },
-        { name: 'Identity_Updates', href: '/updates', external: false },
+        { name: 'Pricing', href: '/pricing', external: false },
+        { name: 'Features', href: '/features', external: false },
+        { name: 'Dashboard', href: isAuthenticated ? '/dashboard' : '/pricing', external: false },
+        { name: 'Updates', href: '/updates', external: false },
       ]
     },
     {
-      title: 'Industrial_Corporate',
+      title: 'Company',
       links: [
-        { name: 'Manifesto', href: '/about', external: false, internalAbout: true },
-        { name: 'Entrext_Parent', href: 'https://www.entrext.com/', external: true },
-        { name: 'Career_Dispatch', href: 'https://deformity.ai/d/C-P5znqtG_ZZ', external: true },
+        { name: 'About', href: '/about', external: false, internalAbout: true },
+        { name: 'Entrext Labs', href: 'https://www.entrext.com/', external: true },
+        { name: 'Careers', href: 'https://deformity.ai/d/C-P5znqtG_ZZ', external: true },
       ]
     },
     {
-      title: 'Legal_Protocols',
+      title: 'Legal',
       links: [
-        { name: 'Privacy_Manifesto', href: '/privacy-policy', external: false },
-        { name: 'Service_Terms', href: '/terms-of-service', external: false },
-        { name: 'Cookie_Schematic', href: '/cookie-policy', external: false },
+        { name: 'Privacy Policy', href: '/privacy-policy', external: false },
+        { name: 'Terms of Service', href: '/terms-of-service', external: false },
+        { name: 'Cookie Policy', href: '/cookie-policy', external: false },
       ]
     }
   ]
@@ -105,7 +105,7 @@ export default function Footer({ onSupportClick }: FooterProps) {
   ]
 
   return (
-    <footer className="bg-zinc-50 dark:bg-slate-950 border-t border-zinc-200 dark:border-slate-800 mt-20 relative overflow-hidden" aria-label="BuildInPublic Footer Schematic">
+    <footer className="bg-zinc-50 dark:bg-slate-950 border-t border-zinc-200 dark:border-slate-800 mt-20 relative overflow-hidden" aria-label="BuildInPublic Footer">
       {/* Industrial Decorative Layer */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-[0.05] pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-indigo-500/[0.03] to-transparent pointer-events-none" />
@@ -157,10 +157,10 @@ export default function Footer({ onSupportClick }: FooterProps) {
                   <Zap className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none mb-1.5">Weekly_Insight</h4>
+                  <h4 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none mb-1.5">Weekly Newsletter</h4>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Feed.Active</p>
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">STAY UPDATED</p>
                   </div>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function Footer({ onSupportClick }: FooterProps) {
               <form onSubmit={handleNewsletterSubscribe} className="space-y-4 relative z-10">
                 <input
                   type="email"
-                  placeholder="IDENTITY_EMAIL"
+                  placeholder="Email address"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="w-full bg-zinc-50 dark:bg-slate-950 border border-zinc-200 dark:border-slate-800 rounded-2xl px-5 py-4 text-xs font-black uppercase tracking-tight sm:tracking-widest focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all dark:text-white placeholder:text-zinc-400/50"
@@ -179,7 +179,7 @@ export default function Footer({ onSupportClick }: FooterProps) {
                   disabled={isSubscribing}
                   className="w-full py-5 bg-zinc-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl text-[10px] sm:text-[11px] font-black uppercase tracking-widest sm:tracking-[0.3em] transition-all flex items-center justify-center gap-3 shadow-xl active:scale-95 disabled:opacity-50"
                 >
-                  {isSubscribing ? 'Processing...' : 'Subscribe_Dispatch'}
+                  {isSubscribing ? 'Processing...' : 'Subscribe'}
                   {!isSubscribing && <ChevronDown className="w-4 h-4 -rotate-90" />}
                 </button>
               </form>
@@ -208,14 +208,14 @@ export default function Footer({ onSupportClick }: FooterProps) {
                       </Link>
                     </li>
                   ))}
-                  {section.title === 'Industrial_Corporate' && (
+                  {section.title === 'Company' && (
                     <li>
                       <button
                         onClick={onSupportClick}
                         className="text-[13px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all flex items-center gap-2 group"
                       >
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0">_</span>
-                        Support_Manual
+                        Support
                       </button>
                     </li>
                   )}
@@ -228,14 +228,14 @@ export default function Footer({ onSupportClick }: FooterProps) {
         {/* Bottom Bar - Industrial Footer Protocol */}
         <div className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 dark:text-slate-500">
-            © {new Date().getFullYear()} BuildInPublic_Systems. All rights reserved.
+            © {new Date().getFullYear()} BuildInPublic. All rights reserved.
           </p>
 
           <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-900 dark:text-white bg-zinc-100 dark:bg-slate-900 border border-zinc-200 dark:border-slate-800 px-6 py-3 rounded-2xl shadow-xl">
-            <span className="opacity-60 uppercase">Protocol: Origin</span>
+            <span className="opacity-60 uppercase">Built by</span>
             <div className="w-[1px] h-3 bg-slate-200 dark:bg-slate-800" />
             <a href="https://entrext.in" target="_blank" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2">
-              Entrext_Labs
+              Entrext Labs
               <Zap className="w-3 h-3 text-indigo-500 fill-current animate-pulse" />
             </a>
           </div>

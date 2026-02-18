@@ -325,7 +325,7 @@ function HomeContent() {
       setTransformProgress(100)
       setCurrentProcessingStep('Complete!')
       setResults(response.data)
-      toast.success('🚀 BUILD_LOG_READY_FOR_DISPATCH')
+      toast.success('🚀 Posts are ready!')
 
       requestCache.invalidate(`usage-stats-${user?.id}`)
       requestCache.invalidate(`dashboard-content-history-${user?.id}`)

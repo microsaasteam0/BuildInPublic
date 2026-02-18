@@ -212,7 +212,7 @@ export const UsageCounter: React.FC<UsageCounterProps> = ({ className = '', stat
   return (
     <div className={`dark:bg-gray-800/50 bg-white border dark:border-gray-700 border-gray-200 rounded-lg p-3 shadow-sm ${className}`}>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm dark:text-gray-300 text-gray-600 font-medium tracking-tight">Daily Generations</span>
+        <span className="text-sm dark:text-gray-300 text-gray-600 font-medium tracking-tight">Daily Posts</span>
         <span className={`text-sm font-bold ${isLow ? 'text-red-500' : 'text-blue-600'}`}>
           {limit === Infinity ? 'Unlimited' : ` ${remaining}/${limit} left`}
         </span>

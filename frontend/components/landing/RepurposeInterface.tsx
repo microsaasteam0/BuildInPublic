@@ -199,7 +199,7 @@ export default function RepurposeInterface({
                         <div className="inline-flex items-center justify-center px-4 py-1.5 bg-zinc-100 dark:bg-slate-900/50 rounded-lg mb-6 sm:mb-8 border border-zinc-200 dark:border-slate-800">
                             <span className="text-[9px] sm:text-[10px] font-black text-zinc-500 dark:text-slate-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] flex items-center gap-2 sm:gap-3">
                                 <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                SESSION_INITIALIZATION: VERIFY_DAY
+                                WORKSPACE
                             </span>
                         </div>
                     </div>
@@ -207,8 +207,8 @@ export default function RepurposeInterface({
                     <div className="p-6 sm:p-10 pt-4 relative z-10">
                         <div className="text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
                             <p className="text-zinc-500 dark:text-slate-400 font-bold uppercase text-[10px] sm:text-[11px] tracking-widest leading-relaxed px-2">
-                                <span className="text-indigo-600 dark:text-indigo-400">MANIFESTO_LOG:</span> Building in public is the ultimate proof of work.
-                                <br className="hidden sm:block" /> We handle the distribution. You handle the engineering.
+                                <span className="text-indigo-600 dark:text-indigo-400">TIP:</span> Share your progress to build trust with your audience.
+                                <br className="hidden sm:block" /> We create the posts. You focus on building.
                             </p>
                         </div>
 
@@ -224,10 +224,10 @@ export default function RepurposeInterface({
                                             <div className="p-2 bg-indigo-500/10 rounded-xl">
                                                 <Zap className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                                             </div>
-                                            <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Morning Plan [TO-DO]</span>
+                                            <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Morning To-Do List</span>
                                         </div>
                                         <div className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 px-3 py-1 bg-indigo-500/10 rounded-lg border border-indigo-500/20 whitespace-nowrap">
-                                            {tasks.filter(t => t.completed).length}/{tasks.length} STACKS
+                                            {tasks.filter(t => t.completed).length}/{tasks.length} TASKS
                                         </div>
                                     </div>
 
@@ -236,7 +236,7 @@ export default function RepurposeInterface({
                                         <div className="flex gap-2">
                                             <input
                                                 type="text"
-                                                placeholder="Inject Task..."
+                                                placeholder="Add a task..."
                                                 className="flex-1 min-w-0 bg-zinc-200/50 dark:bg-slate-800/50 border border-zinc-300 dark:border-slate-700 rounded-xl px-4 sm:px-5 py-3 text-xs font-bold uppercase tracking-widest focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-400/50 dark:placeholder:text-slate-600 truncate"
                                                 onKeyDown={(e) => {
                                                     if (e.key === 'Enter') {
@@ -325,12 +325,12 @@ export default function RepurposeInterface({
                                         <div className="p-2 bg-indigo-500/10 rounded-xl">
                                             <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                                         </div>
-                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Evening Reflection</span>
+                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">End of Day Summary</span>
                                     </div>
                                     <textarea
                                         value={eveningReflection}
                                         onChange={(e) => setEveningReflection(e.target.value)}
-                                        placeholder="DECOMPILE_DAY_EVENTS...&#10;&#10;e.g.&#10;Shipped the landing page! But the bug was harder than expected. Tired but happy. Lessons learned about React hooks..."
+                                        placeholder="What did you build today?&#10;&#10;e.g.&#10;Shipped the landing page! But the bug was harder than expected. Tired but happy. Lessons learned about React hooks..."
                                         className="w-full flex-1 min-h-[16rem] p-4 sm:p-6 bg-transparent border-0 focus:ring-0 outline-none resize-none text-sm font-bold tracking-tight placeholder:text-zinc-400 dark:placeholder:text-slate-600 text-zinc-900 dark:text-slate-300 leading-relaxed custom-scrollbar"
                                     />
                                 </div>
@@ -353,7 +353,7 @@ export default function RepurposeInterface({
                                     <div className="flex gap-2">
                                         <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/5 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-500/10 dark:border-slate-700 text-[10px] font-black uppercase tracking-widest">
                                             <Twitter className="w-3.5 h-3.5" />
-                                            Target: X_PROTOCOL
+                                            Platform: Twitter
                                         </div>
                                     </div>
                                 </div>
@@ -410,10 +410,10 @@ export default function RepurposeInterface({
                                         <div className="absolute inset-x-0 top-0 h-1 bg-white/20 blur-sm opacity-0 group-hover/btn:opacity-100 group-hover/btn:animate-scanline" />
                                         <div className="flex items-center justify-center">
                                             <Zap className="w-5 h-5 mr-3 sm:mr-4 fill-current" />
-                                            Generate_Content
+                                            Create Posts
                                         </div>
                                     </button>
-                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 uppercase tracking-widest sm:tracking-[0.4em] px-2 truncate">INIT_FREE_PROTOCOL • NO_CREDIT_REQUIRED</p>
+                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 uppercase tracking-widest sm:tracking-[0.4em] px-2 truncate">FREE TO USE • NO CREDIT CARD REQUIRED</p>
                                 </div>
                             ) : (
                                 <div className="w-full flex flex-col items-center">
@@ -452,11 +452,11 @@ export default function RepurposeInterface({
                                             <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
                                                 <div className="flex items-center gap-2">
                                                     <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                                                    <span className="text-sm sm:text-base">Generate Content</span>
+                                                    <span className="text-sm sm:text-base">Create Posts</span>
                                                 </div>
                                                 {usageStats && (
                                                     <span className="text-[9px] sm:text-[10px] opacity-80 font-black bg-black/20 px-2.5 py-1 rounded-lg border border-white/10 uppercase tracking-tighter">
-                                                        ({usageStats.remaining_requests}/{usageStats.rate_limit} Units)
+                                                        ({usageStats.remaining_requests}/{usageStats.rate_limit} Posts)
                                                     </span>
                                                 )}
                                             </div>
@@ -511,12 +511,12 @@ export default function RepurposeInterface({
                         <div className="text-center mb-16 space-y-4">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest border border-indigo-500/20 mb-4">
                                 <TrendingUp className="w-3.5 h-3.5" />
-                                DEPLOYMENT_SYNTHESIS_RESULTS
+                                YOUR GENERATED CONTENT
                             </div>
                             <h2 className="text-4xl md:text-6xl font-display font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
-                                Optimized_Narrative.v1
+                                Ready to Post
                             </h2>
-                            <p className="text-zinc-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-[0.4em]">Engineered distribution assets ready for dispatch.</p>
+                            <p className="text-zinc-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-[0.4em]">Your social media posts are ready to share.</p>
                         </div>
 
                         <div className="max-w-4xl mx-auto">
@@ -536,10 +536,10 @@ export default function RepurposeInterface({
                                             </div>
                                             <div>
                                                 <h3 className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
-                                                    X_Thread_Schematic
+                                                    Twitter Thread
                                                 </h3>
                                                 <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">
-                                                    Authorized for dispatch • v1.0.4
+                                                    Ready to share • v1.0.4
                                                 </div>
                                             </div>
                                         </div>
@@ -578,7 +578,7 @@ export default function RepurposeInterface({
                                                 className="px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-slate-900 font-black rounded-xl text-[10px] uppercase tracking-widest flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl"
                                             >
                                                 {copiedStates['twitter'] ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                                                {copiedStates['twitter'] ? 'TRANSFERRED_SUCCESS' : 'TRANSFER_TO_BUFFER'}
+                                                {copiedStates['twitter'] ? 'COPIED!' : 'COPY CONTENT'}
                                             </button>
                                         </div>
                                     </div>

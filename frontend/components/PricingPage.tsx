@@ -137,44 +137,44 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
   const plans = [
     {
       id: 'free',
-      name: 'Free_Build',
-      description: 'Foundational terminal for individual builders.',
+      name: 'Free Plan',
+      description: 'The easiest way to start sharing your work.',
       price: { monthly: 0, yearly: 0 },
-      badge: 'STABLE_BUILD',
+      badge: 'FREE',
       features: [
-        '2 Daily Generations [X/Twitter]',
-        'Basic Build-Log Synthesis',
+        '2 Daily Posts [X/Twitter]',
+        'Basic Post Creation',
         'Standard Templates',
-        '24-Hour History Buffer',
-        'Core Tone Parameters'
+        '24-Hour History',
+        'Basic Tone Settings'
       ],
       limitations: [
         'No Advanced Thread Formats',
         'No Thread Analytics',
-        'No Permanent Vault Storage',
-        'Restricted Brand-Voice Profiles'
+        'No Unlimited Saved Posts',
+        'No Custom AI Voices'
       ],
-      cta: 'Initialize_Free_Build',
+      cta: 'Start for Free',
       popular: false,
     },
     {
       id: 'pro',
-      name: 'Pro_Engine',
-      description: 'Full-velocity content engineering factory.',
+      name: 'Pro Plan',
+      description: 'Advanced tools to grow your brand faster.',
       price: { monthly: 15, yearly: 144 },
-      badge: 'RECOMMENDED_BUILD',
+      badge: 'RECOMMENDED',
       features: [
-        '20 Daily Generations [X/Twitter]',
-        'Deep Build-Log Analysis',
-        'Multi-Thread Synthesis',
-        'Unlimited Permanent Vault',
-        'Personalized Brand-Voice Profiles',
-        'Priority Schematic Execution',
-        'Early Access: Advanced Thread Formats',
-        'Markdown & JSON Data Export'
+        '20 Daily Posts [X/Twitter]',
+        'Advanced Content Analysis',
+        'Automated Thread Creation',
+        'Unlimited Saved Posts',
+        'Custom AI Voice Profiles',
+        'Priority Processing',
+        'Early Access: New Formats',
+        'Export to Markdown & JSON'
       ],
       limitations: [],
-      cta: 'Deploy_Pro_Engine',
+      cta: 'Upgrade to Pro',
       popular: true,
     }
   ]
@@ -209,20 +209,20 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       <div className="text-center space-y-6 sm:space-y-10 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 text-[9px] sm:text-[10px] font-black uppercase tracking-widest sm:tracking-[0.4em] font-mono shadow-sm">
           <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 sm:mr-3" />
-          {user?.is_premium ? 'SUB_PRO_PLAN.ACTIVE' : 'SUB_STARTER_STABLE.ACTIVE'}
+          {user?.is_premium ? 'PRO PLAN ACTIVE' : 'FREE PLAN ACTIVE'}
         </div>
 
         <div className="relative inline-block w-full">
           <h1 className="text-4xl sm:text-6xl md:text-9xl font-display font-black text-slate-900 dark:text-white tracking-tighter uppercase leading-none relative z-20">
             Select your <br />
             <span className="text-indigo-600 dark:text-indigo-400 inline-block font-black">
-              Tier Build.
+              Ideal Plan.
             </span>
           </h1>
         </div>
 
         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium max-w-2xl mx-auto text-balance">
-          Choose the content engine power that matches your building velocity. Secure your distribution architect today.
+          Choose the plan that fits your content needs. Start growing your audience today.
         </p>
 
         {/* Improved Billing Toggle - Industrial Design */}
@@ -367,15 +367,15 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
 
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-500 text-[10px] sm:text-[11px] font-black uppercase tracking-widest sm:tracking-[0.3em] mb-6 border border-indigo-500/20 relative z-10">
               <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              SYSTEM_DEPLOYMENT_LOG
+              PLAN_COMPARISON
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white tracking-tighter uppercase relative z-10 leading-[0.85]">
-              <span className="text-indigo-500">System</span>_Matrix.Schematic
+              <span className="text-indigo-500">Feature</span>_Matrix
             </h2>
             <p className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest sm:tracking-[0.4em] mt-8 flex items-center justify-center gap-4 px-2">
               <span className="hidden md:block w-12 h-[1px] bg-slate-200 dark:bg-white/10" />
-              Technical Parameter Decomposition
+              Complete Feature Comparison
               <span className="hidden md:block w-12 h-[1px] bg-slate-200 dark:bg-white/10" />
             </p>
           </div>
@@ -470,10 +470,10 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
         <div className="text-center mb-24 space-y-6">
           <div className="inline-flex items-center gap-3 px-4 py-1 rounded-lg bg-indigo-600/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest border border-indigo-500/20">
             <Workflow className="w-3.5 h-3.5" />
-            SYSTEM_DOCS
+            HELP_CENTER
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.9]">Deep Dive Schematics</h2>
-          <p className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Platform Operational Guidance</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.9]">Common Questions</h2>
+          <p className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Everything you need to know</p>
         </div>
         <div className="grid md:grid-cols-1 gap-8">
           {faqs.map((faq, index) => (

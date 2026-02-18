@@ -248,7 +248,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             </div>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 text-[10px] font-black uppercase tracking-widest border border-emerald-500/20 mb-6">
-              INITIALIZE_DISPATCH_SUCCESS
+              SUCCESS
             </div>
 
             <h2 className="text-3xl font-black text-zinc-900 dark:text-white mb-4 uppercase tracking-tighter">Check your email</h2>
@@ -267,7 +267,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               }}
               className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl transition-all duration-300 shadow-2xl shadow-indigo-600/20 hover:scale-[1.02] active:scale-95 uppercase tracking-[0.2em] text-xs"
             >
-              Acknowledge_Receipt
+              Got it
             </button>
 
             <button
@@ -277,7 +277,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               }}
               className="mt-6 text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest hover:text-indigo-700 transition-colors"
             >
-              Return_to_Authentication
+              Back to Login
             </button>
           </div>
         </div>
@@ -300,7 +300,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
           <div className="flex items-center justify-between">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-500 text-[10px] font-black uppercase tracking-[0.3em] border border-indigo-500/20">
               <Lock className="w-3.5 h-3.5" />
-              {mode === 'login' ? 'AUTH_ACCESS' : mode === 'forgot-password' ? 'RECOVERY_PROTOCOL' : 'INITIALIZE_PROTOCOL'}
+              {mode === 'login' ? 'LOG IN' : mode === 'forgot-password' ? 'RECOVER PASSWORD' : 'SIGN UP'}
             </div>
             <button
               onClick={onClose}
@@ -312,7 +312,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
 
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none break-words">
-              {mode === 'login' ? 'Welcome_Back' : mode === 'forgot-password' ? 'Reset_Auth' : 'Create_Account'}
+              {mode === 'login' ? 'Welcome Back' : mode === 'forgot-password' ? 'Reset Password' : 'Create Account'}
             </h2>
             <div className="h-1.5 w-16 bg-indigo-600 rounded-full"></div>
           </div>
@@ -323,7 +323,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
           {/* Email */}
           <div className="space-y-2">
             <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">
-              Parameter: Email
+              Email Address
             </label>
             <div className="relative group/input">
               <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 group-focus-within/input:text-indigo-500 transition-colors w-5 h-5" />
@@ -346,7 +346,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
           {mode === 'register' && (
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">
-                Parameter: Username
+                Username
               </label>
               <div className="relative group/input">
                 <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 group-focus-within/input:text-indigo-500 transition-colors w-5 h-5" />
@@ -371,7 +371,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             <div className="space-y-2">
               <div className="flex justify-between items-center ml-1">
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
-                  Parameter: Security_Key
+                  Password
                 </label>
               </div>
 
@@ -407,7 +407,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                     }}
                     className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-indigo-500 transition-colors"
                   >
-                    Forgot_Security_Key?
+                    Forgot Password?
                   </button>
                 </div>
               )}
@@ -434,7 +434,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               </>
             ) : (
               <span className="uppercase tracking-[0.2em] text-xs relative z-10">
-                {mode === 'login' ? 'Authorize Engine' : mode === 'forgot-password' ? 'Dispatch_Reset_Link' : 'Deploy Account'}
+                {mode === 'login' ? 'Log In' : mode === 'forgot-password' ? 'Send Reset Link' : 'Sign Up'}
               </span>
             )}
           </button>
@@ -448,7 +448,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                 <div className="w-full border-t border-slate-200 dark:border-slate-800"></div>
               </div>
               <div className="relative flex justify-center text-[10px]">
-                <span className="px-5 bg-zinc-50 dark:bg-[#020617] text-slate-500 font-black uppercase tracking-[0.4em]">OR_PROTOCOL</span>
+                <span className="px-5 bg-zinc-50 dark:bg-[#020617] text-slate-500 font-black uppercase tracking-[0.4em]">OR</span>
               </div>
             </div>
           </div>
@@ -465,7 +465,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               {isGoogleLoading ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin text-indigo-500" />
-                  Auth_with_Cloud...
+                  Connecting...
                 </>
               ) : (
                 <>
@@ -475,7 +475,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                   </svg>
-                  Identity_Auth.Google
+                  Sign in with Google
                 </>
               )}
             </button>
@@ -485,20 +485,20 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
         {/* Switch Mode */}
         <div className="mt-4 text-center relative z-10 border-t border-slate-200/50 dark:border-slate-800/50 pt-10 pb-4">
           <p className="text-slate-500 font-bold text-xs uppercase tracking-tight">
-            {mode === 'login' ? "New Builder?" : mode === 'forgot-password' ? "Remembered It?" : 'Active Architect?'}
+            {mode === 'login' ? "New here?" : mode === 'forgot-password' ? "Remembered password?" : 'Already have an account?'}
             <button
               onClick={switchMode}
               className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 ml-4 font-black uppercase tracking-[0.2em] transition-colors"
               disabled={isSubmitting}
             >
-              {mode === 'login' ? 'Initialize_Register' : mode === 'forgot-password' ? 'Back_to_Login' : 'Return_to_Login'}
+              {mode === 'login' ? 'Sign Up' : mode === 'forgot-password' ? 'Back to Login' : 'Log In'}
             </button>
           </p>
         </div>
 
         {/* Terminal Status Deco */}
         <div className="absolute bottom-4 right-10 opacity-20 pointer-events-none hidden md:block">
-          <span className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-widest">SECURE_TUNNEL_ACTIVE</span>
+          <span className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-widest">SECURE CONNECTION</span>
         </div>
       </div>
     </div>,

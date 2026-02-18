@@ -103,12 +103,12 @@ const CustomTemplateModal: React.FC<CustomTemplateModalProps> = ({
     e.preventDefault()
 
     if (!formData.name.trim()) {
-      toast.error('ERROR_TEMPLATE_NAME_REQUIRED')
+      toast.error('Template name is required')
       return
     }
 
     if (!formData.content.trim()) {
-      toast.error('ERROR_TEMPLATE_CONTENT_REQUIRED')
+      toast.error('Template content is required')
       return
     }
 
@@ -122,14 +122,14 @@ const CustomTemplateModal: React.FC<CustomTemplateModalProps> = ({
           `${API_URL}/api/v1/templates/${editTemplate.id}`,
           formData
         )
-        toast.success('TEMPLATE_SYNC_COMPLETE')
+        toast.success('Template updated')
       } else {
         // Create new template
         response = await axios.post(
           `${API_URL}/api/v1/templates/`,
           formData
         )
-        toast.success('TEMPLATE_DEPLOY_SUCCESS')
+        toast.success('Template created')
       }
 
       if (onTemplateCreated) {
@@ -251,7 +251,7 @@ Wrap up your content`
     }
 
     handleInputChange('content', sampleContent)
-    toast.success('PROTOCOL_STRUCT_INJECT_SUCCESS')
+    toast.success('Sample content inserted')
   }
 
   if (!isOpen) return null
@@ -268,9 +268,9 @@ Wrap up your content`
               <FileText className="w-7 h-7 text-indigo-500" />
             </div>
             <div>
-              <h4 className="text-[10px] font-black text-indigo-500 uppercase tracking-[0.4em] mb-1.5 font-mono">PROTOCOL_INIT_SEQUENCE</h4>
+              <h4 className="text-[10px] font-black text-indigo-500 uppercase tracking-[0.4em] mb-1.5 font-mono">TEMPLATE EDITOR</h4>
               <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
-                {editTemplate ? 'Update_Schematic' : 'New_Blueprint_Architecture'}
+                {editTemplate ? 'Update Template' : 'Create New Template'}
               </h2>
             </div>
           </div>
@@ -288,27 +288,27 @@ Wrap up your content`
             {/* Template Name and Category Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">SCHEMATIC_NAME_STRING</label>
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">Template Name</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  placeholder="ENTER_UNIQUE_IDENTIFIER..."
+                  placeholder="Enter template name..."
                   className="w-full px-6 py-4 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-mono text-sm transition-all shadow-sm"
                   required
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">PRIMARY_CLASSIFICATION</label>
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">Category</label>
                 <select
                   value={formData.category}
                   onChange={(e) => handleInputChange('category', e.target.value)}
                   className="w-full px-6 py-4 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-black text-[11px] uppercase tracking-widest transition-all cursor-pointer shadow-sm"
                   required
                 >
-                  <option value="" disabled>Select_Type...</option>
+                  <option value="" disabled>Select Type...</option>
                   {categories.map((cat) => (
-                    <option key={cat.value} value={cat.value} className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white">{cat.label.toUpperCase().replace(' ', '_')}</option>
+                    <option key={cat.value} value={cat.value} className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white">{cat.label.toUpperCase()}</option>
                   ))}
                 </select>
               </div>
@@ -316,11 +316,11 @@ Wrap up your content`
 
             {/* Description */}
             <div className="space-y-3">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">FUNCTIONAL_OVERVIEW_RAW</label>
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">Description</label>
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
-                placeholder="DESCRIBE_SYSTEM_PURPOSE..."
+                placeholder="What is this template for?"
                 rows={2}
                 className="w-full px-6 py-4 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-mono text-sm transition-all shadow-sm resize-none"
               />
@@ -329,7 +329,7 @@ Wrap up your content`
             {/* Content with Injection Tool */}
             <div className="space-y-4">
               <div className="flex items-center justify-between mb-2">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">CONTENT_STRUCTURE_MARKDOWN</label>
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">Template Content</label>
                 <div className="flex gap-3">
                   <button
                     type="button"
@@ -337,7 +337,7 @@ Wrap up your content`
                     className="px-4 py-2 bg-indigo-500/10 hover:bg-indigo-500 text-indigo-500 hover:text-white border border-indigo-500/20 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all duration-300 flex items-center gap-2 group/inject"
                   >
                     <Sparkles className="w-3 h-3 group-hover:rotate-12 transition-transform" />
-                    INJECT_PROTOCOL_STRUCTURE
+                    Insert Sample
                   </button>
                 </div>
               </div>
@@ -351,7 +351,7 @@ Wrap up your content`
                 <textarea
                   value={formData.content}
                   onChange={(e) => handleInputChange('content', e.target.value)}
-                  placeholder="BUILD_TEMPLATE_LOGIC_HERE..."
+                  placeholder="Write your template here..."
                   rows={10}
                   className="w-full p-10 bg-white dark:bg-black/20 border border-zinc-200 dark:border-white/10 rounded-[2.5rem] text-slate-900 dark:text-white focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-mono text-sm transition-all shadow-inner leading-relaxed"
                   required
@@ -365,7 +365,7 @@ Wrap up your content`
             {/* Tags and Privacy */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10">
               <div className="space-y-3">
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">SYSTEM_TAG_STRINGS</label>
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono ml-1">Tags</label>
                 <div className="relative group">
                   <Tag className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
                   <input
@@ -390,8 +390,8 @@ Wrap up your content`
                   />
                 </button>
                 <div>
-                  <label className="block text-[11px] font-black text-slate-800 dark:text-white uppercase tracking-widest font-mono">GLOBAL_PUBLIC_UPLINK</label>
-                  <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-0.5">ALLOW_OTHER_USERS_TO_INDEX</p>
+                  <label className="block text-[11px] font-black text-slate-800 dark:text-white uppercase tracking-widest font-mono">Public Template</label>
+                  <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-0.5">Allow others to see and use this</p>
                 </div>
               </div>
             </div>
@@ -406,7 +406,7 @@ Wrap up your content`
               onClick={onClose}
               className="px-8 py-4 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-black text-[11px] uppercase tracking-widest transition-all"
             >
-              ABORT_OPERATION
+              Cancel
             </button>
             <button
               type="submit"
@@ -414,7 +414,7 @@ Wrap up your content`
               className="px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black text-[11px] uppercase tracking-widest hover:scale-105 transition-all shadow-2xl active:scale-95 disabled:opacity-50 disabled:scale-100 flex items-center gap-3"
             >
               <Save className="w-4 h-4" />
-              {isLoading ? 'SYNCING_DATA...' : (editTemplate ? 'COMMENCE_UPDATE' : 'DEPLOY_SCHEMATIC')}
+              {isLoading ? 'Saving...' : (editTemplate ? 'Save Changes' : 'Create Template')}
             </button>
           </div>
         </form>

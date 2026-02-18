@@ -192,7 +192,7 @@ export default function Navbar({
                     >
                       <Zap className={`w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1.5 lg:mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
                       <span className="text-[10px] lg:text-[12px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest font-mono">
-                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} SYS_UNITS
+                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} POSTS LEFT
                       </span>
                     </motion.div>
                   )}
@@ -201,7 +201,7 @@ export default function Navbar({
                   {!user?.is_premium && (
                     <Link href="/pricing" className="px-2 lg:px-3 py-1.5 bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center gap-1.5 lg:gap-2 hover:bg-amber-500/20 transition-all hover:scale-105 group/upgrade">
                       <Crown className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-amber-500 group-hover:rotate-12 transition-transform" />
-                      <span className="text-[10px] lg:text-[12px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest font-mono hidden lg:inline">Tier_Upg</span>
+                      <span className="text-[10px] lg:text-[12px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest font-mono hidden lg:inline">UPGRADE</span>
                     </Link>
                   )}
 
@@ -236,7 +236,7 @@ export default function Navbar({
                     onClick={handleSignIn}
                     className="text-[10px] lg:text-xs font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 uppercase tracking-[0.15em] lg:tracking-[0.2em] px-3 lg:px-4 py-2 transition-colors font-mono whitespace-nowrap"
                   >
-                    Identity_Login
+                    Log In
                   </button>
                   <button
                     onClick={handleSignUp}
@@ -244,7 +244,7 @@ export default function Navbar({
                   >
                     <div className="absolute inset-0 shimmer-text opacity-20 pointer-events-none" />
                     <span className="flex items-center gap-1.5 lg:gap-2 relative z-10">
-                      Initialize <Rocket className="w-3 h-3 lg:w-3.5 lg:h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      Sign Up <Rocket className="w-3 h-3 lg:w-3.5 lg:h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
                   </button>
                 </div>

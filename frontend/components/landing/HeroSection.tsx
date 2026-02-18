@@ -48,7 +48,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-500 mr-1.5 sm:mr-2" />
                     <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-[0.15em] sm:tracking-[0.2em] relative">
-                        Build Phase: Distribution
+                        Share Your Build Journey
                     </span>
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3 animate-ping" />
                 </motion.div>
@@ -81,7 +81,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     transition={{ duration: 1.5, delay: 0.4 }}
                     className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-medium px-4"
                 >
-                    An innovative distribution engine that morphs your raw <span className="text-indigo-500 font-bold border-b-2 border-indigo-500/20 py-0.5">Build Logs</span> into high-authority social content. Distributed at the speed of thought.
+                    The smartest way to turn your raw <span className="text-indigo-500 font-bold border-b-2 border-indigo-500/20 py-0.5">Build Logs</span> into high-quality social media posts. Share your progress instantly.
                 </motion.p>
 
                 {/* CTAs with Builder Glow */}
@@ -111,7 +111,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             >
                                 <div className="absolute inset-0 shimmer-text opacity-20" />
                                 <div className="flex items-center justify-center gap-2 sm:gap-3 relative z-10">
-                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Initialize Setup</span>
+                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Get Started</span>
                                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </button>
@@ -122,7 +122,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             >
                                 <div className="flex items-center justify-center gap-2 sm:gap-3">
                                     <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />
-                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Auth Access</span>
+                                    <span className="tracking-tight uppercase text-xs sm:text-sm">Sign In</span>
                                 </div>
                             </button>
                         </>
@@ -137,9 +137,9 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4"
                 >
                     {[
-                        { icon: Zap, title: "Engine Velocity", desc: "Results in under 1.5s", color: "indigo" },
-                        { icon: Cpu, title: "Neural Synthesis", desc: "AI remembers your brand", color: "purple" },
-                        { icon: Shield, title: "Vault Locked", desc: "Enterprise data privacy", color: "emerald" }
+                        { icon: Zap, title: "Speed", desc: "Results in seconds", color: "indigo" },
+                        { icon: Cpu, title: "AI Content", desc: "AI learns your voice", color: "purple" },
+                        { icon: Shield, title: "Secure", desc: "Your data is private", color: "emerald" }
                     ].map((card, i) => (
                         <div key={i} className="glass-card p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 group hover:border-indigo-500/30 transition-all text-left relative overflow-hidden">
                             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />

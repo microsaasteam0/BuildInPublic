@@ -80,17 +80,17 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
         {/* Header */}
         <div className="relative p-8 pb-4 flex items-center justify-between z-10 border-b border-white/5">
           <div className="flex flex-col gap-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-red-500/20 mb-2">
-              <Activity className="w-3 h-3 animate-pulse" />
-              TERMINATION_PHASE.ACTIVE
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-[10px] font-black uppercase tracking-wider border border-red-500/20 mb-2">
+              <Activity className="w-3 h-3" />
+              CANCEL_PRO_PLAN
             </div>
             <div className="flex items-center gap-3 text-white">
               <div className="p-2.5 bg-red-500/20 rounded-xl border border-red-500/30">
                 <AlertTriangle className="w-5 h-5 text-red-500" />
               </div>
               <div>
-                <h2 className="text-xl font-black tracking-tight uppercase">Downgrade Core</h2>
-                <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.1em] mt-0.5">ID: DEPLOY_TERMINATION_PROTOCOL</p>
+                <h2 className="text-xl font-black tracking-tight uppercase">Cancel Subscription</h2>
+                <p className="text-slate-500 text-[10px] font-black uppercase tracking-wider mt-0.5">Changing to Free Plan</p>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
           <div className="mb-8">
             <h3 className="text-[10px] font-black text-slate-400 mb-4 flex items-center gap-2 uppercase tracking-[0.2em] font-mono">
               <Crown className="w-3 h-3 text-indigo-500" />
-              DEPRECATED_CAPABILITIES
+              FEATURES YOU WILL LOSE
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {featuresYouWillLose.map((feature, index) => (
@@ -137,7 +137,7 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
                   </div>
                   <div>
                     <h4 className="font-black text-white text-[10px] sm:text-[11px] uppercase tracking-tight group-hover/item:text-red-400 transition-colors">{feature.title}</h4>
-                    <p className="text-slate-500 text-[9px] sm:text-[10px] leading-snug mt-0.5">{feature.description}</p>
+                    <p className="text-slate-500 text-[9px] sm:text-[10px] leading-snug mt-0.5">{feature.description.replace('Neural Syntheses', 'AI Generations').replace('units per cycle', 'posts per day')}</p>
                   </div>
                 </div>
               ))}
@@ -148,16 +148,16 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
             {/* What You'll Keep */}
             <div>
               <h3 className="text-[10px] font-black text-slate-400 mb-4 uppercase tracking-[0.2em] font-mono">
-                RETAINED_RESOURCES
+                WHAT YOU KEEP ON FREE
               </h3>
               <div className="bg-emerald-500/5 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-4 sm:p-5 font-mono">
                 <ul className="space-y-2.5 sm:space-y-3">
                   {[
-                    '2 DAILY GENERATIONS',
-                    'BASIC BUILD-LOG SYNTHESIS',
+                    '2 DAILY POSTS',
+                    'BASIC THREAD GENERATION',
                     'STANDARD TEMPLATES',
-                    'CORE TONE PARAMETERS',
-                    '24HR HISTORY BUFFER'
+                    'VOICE SETTINGS',
+                    '24HR HISTORY'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5 sm:gap-3 text-[9px] sm:text-[10px] text-emerald-500 font-bold tracking-widest uppercase">
                       <div className="w-1 h-1 rounded-full bg-emerald-500" />
@@ -171,14 +171,14 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
             {/* Alternative Options */}
             <div>
               <h3 className="text-[10px] font-black text-slate-400 mb-4 uppercase tracking-[0.2em] font-mono">
-                SAFETY_PROTOCOLS
+                OTHER OPTIONS
               </h3>
               <div className="bg-indigo-500/5 backdrop-blur-sm border border-indigo-500/20 rounded-2xl p-4 sm:p-5">
                 <ul className="space-y-2.5 sm:space-y-3">
                   {[
-                    'SUSPEND_SYNAPSE_STREAM',
-                    'MISSION_CONTROL_SYNC',
-                    'VAULT_SCHEMATIC_DUMP'
+                    'PAUSE SUBSCRIPTION',
+                    'CONTACT SUPPORT',
+                    'DOWNLOAD CONTENT'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5 sm:gap-3 text-[9px] sm:text-[10px] text-indigo-400 font-bold tracking-widest uppercase">
                       <Terminal className="w-2.5 h-2.5 text-indigo-500" />

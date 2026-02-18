@@ -90,9 +90,9 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
     } catch (error: any) {
       console.error('Error loading templates:', error)
       if (error.response?.status === 403) {
-        toast.error('ERROR_PRO_LICENSE_REQUIRED')
+        toast.error('Pro plan required')
       } else {
-        toast.error('ERROR_TEMPLATE_SYNC_FAILURE')
+        toast.error('Failed to load templates')
       }
     } finally {
       setIsLoading(false)
@@ -118,10 +118,10 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
     try {
       await axios.delete(`${API_URL}/api/v1/templates/${templateId}`)
       setTemplates(prev => prev.filter(t => t.id !== templateId))
-      toast.success('TEMPLATE_PURGE_SUCCESS')
+      toast.success('Template deleted')
     } catch (error: any) {
       console.error('Error deleting template:', error)
-      toast.error('ERROR_TEMPLATE_PURGE_FAILURE')
+      toast.error('Failed to delete template')
     }
   }
 
@@ -141,17 +141,17 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
         onTemplateSelect(template)
       }
 
-      toast.success('PROTOCOL_TEMPLATE_LOAD_SUCCESS')
+      toast.success('Template loaded')
     } catch (error: any) {
       console.error('Error using template:', error)
-      toast.error('ERROR_TEMPLATE_EXEC_FAILURE')
+      toast.error('Failed to use template')
     }
   }
 
   const handleCopyContent = async (content: string, templateName: string) => {
     try {
       await navigator.clipboard.writeText(content)
-      toast.success('PROTOCOL_CLIPBOARD_SUCCESS')
+      toast.success('Copied to clipboard')
     } catch (error) {
       // Fallback for older browsers
       const textArea = document.createElement('textarea')
@@ -176,10 +176,10 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
           : t
       ))
 
-      toast.success(template.is_favorite ? 'NODE_FAVORITE_REMOVED' : 'NODE_FAVORITE_STABLE')
+      toast.success(template.is_favorite ? 'Removed from favorites' : 'Added to favorites')
     } catch (error: any) {
       console.error('Error toggling favorite:', error)
-      toast.error('ERROR_FAVORITE_SYNC_FAILURE')
+      toast.error('Failed to update favorite')
     }
   }
 
@@ -235,7 +235,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
                 <span className="text-yellow-500 dark:text-yellow-400 font-medium text-sm">Pro Feature</span>
               </div>
               <button
-                onClick={() => toast.error('ERROR_PRO_LICENSE_REQUIRED')}
+                onClick={() => toast.error('Pro plan required')}
                 className="px-4 py-2 bg-gray-600/20 text-gray-500 rounded-lg font-medium transition-all duration-200 flex items-center cursor-not-allowed border border-gray-600/30"
               >
                 <Plus className="w-4 h-4 mr-2" />
@@ -269,7 +269,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
               : 'bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border-zinc-200 dark:border-white/5 hover:bg-zinc-200 dark:hover:bg-white/10'
               }`}
           >
-            {category.label.replace(' ', '_').toUpperCase()}
+            {category.label}
           </button>
         ))}
       </div>
@@ -292,17 +292,17 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
             <FileText className="w-10 h-10 text-indigo-500 relative z-10" />
           </div>
           <h4 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">
-            SCHEMATIC_EMPTY
+            No Templates Found
           </h4>
           <p className="text-slate-500 dark:text-slate-400 mb-10 max-w-sm mx-auto font-mono text-[11px] uppercase tracking-[0.2em] leading-relaxed">
-            No custom blueprints detected in the current index.
+            You haven't created any custom templates yet.
           </p>
           <button
             onClick={() => setShowCreateModal(true)}
             className="px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-2xl active:scale-95 flex items-center gap-3 mx-auto"
           >
             <Plus className="w-4 h-4" />
-            GENERATE_NEW_SCHEMATIC
+            Create New Template
           </button>
         </div>
       ) : (
@@ -371,7 +371,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
               <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-8 font-mono uppercase tracking-widest border-t border-zinc-100 dark:border-white/5 pt-6">
                 <div className="flex items-center gap-2">
                   <TrendingUp className="w-3.5 h-3.5 opacity-40" />
-                  Used_{template.usage_count}
+                  Used {template.usage_count}
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 opacity-40" />
@@ -387,7 +387,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
                     className="flex-1 px-4 py-3 bg-indigo-500 hover:bg-indigo-600 text-white text-[11px] rounded-xl font-black uppercase tracking-widest transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2"
                   >
                     <Zap className="w-3.5 h-3.5" />
-                    ACTIVATE
+                    Use Template
                   </button>
                 )}
 
@@ -402,7 +402,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
                   <button
                     onClick={() => {
                       if (!user?.is_premium) {
-                        toast.error('PRO_LICENSE_REQUIRED')
+                        toast.error('Pro plan required')
                         return
                       }
                       setEditingTemplate(template)
@@ -419,7 +419,7 @@ const CustomTemplateManager: React.FC<CustomTemplateManagerProps> = ({
                   <button
                     onClick={() => {
                       if (!user?.is_premium) {
-                        toast.error('PRO_LICENSE_REQUIRED')
+                        toast.error('Pro plan required')
                         return
                       }
                       handleDeleteTemplate(template.id)

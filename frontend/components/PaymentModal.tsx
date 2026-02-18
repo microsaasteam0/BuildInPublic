@@ -34,7 +34,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   }
 
   const planNames = {
-    pro: 'Pro_Engine'
+    pro: 'Pro Plan'
   }
 
   const amount = pricing[selectedPlan as keyof typeof pricing]?.[billingCycle] || 0
@@ -60,7 +60,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
         throw new Error('Failed to create checkout session')
       }
     } catch (error: any) {
-      let message = 'ERROR_PAYMENT_INIT_FAILURE'
+      let message = 'Failed to start checkout'
       if (error.response?.data?.detail) message = String(error.response.data.detail)
       toast.error(message)
     } finally {
@@ -104,13 +104,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
           <div className="flex flex-col gap-1">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-indigo-500/20 mb-2">
               <Activity className="w-3 h-3 animate-pulse" />
-              AUTH_CHANNEL.SECURE
+              SECURE CHECKOUT
             </div>
             <div className="flex items-center gap-3 text-white">
               <div className="p-2.5 bg-indigo-500/20 rounded-xl border border-indigo-500/30">
                 <Crown className="w-5 h-5 text-indigo-400" />
               </div>
-              <h2 className="text-xl font-black tracking-tight">Upgrade Environment</h2>
+              <h2 className="text-xl font-black tracking-tight">Upgrade to Pro</h2>
             </div>
           </div>
           <button
@@ -130,7 +130,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
 
             <div className="relative flex justify-between items-start mb-6">
               <div>
-                <p className="text-indigo-400/60 text-[10px] font-black uppercase tracking-widest mb-1">SELECTED_CORE</p>
+                <p className="text-indigo-400/60 text-[10px] font-black uppercase tracking-widest mb-1">SELECTED PLAN</p>
                 <h3 className="text-2xl font-black text-white tracking-tight">{planNames[selectedPlan as keyof typeof planNames] || selectedPlan}</h3>
               </div>
               <div className="text-right">
@@ -140,7 +140,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 </div>
                 {savings > 0 && (
                   <span className="inline-block mt-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-black rounded-full border border-emerald-500/20 uppercase tracking-widest">
-                    Optimization: -{savings}%
+                    Save {savings}%
                   </span>
                 )}
               </div>
@@ -151,11 +151,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             {/* Feature Matrix */}
             <ul className="grid gap-4">
               {[
-                "20 Daily Neural Syntheses",
-                "Deep Multi-Thread URL Ingestion",
-                "Unlimited Permanent Vault",
-                "Personalized Brand-Voice Profiles",
-                "Priority Schematic Execution"
+                "20 Daily Posts",
+                "Advanced URL Processing",
+                "Unlimited Saved Posts",
+                "AI Learns Your Voice",
+                "Fast Processing"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4 text-sm text-slate-300 font-medium group/item">
                   <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-indigo-500/10 flex items-center justify-center border border-indigo-500/30 group-hover/item:bg-indigo-500/20 transition-colors">
@@ -179,11 +179,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    INITIALIZING_PAYMENT...
+                    Processing...
                   </>
                 ) : (
                   <>
-                    Initialize Secure Checkout
+                    Continue to Checkout
                     <Box className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </>
                 )}
@@ -193,11 +193,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             <div className="flex items-center justify-center gap-6">
               <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 uppercase tracking-widest bg-slate-800/50 px-3 py-1.5 rounded-lg border border-slate-700/50">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                Vault_SECURED
+                SECURE
               </div>
               <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 uppercase tracking-widest bg-slate-800/50 px-3 py-1.5 rounded-lg border border-slate-700/50">
                 <Lock className="w-3.5 h-3.5 text-indigo-500" />
-                SSL_ENCRYPTED
+                ENCRYPTED
               </div>
             </div>
           </div>
