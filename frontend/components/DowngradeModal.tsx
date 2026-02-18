@@ -103,9 +103,9 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
 
           {/* Features You'll Lose */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Crown className="w-5 h-5 text-yellow-500" />
-              Pro Features You'll Lose
+            <h3 className="text-lg font-black text-gray-900 dark:text-white mb-4 flex items-center gap-2 uppercase tracking-tighter">
+              <Crown className="w-5 h-5 text-indigo-500" />
+              DEPRECATED_CAPABILITIES
             </h3>
             <div className="space-y-3">
               {featuresYouWillLose.map((feature, index) => (
@@ -122,8 +122,8 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
 
           {/* What You'll Keep */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              What You'll Keep (Free Plan)
+            <h3 className="text-lg font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tighter">
+              RETAINED_RESOURCES [FREE_BUILD]
             </h3>
             <div className="bg-green-50 dark:bg-emerald-900/10 border border-green-200 dark:border-emerald-800/50 rounded-lg p-4 font-mono">
               <ul className="space-y-2 text-[10px] text-green-800 dark:text-emerald-400 font-bold uppercase tracking-wide">
@@ -137,22 +137,22 @@ export default function DowngradeModal({ isOpen, onClose, onConfirm, isLoading }
           </div>
 
           {/* Alternative Options */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/50 rounded-lg p-4">
-            <h4 className="font-medium text-blue-800 dark:text-blue-400 mb-2">
-              Consider These Alternatives
+          <div className="bg-indigo-50 dark:bg-indigo-900/10 border border-indigo-200 dark:border-indigo-800/50 rounded-lg p-4">
+            <h4 className="font-black text-indigo-800 dark:text-indigo-400 mb-2 uppercase text-xs tracking-widest">
+              ALTERNATIVE_PROTOCOLS
             </h4>
-            <ul className="space-y-1 text-sm text-blue-700 dark:text-blue-300">
-              <li>• Pause your subscription temporarily instead of cancelling</li>
-              <li>• Contact support if you're having billing issues</li>
-              <li>• Export your saved content before downgrading</li>
+            <ul className="space-y-1 text-xs text-indigo-700 dark:text-indigo-300 font-medium">
+              <li>• SUSPEND_SYNAPSE_STREAM temporarily instead of termination</li>
+              <li>• CONTACT_MISSION_CONTROL for billing schematic issues</li>
+              <li>• DUMP_VAULT_SCHEMATICS before environment wipe</li>
             </ul>
           </div>
         </div>
 
         {/* Footer */}
         <div className="flex items-center justify-between p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-          <div className="text-sm text-gray-600 dark:text-gray-400">
-            This will cancel your subscription immediately
+          <div className="text-[10px] font-black text-red-500 uppercase tracking-widest">
+            TERMINATION_IMMEDIATE_EFFECT
           </div>
           <div className="flex items-center gap-3">
             <button
