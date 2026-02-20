@@ -203,7 +203,7 @@ allowed_origins = [
     "https://build-in-public-alpha.vercel.app",
     "https://build-in-public-app.vercel.app",
     "http://localhost:3000",
-    "http://localhost:8000"
+    "http://localhost:8000",
     "https://www.buildinpublic.entrext.com"
 ]
 
