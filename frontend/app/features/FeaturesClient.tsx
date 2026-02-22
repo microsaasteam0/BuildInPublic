@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { CheckCircle, Zap, Shield, TrendingUp, Sparkles, Layout, MessageSquare, Repeat, Gauge, Rocket, ArrowRight, Share2, Target, Users, HardHat, Hammer, Construction, Terminal, Box, Cpu, Workflow, Database, Network, Brackets } from 'lucide-react'
+import { CheckCircle, Zap, Shield, TrendingUp, Sparkles, Layout, MessageSquare, Repeat, Gauge, Rocket, ArrowRight, Share2, Target, Users, HardHat, Hammer, Construction, Terminal, Box, Cpu, Workflow, Database, Network, Brackets, Quote, Star } from 'lucide-react'
 import Link from 'next/link'
 import { AuthProvider, useAuth } from '../../contexts/AuthContext'
 import { UserPreferencesProvider } from '../../contexts/UserPreferencesContext'
@@ -46,10 +46,10 @@ function FeaturesContent() {
   }
 
   const schematicSteps = [
-    { title: "LOG_CAPTURE", desc: "Structured ingestion of Morning Plans & Evening Reflections", icon: Database },
-    { title: "NEURAL_SYNC", desc: "Semantic parsing of daily building milestones", icon: Cpu },
-    { title: "LOGIC_SYNTH", desc: "Manufacturing high-authority social storylines", icon: Workflow },
-    { title: "THREAD_SYNC", desc: "Native X (Twitter) thread compilation and formatting", icon: Repeat }
+    { title: "Capture", desc: "Add your plans and reflections.", icon: Database },
+    { title: "Analyze", desc: "We find the best parts of your day.", icon: Cpu },
+    { title: "Write", desc: "We create high-quality social posts.", icon: Workflow },
+    { title: "Post", desc: "Get threads ready for Twitter.", icon: Repeat }
   ]
 
   return (
@@ -93,22 +93,22 @@ function FeaturesContent() {
               className="inline-flex items-center gap-3 px-4 sm:px-5 py-2 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 text-[9px] sm:text-[11px] font-black uppercase tracking-widest sm:tracking-[0.4em] font-mono shadow-sm animate-kinetic-glow"
             >
               <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              BUILD_ENV.FEATURE_SET
+              Features
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl sm:text-6xl md:text-9xl font-display font-black tracking-tighter text-slate-900 dark:text-white leading-[0.85] uppercase text-balance"
             >
-              High-Authority <br />
-              <span className="text-gradient">Engineered</span>
+              Built for <br />
+              <span className="text-gradient">Founders</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-base sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium px-2 sm:px-0"
             >
-              Our neural distribution architecture decomposes your building process into high-performance social assets, automatically.
+              We turn your building process into social posts. Automatically.
             </motion.p>
           </div>
 
@@ -126,10 +126,10 @@ function FeaturesContent() {
               <div className="lg:col-span-5 space-y-8 sm:space-y-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-500/10 text-purple-500 rounded-lg text-[10px] font-black uppercase tracking-widest border border-purple-500/20">
                   <Workflow className="w-3 h-3" />
-                  SYSTEM_SCHEMATIC
+                  How it works
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.1] text-balance">
-                  Automated <br className="hidden sm:block" /> Distribution Pipeline
+                  Content pipeline
                 </h2>
                 <div className="space-y-3 sm:space-y-4">
                   {schematicSteps.map((step, i) => (
@@ -208,8 +208,8 @@ function FeaturesContent() {
                 </div>
 
                 <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 flex justify-between items-center text-[8px] sm:text-[10px] font-mono font-black text-indigo-500/60 tracking-widest uppercase">
-                  <div>&gt; STATUS_STREAMING</div>
-                  <div className="hidden sm:block">ENV: PRODUCTION_READY</div>
+                  <div>&gt; ACTIVE</div>
+                  <div className="hidden sm:block">READY</div>
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@ function FeaturesContent() {
           {/* Feature Grid - Enhanced Visual Rhythm */}
           <div className="space-y-12 sm:space-y-20">
             <div className="flex items-end justify-between border-b border-slate-200 dark:border-white/5 pb-8 sm:pb-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Core Modules</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Core features</h2>
               <div className="hidden md:flex items-center gap-4 text-xs font-black uppercase tracking-widest text-slate-500">
                 <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-indigo-500" /> READY</span>
                 <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-indigo-500" /> ACTIVE</span>
@@ -235,39 +235,39 @@ function FeaturesContent() {
               {[
                 {
                   icon: Hammer,
-                  title: "Founder's Build Logs",
-                  desc: "Capture Morning To-Dos and Evening Reflections. Our AI extracts the 'build patterns' from your raw daily activity stream.",
-                  tag: "Phase 1"
+                  title: "Daily notes",
+                  desc: "Write your plans and reflections. Our AI finds the best patterns in your work.",
+                  tag: "1"
                 },
                 {
                   icon: Construction,
-                  title: "High-Authority Synthesis",
-                  desc: "Transforms fragmented logic into professional threads designed specifically for X (Twitter) engagement velocity.",
-                  tag: "Phase 2"
+                  title: "Smart writing",
+                  desc: "Turn messy notes into professional Twitter threads.",
+                  tag: "2"
                 },
                 {
                   icon: Users,
-                  title: "Community Logic Module",
-                  desc: "Access a vault of proven templates for Blog posts, Newsletters, and Marketing. Engineered for the modern creator.",
-                  tag: "Phase 3"
+                  title: "Templates",
+                  desc: "Use proven templates for blogs and newsletters.",
+                  tag: "3"
                 },
                 {
                   icon: Repeat,
-                  title: "X Thread Optimization",
-                  desc: "Single-deploy optimization engine for X (Twitter). Strategic reach engineered for high-engagement thread velocity.",
-                  tag: "Phase 4"
+                  title: "Twitter threads",
+                  desc: "Built for reach and engagement.",
+                  tag: "4"
                 },
                 {
                   icon: Target,
-                  title: "Brand Voice Schematics",
-                  desc: "Outcome-tailored synthesis that replicates your unique creative signature across every generated asset.",
-                  tag: "Phase 5"
+                  title: "Your voice",
+                  desc: "Our AI learns your unique style.",
+                  tag: "5"
                 },
                 {
                   icon: Rocket,
-                  title: "Technical Build Logs",
-                  desc: "Deconstruct your raw engineering updates into semantic components. Re-synthesize daily progress into native social content.",
-                  tag: "Phase 6"
+                  title: "Work updates",
+                  desc: "Turn your raw updates into social content.",
+                  tag: "6"
                 }
               ].map((feature, i) => (
                 <motion.div
@@ -317,20 +317,20 @@ function FeaturesContent() {
               <div className="space-y-8 sm:space-y-10">
                 <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-[0.2em]">
                   <Box className="w-4 h-4" />
-                  NEURO_SYNC.ALPHA
+                  Neuro-Sync
                 </div>
                 <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-black leading-tight tracking-tighter text-balance">
-                  One Draft. <br />
-                  <span className="text-indigo-200">Total Reach.</span>
+                  Write once. <br />
+                  <span className="text-indigo-200">Share everywhere.</span>
                 </h2>
                 <p className="text-lg sm:text-xl text-indigo-100 font-medium leading-relaxed max-w-xl">
-                  Our Neuro-Sync Engine analyzes the deep semantics of your daily build logs to re-engineer your project milestones into high-performance X threads.
+                  Our engine turns your daily notes into high-performance Twitter threads.
                 </p>
                 <div className="space-y-4 sm:space-y-6">
                   {[
-                    "Daily Build-Log Synthesis.",
-                    "Raw Logic Distribution.",
-                    "Permanent Vault Storage."
+                    "Daily build notes.",
+                    "Share your progress.",
+                    "Save everything."
                   ].map((text, i) => (
                     <div key={i} className="flex items-center gap-3 sm:gap-4 group">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all border border-white/10 shrink-0">
@@ -353,7 +353,7 @@ function FeaturesContent() {
                       <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-yellow-400" />
                       <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-green-400" />
                     </div>
-                    <span className="text-white/40 text-[9px] sm:text-[10px] font-black uppercase tracking-widest">DEPLOY_TERMINAL</span>
+                    <span className="text-white/40 text-[9px] sm:text-[10px] font-black uppercase tracking-widest">Terminal</span>
                   </div>
                   <div className="space-y-2 sm:space-y-3">
                     <p className="text-indigo-300">&gt;&gt;&gt; NEURAL_PIPE_INIT</p>
@@ -389,16 +389,16 @@ function FeaturesContent() {
           {/* Platform Performance Benchmarks */}
           <div className="text-center space-y-12 sm:space-y-24">
             <div className="space-y-4 sm:space-y-6 px-2">
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-display font-black text-slate-900 dark:text-white uppercase tracking-tighter text-balance leading-none">Performance Benchmarks</h2>
-              <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] sm:text-xs opacity-70">ENVIRONMENT: STABLE_RELEASE_V1</p>
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-display font-black text-slate-900 dark:text-white uppercase tracking-tighter text-balance leading-none">Success</h2>
+              <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] sm:text-xs opacity-70">Stable</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {[
-                { label: "End-to-End Latency", value: "1.2s", icon: Gauge, color: "blue" },
-                { label: "Encryption Grade", value: "Military", icon: Shield, color: "indigo" },
-                { label: "Deployment Channel", value: "X / Twitter", icon: Layout, color: "purple" },
-                { label: "Success Coefficient", value: "99.9%", icon: TrendingUp, color: "emerald" }
+                { label: "1.2s speed", value: "Fast", icon: Gauge, color: "blue" },
+                { label: "Private data", value: "Secure", icon: Shield, color: "indigo" },
+                { label: "Ready for X", value: "Social", icon: Layout, color: "purple" },
+                { label: "99.9% uptime", value: "Stable", icon: TrendingUp, color: "emerald" }
               ].map((stat, i) => (
                 <div key={i} className="glass-card p-8 sm:p-12 rounded-[2rem] sm:rounded-[3rem] border border-slate-200/50 dark:border-slate-800/50 group hover:border-indigo-500/30 transition-all text-center relative overflow-hidden shadow-xl sm:shadow-2xl">
                   <div className="absolute inset-0 bg-grid-blueprint-light opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none" />
@@ -433,13 +433,13 @@ function FeaturesContent() {
               <div className="space-y-6 sm:space-y-8">
                 <div className="inline-flex items-center gap-3 px-4 sm:px-5 py-2 rounded-full bg-white/5 border border-white/10 text-[9px] sm:text-[10px] font-black uppercase tracking-widest sm:tracking-[0.3em] font-mono">
                   <Brackets className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  SYSTEM_INITIALIZATION
+                  Get started
                 </div>
                 <h2 className="text-4xl sm:text-6xl md:text-9xl font-display font-black leading-none tracking-tighter uppercase text-balance">
-                  Launch your <br /><span className="text-gradient inline-block">Public Engine</span>
+                  Launch your <br /><span className="text-gradient inline-block">dashboard</span>
                 </h2>
                 <p className="text-base sm:text-xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed px-4 sm:px-0 opacity-80">
-                  Join 1,200+ elite founders transforming their Build Logs into pure distribution authority. Secure your environment today.
+                  Join 1,200+ founders using BuildInPublic to grow their audience.
                 </p>
               </div>
 
@@ -450,7 +450,7 @@ function FeaturesContent() {
                 >
                   <div className="absolute inset-0 shimmer-text opacity-20" />
                   <Rocket className="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform relative z-10 shrink-0" />
-                  <span className="relative z-10 uppercase tracking-widest sm:tracking-tight text-base sm:text-lg">Initialize</span>
+                  <span className="relative z-10 uppercase tracking-widest sm:tracking-tight text-base sm:text-lg">Get started</span>
                 </button>
                 <button
                   onClick={() => {
@@ -464,8 +464,34 @@ function FeaturesContent() {
                   className="px-8 sm:px-14 py-5 sm:py-7 bg-white/5 border sm:border-2 border-white/10 backdrop-blur-xl text-white font-black rounded-2xl sm:rounded-[2rem] hover:bg-white/10 transition-all flex items-center justify-center gap-3 sm:gap-4 hover:border-white/20"
                 >
                   <Terminal className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
-                  <span className="uppercase tracking-widest sm:tracking-tight text-base sm:text-lg">Secure Access</span>
+                  <span className="uppercase tracking-widest sm:tracking-tight text-base sm:text-lg">Sign in</span>
                 </button>
+              </div>
+            </div>
+          </motion.div>
+          {/* Features Social Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-40 max-w-4xl mx-auto"
+          >
+            <div className="glass-card p-10 sm:p-16 rounded-[3rem] border border-white/10 bg-white/5 relative overflow-hidden group">
+              <Quote className="absolute top-10 left-10 w-20 h-20 text-white/5 opacity-50 group-hover:text-white/10 transition-colors" />
+              <div className="relative z-10 text-center">
+                <div className="flex justify-center gap-1 mb-8">
+                  {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-5 h-5 text-amber-500 fill-current" />)}
+                </div>
+                <p className="text-xl sm:text-3xl font-bold text-white mb-10 italic leading-relaxed">
+                  "The sematic parsing engine is a game-changer. It turns my messy dev notes into high-authority threads without losing any technical nuance."
+                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 font-bold">JW</div>
+                  <div className="text-left">
+                    <h4 className="font-bold text-white text-lg leading-none">James Wilson</h4>
+                    <p className="text-xs text-indigo-400 uppercase tracking-widest mt-1 font-black">Tech Lead</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -174,17 +174,16 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1 bg-slate-100/50 dark:bg-slate-900/50 p-1 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-sm">
+            <div className="hidden md:flex items-center md:space-x-1 lg:space-x-2 xl:space-x-4 bg-slate-100/50 dark:bg-slate-900/50 p-1.5 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-sm">
               {[
                 { name: 'Repurpose', path: '/' },
                 { name: 'Community', path: '/community', icon: <Users className="w-3.5 h-3.5 inline mr-1.5 mb-0.5" /> },
-                { name: 'Blog', path: '/blog' },
-                { name: user?.is_premium ? 'Subscription' : 'Upgrade', path: '/pricing', highlight: !user?.is_premium }
+                { name: 'Pricing', path: '/pricing', highlight: !user?.is_premium }
               ].map((link) => (
                 <button
                   key={link.path}
                   onClick={() => handleNavigation(link.path)}
-                  className={`relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link.path)
+                  className={`relative px-5 lg:px-8 xl:px-10 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link.path)
                     ? 'text-primary bg-white dark:bg-slate-800 shadow-sm'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50'
                     }`}
@@ -213,7 +212,7 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
                 >
                   <Sparkles className={`w-3.5 h-3.5 ${statsLoading ? 'animate-spin' : ''}`} />
                   <span>
-                    {statsLoading ? '...' : user?.is_premium ? 'Unlimited' : usageStats ? `${usageStats.remaining_requests ?? (usageStats.rate_limit - usageStats.recent_generations)}/${usageStats.rate_limit} left` : '?'}
+                    {statsLoading ? '...' : user?.is_premium ? 'Unlimited' : usageStats ? `${usageStats.remaining_requests ?? (usageStats.rate_limit - usageStats.recent_generations)}/${usageStats.rate_limit} posts left` : '?'}
                   </span>
                 </button>
               )}
@@ -226,7 +225,7 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
                 title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />
-                <span>Sign Out</span>
+                <span>Sign out</span>
               </button>
 
               {/* User Avatar */}

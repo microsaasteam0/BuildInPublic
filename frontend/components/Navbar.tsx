@@ -1,4 +1,4 @@
-'use client'
+ 'use client'
 
 import { Sparkles, Users, Crown, Menu, X, Rocket, Zap, LogIn, LogOut } from 'lucide-react'
 import Link from 'next/link'
@@ -139,7 +139,7 @@ export default function Navbar({
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 bg-slate-100/50 dark:bg-slate-900/50 p-1.5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-inner">
+          <div className="hidden md:flex items-center md:space-x-1 lg:space-x-2 xl:space-x-4 bg-slate-100/50 dark:bg-slate-900/50 p-1.5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-inner">
             <AnimatePresence>
               {navLinks.filter(link => link.show).map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
@@ -153,7 +153,7 @@ export default function Navbar({
                   >
                     <Link
                       href={link.href}
-                      className={`relative px-3 lg:px-5 py-2 rounded-xl text-xs sm:text-sm font-black transition-all duration-300 tracking-tight ${isActive
+                      className={`relative px-3 lg:px-6 xl:px-8 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all duration-300 tracking-tight ${isActive
                         ? 'text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-800 shadow-sm border border-zinc-200 dark:border-slate-700'
                         : 'text-zinc-500 dark:text-slate-500 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-slate-800/50'
                         }`}
@@ -251,7 +251,7 @@ export default function Navbar({
                   </button>
                   <button
                     onClick={handleSignUp}
-                    className="group relative px-4 lg:px-6 py-2.5 lg:py-3 bg-indigo-600 text-white text-[10px] lg:text-xs font-black rounded-2xl shadow-xl shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all hover:-translate-y-1 tracking-widest overflow-hidden font-mono whitespace-nowrap"
+                    className="group relative px-4 lg:px-8 xl:px-10 py-2.5 lg:py-3.5 bg-indigo-600 text-white text-[10px] lg:text-xs xl:text-sm font-black rounded-2xl shadow-xl shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all hover:-translate-y-1 tracking-widest overflow-hidden font-mono whitespace-nowrap"
                   >
                     <div className="absolute inset-0 shimmer-text opacity-20 pointer-events-none" />
                     <span className="flex items-center gap-1.5 lg:gap-2 relative z-10">

@@ -30,6 +30,7 @@ import SubscriptionWarning from '../components/SubscriptionWarning'
 // New Landing Components
 import HeroSection from '../components/landing/HeroSection'
 import HowItWorks from '../components/landing/HowItWorks'
+import Testimonials from '../components/landing/Testimonials'
 import RepurposeInterface from '../components/landing/RepurposeInterface'
 
 interface SocialMediaResponse {
@@ -396,6 +397,7 @@ function HomeContent() {
                   onSignUp={() => { setShowAuthModal(true); setAuthModalMode('register') }}
                 />
                 <HowItWorks />
+                <Testimonials />
               </>
             )}
 

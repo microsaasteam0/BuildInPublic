@@ -118,14 +118,14 @@ export default function Footer({ onSupportClick }: FooterProps) {
             <div className="flex flex-col space-y-8">
               <Link href="/" className="flex items-center group gap-4 w-fit">
                 <div className="relative w-12 h-12 bg-zinc-100 dark:bg-slate-900 rounded-2xl shadow-2xl flex items-center justify-center p-2 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6">
-                  <Image src="/logo.png" alt="BuildInPublic Identity Asset" width={40} height={40} className="w-full h-full object-contain" />
+                  <Image src="/logo.png" alt="Logo" width={40} height={40} className="w-full h-full object-contain" />
                 </div>
                 <span className="text-3xl font-display font-black tracking-tighter text-zinc-900 dark:text-white">
                   BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>
                 </span>
               </Link>
               <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-sm font-bold tracking-tight opacity-80">
-                Scaling distribution through automated transparency. The engine built for visionary founders.
+                Turn your notes into social growth. Built for founders.
               </p>
 
               {/* Security_Sync Socials */}
@@ -160,7 +160,7 @@ export default function Footer({ onSupportClick }: FooterProps) {
                   <h4 className="text-lg font-black text-slate-900 dark:text-white tracking-tight leading-none mb-1.5">Weekly newsletter</h4>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className="text-[10px] font-black text-slate-500 tracking-widest">Stay updated</p>
+                    <p className="text-[10px] font-black text-slate-500 tracking-widest">Get updates</p>
                   </div>
                 </div>
               </div>

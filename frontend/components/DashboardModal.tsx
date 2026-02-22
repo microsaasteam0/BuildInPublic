@@ -122,13 +122,13 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
     if (file) {
       // Validate file type
       if (!file.type.startsWith('image/')) {
-        toast.error('ERROR_IMAGE_FORMAT_REQUIRED')
+        toast.error('Please select an image file')
         return
       }
 
       // Validate file size (max 5MB for editing)
       if (file.size > 5 * 1024 * 1024) {
-        toast.error('ERROR_IMAGE_SIZE_EXCEEDED')
+        toast.error('Image is too large (max 5MB)')
         return
       }
 
@@ -152,7 +152,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
       if (blob) {
         // Validate final size (max 750KB after compression)
         if (blob.size > 750 * 1024) {
-          toast.error('ERROR_IMAGE_DIMENSION_OVERFLOW')
+          toast.error('Image dimensions are too large')
           return
         }
 
@@ -203,7 +203,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
   // Handle image upload and save
   const handleImageUpload = async (imageData?: string) => {
     if (!selectedFile) {
-      toast.error('ERROR_IMAGE_NULL')
+      toast.error('Please select an image first')
       return
     }
 
@@ -252,7 +252,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
 
         // Force a small delay to ensure state updates
         setTimeout(() => {
-          toast.success('PROFILE_MEDIA_SYNC_COMPLETE')
+          toast.success('Profile picture updated')
 
           // Force a re-render by updating a dummy state
           setIsEditingProfile(false)

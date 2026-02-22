@@ -5,22 +5,22 @@ export default function HowItWorks() {
     const steps = [
         {
             icon: FileText,
-            title: "Log Your Build",
-            description: "Input your Morning Plan & Evening Reflection daily.",
+            title: "1. Write notes",
+            description: "Add your daily plans or reflections.",
             bgClass: "bg-blue-500/10",
             textClass: "text-blue-500"
         },
         {
             icon: Cpu,
-            title: "AI Generation",
-            description: "Our AI turns your daily logs into high-quality social media posts.",
+            title: "2. AI generates",
+            description: "We turn your notes into social posts.",
             bgClass: "bg-indigo-500/10",
             textClass: "text-indigo-500"
         },
         {
             icon: Share2,
-            title: "Share it",
-            description: "Get ready-to-post Twitter threads in seconds.",
+            title: "3. Post",
+            description: "Get ready-to-share threads in seconds.",
             bgClass: "bg-purple-500/10",
             textClass: "text-purple-500"
         }
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                         transition={{ delay: 0.1 }}
                         className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg font-medium"
                     >
-                        Three steps to turn raw inputs into audience growth.
+                        From raw notes to social growth.
                     </motion.p>
                 </div>
 
