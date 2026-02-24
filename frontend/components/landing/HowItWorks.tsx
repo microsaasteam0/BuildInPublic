@@ -5,22 +5,22 @@ export default function HowItWorks() {
     const steps = [
         {
             icon: FileText,
-            title: "1. Write notes",
-            description: "Add your daily plans or reflections.",
+            title: "1. Write",
+            description: "Add your daily notes or plans.",
             bgClass: "bg-blue-500/10",
             textClass: "text-blue-500"
         },
         {
             icon: Cpu,
-            title: "2. AI generates",
-            description: "We turn your notes into social posts.",
+            title: "2. Create",
+            description: "Our AI writes your social posts.",
             bgClass: "bg-indigo-500/10",
             textClass: "text-indigo-500"
         },
         {
             icon: Share2,
-            title: "3. Post",
-            description: "Get ready-to-share threads in seconds.",
+            title: "3. Share",
+            description: "Post ready-to-share threads.",
             bgClass: "bg-purple-500/10",
             textClass: "text-purple-500"
         }
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                         transition={{ delay: 0.1 }}
                         className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg font-medium"
                     >
-                        From raw notes to social growth.
+                        From notes to posts.
                     </motion.p>
                 </div>
 

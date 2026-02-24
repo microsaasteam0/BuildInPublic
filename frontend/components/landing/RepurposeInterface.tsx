@@ -130,7 +130,7 @@ export default function RepurposeInterface({
     const copyToClipboard = (text: string, key: string) => {
         navigator.clipboard.writeText(text)
         setCopiedStates({ ...copiedStates, [key]: true })
-        toast.success('PROTOCOL_CLIPBOARD_SUCCESS')
+        toast.success('Copied to clipboard')
         setTimeout(() => {
             setCopiedStates(prev => ({ ...prev, [key]: false }))
         }, 2000)
@@ -138,7 +138,7 @@ export default function RepurposeInterface({
 
     const handleExport = (data: string | string[], platform: string, format: 'txt' | 'json' | 'csv' = 'txt') => {
         if (!user?.is_premium) {
-            toast.error('PRO_ACCESS_REQUIRED: Exporting is a premium feature.')
+            toast.error('Exporting is a premium feature.')
             return
         }
 
@@ -176,7 +176,7 @@ export default function RepurposeInterface({
         a.click()
         document.body.removeChild(a)
         URL.revokeObjectURL(url)
-        toast.success(`EXPORT_COMPLETE: ${format.toUpperCase()}`)
+        toast.success(`Exported as ${format.toUpperCase()}`)
     }
 
     return (
@@ -199,7 +199,7 @@ export default function RepurposeInterface({
                         <div className="inline-flex items-center justify-center px-4 py-1.5 bg-zinc-100 dark:bg-slate-900/50 rounded-lg mb-6 sm:mb-8 border border-zinc-200 dark:border-slate-800">
                             <span className="text-[9px] sm:text-[10px] font-black text-zinc-500 dark:text-slate-400 tracking-[0.2em] sm:tracking-[0.3em] flex items-center gap-2 sm:gap-3">
                                 <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                Workspace
+                                Your Tool
                             </span>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ export default function RepurposeInterface({
                     <div className="p-6 sm:p-10 pt-4 relative z-10">
                         <div className="text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
                             <p className="text-zinc-500 dark:text-slate-400 font-bold text-[10px] sm:text-[11px] tracking-widest leading-relaxed px-2">
-                                Protip: Share your progress to grow your audience. You build, we write.
+                                Protip: Share your wins to grow your audience. You build, we write.
                             </p>
                         </div>
 
@@ -223,7 +223,7 @@ export default function RepurposeInterface({
                                             <div className="p-2 bg-indigo-500/10 rounded-xl">
                                                 <Zap className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                                             </div>
-                                            <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Morning plan</span>
+                                            <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] uppercase tracking-widest">Today's Plans</span>
                                         </div>
                                         <div className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 px-3 py-1 bg-indigo-500/10 rounded-lg border border-indigo-500/20 whitespace-nowrap">
                                             {tasks.filter(t => t.completed).length}/{tasks.length} tasks
@@ -235,7 +235,7 @@ export default function RepurposeInterface({
                                         <div className="flex gap-2">
                                             <input
                                                 type="text"
-                                                placeholder="What are you doing today?"
+                                                placeholder="What are you working on today?"
                                                 className="flex-1 min-w-0 bg-zinc-200/50 dark:bg-slate-800/50 border border-zinc-300 dark:border-slate-700 rounded-xl px-4 sm:px-5 py-3 text-xs font-bold tracking-widest focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-400/50 dark:placeholder:text-slate-600 truncate"
                                                 onKeyDown={(e) => {
                                                     if (e.key === 'Enter') {
@@ -324,7 +324,7 @@ export default function RepurposeInterface({
                                         <div className="p-2 bg-indigo-500/10 rounded-xl">
                                             <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                                         </div>
-                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] tracking-widest">Evening reflection</span>
+                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] tracking-widest uppercase">Reflection</span>
                                     </div>
                                     <textarea
                                         value={eveningReflection}
@@ -412,7 +412,7 @@ export default function RepurposeInterface({
                                             Create Posts
                                         </div>
                                     </button>
-                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 tracking-widest sm:tracking-[0.4em] px-2 truncate">Free to use. No card needed.</p>
+                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 tracking-widest sm:tracking-[0.4em] px-2 truncate">Start for free. No credit card needed.</p>
                                 </div>
                             ) : (
                                 <div className="w-full flex flex-col items-center">
@@ -420,21 +420,21 @@ export default function RepurposeInterface({
                                         onClick={() => {
                                             // ... existing validation
                                             if (tasks.length === 0) {
-                                                toast.error('PROTOCOL_HALTED: Morning Plan [TO-DO] input is mandatory.')
+                                                toast.error('Please add at least one task.')
                                                 return
                                             }
                                             if (!eveningReflection.trim()) {
-                                                toast.error('PROTOCOL_HALTED: Evening Reflection data is missing.')
+                                                toast.error('Please add a reflection.')
                                                 return
                                             }
                                             if (!personalization.audience?.trim()) {
                                                 if (!showPersonalization) setShowPersonalization(true)
-                                                toast.error('PROTOCOL_HALTED: Target Audience definition is required.')
+                                                toast.error('Please set your target audience.')
                                                 return
                                             }
                                             if (!personalization.tone?.trim()) {
                                                 if (!showPersonalization) setShowPersonalization(true)
-                                                toast.error('PROTOCOL_HALTED: Tone of Voice selection is required.')
+                                                toast.error('Please choose a post style.')
                                                 return
                                             }
                                             handleSubmit()
@@ -513,9 +513,9 @@ export default function RepurposeInterface({
                                 Your generated content
                             </div>
                             <h2 className="text-4xl md:text-6xl font-display font-black text-zinc-900 dark:text-white tracking-tighter">
-                                Ready to post
+                                Ready to share
                             </h2>
-                            <p className="text-zinc-500 dark:text-slate-400 font-bold text-[10px] tracking-[0.4em]">Your posts are ready. Read them below.</p>
+                            <p className="text-zinc-500 dark:text-slate-400 font-bold text-[10px] tracking-[0.4em]">Read your new posts below.</p>
                         </div>
 
                         <div className="max-w-4xl mx-auto">

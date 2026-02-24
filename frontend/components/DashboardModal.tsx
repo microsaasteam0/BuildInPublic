@@ -1310,8 +1310,8 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
           < nav className="flex-1 px-2 py-4" >
             <div className="space-y-1.5">
               {[
-                { id: 'overview', name: 'Overview', icon: BarChart3, color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
-                { id: 'content', name: 'Saved Content', icon: Save, count: savedContent.length, color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
+                { id: 'overview', name: 'Your Stats', icon: BarChart3, color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
+                { id: 'content', name: 'Saved Posts', icon: Save, count: savedContent.length, color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
                 { id: 'history', name: 'History', icon: History, count: contentHistory.length, color: 'text-purple-500', bg: 'bg-purple-500/10' },
                 { id: 'templates', name: 'Templates', icon: FileText, pro: true, color: 'text-amber-500', bg: 'bg-amber-500/10' },
                 { id: 'settings', name: 'Settings', icon: Settings, color: 'text-slate-500', bg: 'bg-slate-500/10' },
@@ -1403,10 +1403,10 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
           {/* Header - Hidden on mobile since we have tab navigation */}
           < div className="hidden sm:flex items-center justify-between p-8 border-b border-zinc-200 dark:border-slate-800" >
             <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">
-              {activeSection === 'overview' && 'Dashboard Overview'}
+              {activeSection === 'overview' && 'Your Progress'}
               {activeSection === 'content' && (
                 <span className="flex items-center gap-2">
-                  Saved Content
+                  Saved Posts
                   {savedContent.length > 0 && (
                     <span className="px-2 py-1 bg-blue-500/20 text-blue-600 dark:text-blue-400 text-sm rounded-full">
                       {getFilteredContent().length} {getFilteredContent().length !== savedContent.length && `of ${savedContent.length}`}
@@ -1416,7 +1416,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
               )}
               {activeSection === 'history' && (
                 <span className="flex items-center gap-2">
-                  Content History
+                  Past Posts
                   {contentHistory.length > 0 && (
                     <span className="px-2 py-1 bg-purple-500/20 text-purple-600 dark:text-purple-400 text-sm rounded-full">
                       {contentHistory.length}
@@ -1424,7 +1424,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                   )}
                 </span>
               )}
-              {activeSection === 'templates' && 'Custom Templates'}
+              {activeSection === 'templates' && 'Templates'}
               {activeSection === 'settings' && 'Account Settings'}
             </h1>
             <div className="flex items-center gap-3">
@@ -1508,8 +1508,8 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         </h2>
                         <p className="text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">
                           {user?.is_premium
-                            ? 'Your Pro arsenal is ready. Let\'s turn your reflections into high-impact X content today.'
-                            : 'Ready to build in public? Transform your day into engaging X threads in seconds.'
+                            ? 'Your Pro tools are ready. Let\'s turn your notes into great social posts.'
+                            : 'Ready to build together? Turn your daily plans into great social posts.'
                           }
                         </p>
                       </div>
@@ -1522,7 +1522,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                               </div>
                               <div>
                                 <p className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest">Active Plan</p>
-                                <p className="text-lg font-black text-slate-900 dark:text-white">PRO MEMBER</p>
+                                <p className="text-lg font-black text-slate-900 dark:text-white">Pro Member</p>
                               </div>
                             </div>
                           </div>
@@ -1536,7 +1536,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
                             <div className="flex items-center gap-3">
                               <Sparkles className="w-5 h-5 animate-pulse" />
-                              <span>UNLOCK PRO</span>
+                              <span>Unlock Pro</span>
                               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                           </motion.button>
@@ -1619,8 +1619,8 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                       <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-md mb-6 shadow-lg">
                         <Plus className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-2xl font-black text-white mb-2 leading-tight">Create Your <br />Next Thread</h3>
-                      <p className="text-white/70 text-sm">Transform your day into viral content in seconds.</p>
+                      <h3 className="text-2xl font-black text-white mb-2 leading-tight">Create New <br />Posts</h3>
+                      <p className="text-white/70 text-sm">Turn your day into viral posts in seconds.</p>
                     </div>
                     <div className="relative z-10 mt-8 flex items-center gap-2 text-white font-bold text-sm">
                       <span>Go to Tool</span>
@@ -1678,8 +1678,8 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         <Crown className="w-8 h-8 text-amber-400" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-2xl font-black text-white">Dominate X Threads</h3>
-                        <p className="text-slate-400 text-sm max-w-xs">Upgrade to Pro for unlimited content, custom templates, and priority processing.</p>
+                        <h3 className="text-2xl font-black text-white">Get More Posts</h3>
+                        <p className="text-slate-400 text-sm max-w-xs">Upgrade to Pro for unlimited posts and custom templates.</p>
                       </div>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -1688,7 +1688,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         className="px-8 py-4 bg-white text-slate-900 font-black rounded-2xl transition-all shadow-xl flex items-center gap-2 group"
                       >
                         <Zap className="w-4 h-4 text-indigo-500 fill-current group-hover:animate-pulse" />
-                        SEE PRO FEATURES
+                        See Pro Features
                       </motion.button>
                     </div>
                   </div>
@@ -1706,10 +1706,10 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full animate-pulse" />
                         <Crown className="w-10 h-10 sm:w-12 sm:h-12 text-amber-500 relative z-10" />
                       </div>
-                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-4 font-mono truncate px-2">PRO FEATURE</h4>
-                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tighter">Premium Vault Access</h3>
+                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-4 font-mono truncate px-2">Pro Feature</h4>
+                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tighter">Save Your Posts</h3>
                       <p className="text-slate-500 dark:text-slate-400 max-w-xs mx-auto font-mono text-xs uppercase tracking-wider leading-relaxed mb-8 px-2">
-                        Persistent archiving and database synchronization require an active Pro License.
+                        You need a Pro plan to save your posts in the vault.
                       </p>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -1726,7 +1726,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                   ) : isLoadingContent ? (
                     <div className="text-center py-20">
                       <LoadingSpinner />
-                      <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.2em] mt-6">LOADING SAVED POSTS...</p>
+                      <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.2em] mt-6">Loading saved posts...</p>
                     </div>
                   ) : savedContent.length === 0 ? (
                     <div className="text-center py-20 border-2 border-dashed border-zinc-200 dark:border-white/5 rounded-[3rem] bg-zinc-50 dark:bg-slate-900/50">
@@ -1734,7 +1734,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                         <div className="absolute inset-0 bg-indigo-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                         <Save className="w-10 h-10 text-indigo-500 relative z-10" />
                       </div>
-                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">NO SAVED POSTS</h3>
+                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">No saved posts</h3>
                       <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto font-mono text-xs uppercase tracking-[0.2em] leading-relaxed">
                         No persistent data detected. Start generating and archive your results here.
                       </p>
@@ -1759,9 +1759,9 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                             onChange={(e) => setFilterType(e.target.value)}
                             className="px-6 py-4 bg-zinc-100 dark:bg-slate-900/50 border border-zinc-200 dark:border-slate-800 rounded-[1.5rem] text-zinc-900 dark:text-white focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-black text-[11px] uppercase tracking-widest transition-all cursor-pointer hover:border-indigo-500/30"
                           >
-                            <option value="all">ALL POSTS</option>
-                            <option value="twitter">TWITTER THREADS</option>
-                            <option value="auto-generated">AUTO SAVED</option>
+                            <option value="all">All posts</option>
+                            <option value="twitter">Twitter threads</option>
+                            <option value="auto-generated">Auto saved</option>
                           </select>
                         </div>
                       </div>
@@ -1974,10 +1974,10 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                                   {item.processing_time && (
                                     <div className="px-4 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 text-indigo-500 rounded-lg text-[10px] font-black uppercase tracking-widest border border-indigo-500/20 flex items-center gap-2">
                                       <Zap className="w-3 h-3 fill-current" />
-                                      {item.processing_time}s LATENCY
+                                      {item.processing_time}s FAST
                                     </div>
                                   )}
-                                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">READY_SUCCESS</span>
+                                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">DONE</span>
                                 </div>
                               </div>
 
@@ -2065,7 +2065,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                                     </div>
                                     <p className="text-[11px] font-black text-indigo-500 uppercase tracking-[0.2em] mb-4 font-mono flex items-center gap-2">
                                       <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-                                      Synthesis_Matrix.X_Thread
+                                      Your Posts
                                     </p>
 
                                     <div className="space-y-3">
@@ -2987,7 +2987,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                       </div>
 
                       <h3 className="text-xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight">
-                        ABORT_SUBSCRIPTION
+                        Cancel Subscription
                       </h3>
 
                       <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8">
@@ -3000,14 +3000,14 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                           disabled={cancelLoading}
                           className="flex-1 px-4 py-3.5 bg-zinc-100 dark:bg-slate-800 hover:bg-zinc-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all"
                         >
-                          Keep_Access
+                          Keep Subscription
                         </button>
                         <button
                           onClick={handleCancelSubscription}
                           disabled={cancelLoading}
                           className="flex-1 px-4 py-3.5 bg-red-500 hover:bg-red-600 text-white rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-lg shadow-red-500/20 flex items-center justify-center gap-2 disabled:opacity-50"
                         >
-                          {cancelLoading ? 'PROCESSING...' : 'CONFIRM_ABORT'}
+                          {cancelLoading ? 'Processing...' : 'Confirm Cancellation'}
                         </button>
                       </div>
                     </div>

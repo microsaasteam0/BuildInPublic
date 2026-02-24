@@ -113,7 +113,7 @@ export default function Navbar({
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-[50] transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
         ? 'bg-zinc-50/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-slate-800 shadow-sm py-2 sm:py-3'
         : 'bg-zinc-50/80 dark:bg-slate-950/80 backdrop-blur-sm py-3 sm:py-5'
         }`}
@@ -138,8 +138,8 @@ export default function Navbar({
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center md:space-x-1 lg:space-x-2 xl:space-x-4 bg-slate-100/50 dark:bg-slate-900/50 p-1.5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-inner">
+          {/* Desktop Navigation - Advanced Glass Center Pill */}
+          <div className="hidden md:flex items-center gap-1 bg-white/50 dark:bg-slate-900/50 p-1 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.03)] dark:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
             <AnimatePresence>
               {navLinks.filter(link => link.show).map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
@@ -150,24 +150,35 @@ export default function Navbar({
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
+                    className="relative"
                   >
                     <Link
                       href={link.href}
-                      className={`relative px-3 lg:px-6 xl:px-8 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all duration-300 tracking-tight ${isActive
-                        ? 'text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-800 shadow-sm border border-zinc-200 dark:border-slate-700'
-                        : 'text-zinc-500 dark:text-slate-500 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-slate-800/50'
+                      className={`relative px-4 lg:px-6 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 tracking-wide flex items-center gap-1.5 whitespace-nowrap overflow-hidden ${isActive
+                        ? 'text-indigo-600 dark:text-indigo-400'
+                        : 'text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/50'
                         }`}
                     >
-                      {link.name === 'Community' && (
-                        <Users className="w-3 h-3 sm:w-3.5 sm:h-3.5 inline-block mr-1 sm:mr-1.5 mb-1" />
+                      {isActive && (
+                        <motion.div
+                          layoutId="nav-pill"
+                          className="absolute inset-0 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 z-0 rounded-xl"
+                          transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                        />
                       )}
-                      <span className="relative z-10 transition-colors duration-300">
+
+                      {link.name === 'Community' && (
+                        <Users className="w-3.5 h-3.5 relative z-10" />
+                      )}
+
+                      <span className="relative z-10">
                         {link.name}
                       </span>
+
                       {link.name === 'Pricing' && isAuthenticated && !user?.is_premium && (
-                        <span className="absolute -top-1 -right-1 flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                        <span className="relative z-10 flex h-2 w-2 ml-1">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-indigo-500"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                         </span>
                       )}
                     </Link>
@@ -189,11 +200,11 @@ export default function Navbar({
                     <motion.div
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      className="hidden lg:flex items-center px-2 lg:px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-lg border border-indigo-500/20"
+                      className="hidden lg:flex items-center px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-xl border border-indigo-500/20 shadow-sm"
                     >
-                      <Zap className={`w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1.5 lg:mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
-                      <span className="text-[10px] lg:text-[12px] font-black text-indigo-600 dark:text-indigo-400 tracking-widest font-mono">
-                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} posts left
+                      <Zap className={`w-3.5 h-3.5 mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
+                      <span className="text-[12px] font-black text-indigo-600 dark:text-indigo-400 tracking-widest font-mono">
+                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} POSTS LEFT
                       </span>
                     </motion.div>
                   )}
@@ -209,11 +220,11 @@ export default function Navbar({
                   {/* Sign Out Button */}
                   <button
                     onClick={logout}
-                    className="hidden md:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg text-xs font-black transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
+                    className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl text-xs font-black transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20 font-mono tracking-widest"
                     title="Sign Out"
                   >
                     <LogOut className="w-4 h-4" />
-                    <span className="hidden xl:inline">Sign out</span>
+                    <span>EXIT</span>
                   </button>
 
                   {/* User Avatar */}

@@ -149,7 +149,7 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
           ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm py-3'
           : 'bg-transparent py-5'
           }`}
@@ -158,42 +158,53 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
           <div className="flex items-center justify-between">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
-              <div className="relative mr-3">
+            <Link href="/" className="flex items-center group gap-3">
+              <div className="relative w-10 h-10 bg-white dark:bg-slate-900 rounded-xl shadow-2xl shadow-indigo-500/10 flex items-center justify-center p-1.5 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                 <Image
                   src="/logo.png"
                   alt="BuildInPublic Logo"
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 object-contain rounded-lg"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-3xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300">
-                BuildInPublic
+              <span className="text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white">
+                BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center md:space-x-1 lg:space-x-2 xl:space-x-4 bg-slate-100/50 dark:bg-slate-900/50 p-1.5 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-sm">
+            {/* Desktop Navigation - Glass Pill */}
+            <div className="hidden md:flex items-center gap-1 bg-white/50 dark:bg-slate-900/50 p-1 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.03)] dark:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
               {[
                 { name: 'Repurpose', path: '/' },
-                { name: 'Community', path: '/community', icon: <Users className="w-3.5 h-3.5 inline mr-1.5 mb-0.5" /> },
+                { name: 'Community', path: '/community', icon: <Users className="w-4 h-4" /> },
                 { name: 'Pricing', path: '/pricing', highlight: !user?.is_premium }
               ].map((link) => (
                 <button
                   key={link.path}
                   onClick={() => handleNavigation(link.path)}
-                  className={`relative px-5 lg:px-8 xl:px-10 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link.path)
-                    ? 'text-primary bg-white dark:bg-slate-800 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50'
+                  className={`relative px-6 py-2 rounded-xl text-sm font-bold transition-all duration-300 tracking-wide flex items-center gap-1.5 whitespace-nowrap overflow-hidden ${isActive(link.path)
+                    ? 'text-indigo-600 dark:text-indigo-400'
+                    : 'text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/50'
                     }`}
                 >
-                  {link.icon}
-                  {link.name}
+                  {isActive(link.path) && (
+                    <motion.div
+                      layoutId="auth-nav-pill"
+                      className="absolute inset-0 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 z-0 rounded-xl"
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+
+                  <span className="relative z-10 flex items-center gap-2">
+                    {link.icon && link.icon}
+                    {link.name}
+                  </span>
+
                   {link.highlight && (
-                    <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/40 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                    <span className="relative z-10 flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
                   )}
                 </button>
@@ -201,50 +212,52 @@ export default function AuthenticatedNavbar({ activeTab, isLoading = false }: Au
             </div>
 
             {/* Right Actions */}
-            <div className="flex items-center space-x-3 pl-3 border-l border-slate-200 dark:border-slate-800">
-              {/* Usage Stats */}
+            <div className="flex items-center space-x-4 pl-4 border-l border-slate-200 dark:border-slate-800">
+              {/* Usage Stats - Glassy Badge */}
               {!isLoading && (
                 <button
                   onClick={refreshUsageStats}
                   disabled={statsLoading}
-                  className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/50 hover:bg-secondary text-secondary-foreground rounded-full text-xs font-bold border border-border transition-all"
+                  className="hidden md:flex items-center gap-2.5 px-4 py-2 bg-indigo-500/5 dark:bg-indigo-500/10 hover:bg-indigo-500/15 dark:hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl text-xs font-black tracking-wider transition-all border border-indigo-500/20 shadow-sm font-mono"
                   title="Click to refresh usage stats"
                 >
-                  <Sparkles className={`w-3.5 h-3.5 ${statsLoading ? 'animate-spin' : ''}`} />
+                  <Sparkles className={`w-3.5 h-3.5 ${statsLoading ? 'animate-spin' : 'fill-current opacity-50'}`} />
                   <span>
-                    {statsLoading ? '...' : user?.is_premium ? 'Unlimited' : usageStats ? `${usageStats.remaining_requests ?? (usageStats.rate_limit - usageStats.recent_generations)}/${usageStats.rate_limit} posts left` : '?'}
+                    {statsLoading ? '...' : user?.is_premium ? 'UNLIMITED' : usageStats ? `${usageStats.remaining_requests ?? (usageStats.rate_limit - usageStats.recent_generations)}/${usageStats.rate_limit} LEFT` : '?'}
                   </span>
                 </button>
               )}
 
               <ThemeSwitcher />
 
+              {/* Sign Out - Subtle Red */}
               <button
                 onClick={logout}
-                className="hidden md:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full text-xs font-bold transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
+                className="hidden md:flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl text-xs font-black tracking-widest transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20 font-mono"
                 title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />
-                <span>Sign out</span>
               </button>
 
-              {/* User Avatar */}
+              {/* User Avatar - Square styled */}
               <div className="hidden md:block">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setShowDashboard(true)}
-                  className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-violet-600 flex items-center justify-center text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-105 border-2 border-white dark:border-slate-800 overflow-hidden relative"
+                  className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/10 hover:shadow-indigo-600/30 transition-all border-2 border-white dark:border-slate-800 relative overflow-hidden group/avatar"
                 >
                   {user?.profile_picture && isValidImageUrl(user.profile_picture) ? (
                     <Image
                       src={user.profile_picture}
                       alt="Profile"
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover/avatar:scale-110 transition-transform duration-500"
                     />
                   ) : (
-                    <span className="font-bold text-sm">{user?.email?.charAt(0).toUpperCase() || 'U'}</span>
+                    <span className="font-black text-xs font-mono">{user?.email?.charAt(0).toUpperCase() || 'U'}</span>
                   )}
-                </button>
+                </motion.button>
               </div>
 
               {/* Mobile Menu */}

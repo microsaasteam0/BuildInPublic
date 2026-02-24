@@ -48,7 +48,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-500 mr-1.5 sm:mr-2" />
                     <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 tracking-[0.1em] relative">
-                        Build in public
+                        Build together
                     </span>
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3 animate-ping" />
                 </motion.div>
@@ -60,9 +60,9 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                     className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter mb-6 sm:mb-8 leading-[0.95] text-slate-900 dark:text-white px-2"
                 >
-                    The <span className="text-gradient animate-pulse">Public Engine</span> <br className="hidden sm:block" />
-                    For <span className="text-indigo-500 relative inline-block">
-                        Founders
+                    Grow Your <span className="text-gradient animate-pulse">Social Following</span> <br className="hidden sm:block" />
+                    As You <span className="text-indigo-500 relative inline-block">
+                        Build
                         <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-indigo-500/20 rounded-full overflow-hidden">
                             <motion.div
                                 initial={{ x: '-100%' }}
@@ -81,7 +81,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     transition={{ duration: 1.5, delay: 0.4 }}
                     className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-medium px-4"
                 >
-                    Turn your work logs into social posts. Share your progress in seconds.
+                    Turn your simple notes into great social posts. Share your daily wins in seconds.
                 </motion.p>
 
                 {/* CTAs with Builder Glow */}
@@ -137,9 +137,9 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4"
                 >
                     {[
-                        { icon: Zap, title: "Fast", desc: "Posts ready in seconds", color: "indigo" },
-                        { icon: Cpu, title: "Smart", desc: "AI learns your style", color: "purple" },
-                        { icon: Shield, title: "Private", desc: "Your data stays yours", color: "emerald" }
+                        { icon: Zap, title: "Fast", desc: "Posts in seconds", color: "indigo" },
+                        { icon: Cpu, title: "Simple", desc: "No complex tools", color: "purple" },
+                        { icon: Shield, title: "Safe", desc: "Your data is private", color: "emerald" }
                     ].map((card, i) => (
                         <div key={i} className="glass-card p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 group hover:border-indigo-500/30 transition-all text-left relative overflow-hidden">
                             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />

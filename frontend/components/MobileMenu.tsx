@@ -120,7 +120,7 @@ export default function MobileMenu({
                     <Image src="/logo.png" alt="BuildInPublic" width={28} height={28} className="w-full h-full object-contain" />
                   </div>
                   <span className="text-base font-black tracking-tighter text-slate-900 dark:text-white">
-                    Build<span className="text-indigo-600 dark:text-indigo-400">In</span>Public
+                    BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>
                   </span>
                 </div>
                 <button

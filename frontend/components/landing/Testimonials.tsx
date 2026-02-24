@@ -63,7 +63,7 @@ export default function Testimonials() {
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 text-[10px] font-black uppercase tracking-widest mb-4"
                     >
                         <Star className="w-3 h-3 fill-current" />
-                        Social Proof
+                        Reviews
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function Testimonials() {
                         transition={{ delay: 0.1 }}
                         className="text-slate-500 dark:text-slate-400 font-medium text-lg max-w-2xl mx-auto"
                     >
-                        Join hundreds of builders who are growing their audience automatically.
+                        Join hundreds of builders who are growing their audience.
                     </motion.p>
                 </div>
 
