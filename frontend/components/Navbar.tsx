@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import { Sparkles, Users, Crown, Menu, X, Rocket, Zap, LogIn, LogOut } from 'lucide-react'
 import Link from 'next/link'
