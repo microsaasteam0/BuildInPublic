@@ -11,7 +11,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     if (!post) {
         return {
-            title: 'Schematic Not Found | BuildInPublic Blog',
+            title: 'Post Not Found | BuildInPublic Blog',
+            robots: {
+                index: false,
+                follow: false,
+            },
         }
     }
 
@@ -19,10 +23,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: `${post.title} | BuildInPublic Blog`,
         description: post.excerpt,
         keywords: post.tags.join(', '),
+        alternates: {
+            canonical: `/blog/${post.slug}`,
+        },
+        robots: {
+            index: true,
+            follow: true,
+        },
         openGraph: {
             title: post.title,
             description: post.excerpt,
             type: 'article',
+            url: `/blog/${post.slug}`,
             publishedTime: post.publishedAt,
             authors: [post.author.name],
             images: [

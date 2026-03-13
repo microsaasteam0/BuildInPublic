@@ -3,6 +3,8 @@ Allow: /
 Disallow: /api/
 Disallow: /auth/
 Disallow: /verify-email
+Disallow: /reset-password
+Disallow: /auth/google/callback
 Disallow: /*?token=
 
 # Sitemap

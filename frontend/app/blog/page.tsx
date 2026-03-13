@@ -99,11 +99,11 @@ export default function BlogPage() {
                         </motion.div>
 
                         <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 tracking-tight text-foreground">
-                            The Ultimate <span className="text-gradient">Founder's Journal</span>
+                            Build In Public <span className="text-gradient">Blog</span>
                         </h1>
 
                         <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12">
-                            Transforming daily work into magnetic content. Explore our collection of guides, tools, and frameworks.
+                            Simple guides to help you write better posts and grow your audience.
                         </p>
 
                         <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto p-1 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-border/40 shadow-xl overflow-hidden">
