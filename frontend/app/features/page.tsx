@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import FeaturesClient from './FeaturesClient'
 
 export const metadata: Metadata = {
-  title: 'Features - AI Content Repurposing Capabilities | BuildInPublic',
-  description: 'Explore the powerful AI features of BuildInPublic. Transform your daily build logs into high-authority X (Twitter) threads automatically with our Neuro-Sync engine.',
-  keywords: 'BuildInPublic features, X thread generator, Twitter thread AI, build log automation, founder content engine, build in public tool',
+  title: 'Features | BuildInPublic',
+  description: 'See the features that help you turn daily notes into social posts and X threads faster.',
+  keywords: 'buildinpublic features, x thread generator, social post tool, build in public app',
   openGraph: {
-    title: 'BuildInPublic AI Features - Intelligent Content Transformation',
-    description: 'Powerful AI-driven features to optimize your content for every social platform.',
+    title: 'BuildInPublic Features',
+    description: 'Simple tools to turn daily work into content you can share.',
     type: 'website',
   },
 }

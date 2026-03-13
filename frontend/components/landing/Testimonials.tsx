@@ -7,42 +7,42 @@ const testimonials = [
     {
         name: "Alex Rivera",
         role: "SaaS Founder",
-        content: "BuildInPublic has completely changed how I share my journey. I just dump my notes, and it gives me a week's worth of content.",
+        content: "BuildInPublic changed how I share my work. I add my notes and get a full week of posts.",
         initials: "AR",
         color: "indigo"
     },
     {
         name: "Sarah Chen",
         role: "Indie Hacker",
-        content: "The smart writing engine is scary good. It captures my tone perfectly every time. It's like having a social media manager.",
+        content: "The writing is very good and sounds like me. It feels like having a social media helper.",
         initials: "SC",
         color: "purple"
     },
     {
         name: "David Park",
         role: "Frontend Dev",
-        content: "I used to spend hours struggling with what to tweet. Now it takes me 2 minutes. The Twitter thread output is elite.",
+        content: "I used to spend hours thinking about what to post. Now it takes two minutes.",
         initials: "DP",
         color: "blue"
     },
     {
         name: "Elena Rodriguez",
         role: "Content Creator",
-        content: "The way it handles daily reflections is amazing. It finds insights I didn't even realize I'd written. Highly recommended for every builder.",
+        content: "It helps me turn daily reflections into useful posts. I recommend it to every builder.",
         initials: "ER",
         color: "emerald"
     },
     {
         name: "Marcus Thorne",
         role: "Solopreneur",
-        content: "Consistency was my biggest weakness. With BuildInPublic, I haven't missed a day of posting in three months. My following is up 400%.",
+        content: "I used to miss posting days. With BuildInPublic, I post daily and my audience keeps growing.",
         initials: "MT",
         color: "amber"
     },
     {
         name: "James Wilson",
         role: "Tech Lead",
-        content: "The automation is seamless. I love that I can focus purely on building while my distribution channel grows in the background.",
+        content: "I can focus on building while BuildInPublic helps me stay active on social media.",
         initials: "JW",
         color: "rose"
     }
@@ -80,7 +80,7 @@ export default function Testimonials() {
                         transition={{ delay: 0.1 }}
                         className="text-slate-500 dark:text-slate-400 font-medium text-lg max-w-2xl mx-auto"
                     >
-                        Join hundreds of builders who are growing their audience.
+                        Join builders who are growing their audience with simple daily posts.
                     </motion.p>
                 </div>
 

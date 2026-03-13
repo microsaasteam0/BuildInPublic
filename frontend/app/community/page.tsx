@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import CommunityClient from './CommunityClient'
 
 export const metadata: Metadata = {
-  title: 'Community Templates Hub | BuildInPublic AI Content Creator Network',
-  description: 'Join the BuildInPublic creator community. Browse and use proven AI content repurposing templates shared by successful marketers and creators.',
-  keywords: 'content repurposing templates, community AI templates, social media content hub, shared content strategies',
+  title: 'Community Templates | BuildInPublic',
+  description: 'Browse templates shared by the community and use them to write better posts faster.',
+  keywords: 'community templates, social post templates, buildinpublic community',
   openGraph: {
-    title: 'BuildInPublic Community Hub - Proven Content Templates',
-    description: 'Discover and share top-performing AI repurposing templates for every social platform.',
+    title: 'BuildInPublic Community Templates',
+    description: 'Find and share templates for posts and threads.',
     type: 'website',
   },
 }

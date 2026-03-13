@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import PricingClient from './PricingClient'
 
 export const metadata: Metadata = {
-  title: 'Pricing - Pro_Engine & Free_Build Tiers | BuildInPublic',
-  description: 'Choose the best engine configuration for your build-in-public journey. Compare BuildInPublic tiers for high-velocity X (Twitter) thread synthesis and founder content automation.',
-  keywords: 'BuildInPublic pricing, X thread generator cost, founder content plans, build in public tool, AI thread generation',
+  title: 'Pricing | BuildInPublic',
+  description: 'Pick the plan that fits you. Start free, then upgrade when you need more posts and features.',
+  keywords: 'buildinpublic pricing, x thread generator pricing, social post tool plans',
   openGraph: {
-    title: 'BuildInPublic AI - Professional Pricing Plans',
-    description: 'Affordable AI-powered content repurposing for creators and marketers.',
+    title: 'BuildInPublic Pricing',
+    description: 'Simple plans for founders who want to post consistently.',
     type: 'website',
   },
 }

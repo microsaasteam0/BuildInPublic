@@ -6,21 +6,21 @@ export default function HowItWorks() {
         {
             icon: FileText,
             title: "1. Write",
-            description: "Add your daily notes or plans.",
+            description: "Write your daily notes.",
             bgClass: "bg-blue-500/10",
             textClass: "text-blue-500"
         },
         {
             icon: Cpu,
             title: "2. Create",
-            description: "Our AI writes your social posts.",
+            description: "We turn your notes into posts.",
             bgClass: "bg-indigo-500/10",
             textClass: "text-indigo-500"
         },
         {
             icon: Share2,
             title: "3. Share",
-            description: "Post ready-to-share threads.",
+            description: "Copy and share your thread.",
             bgClass: "bg-purple-500/10",
             textClass: "text-purple-500"
         }
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                         transition={{ delay: 0.1 }}
                         className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg font-medium"
                     >
-                        From notes to posts.
+                        From notes to posts in 3 easy steps.
                     </motion.p>
                 </div>
 

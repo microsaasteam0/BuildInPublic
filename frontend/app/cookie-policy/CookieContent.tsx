@@ -68,7 +68,7 @@ export default function CookiePolicy() {
                                     </div>
                                     <div className="text-slate-600 dark:text-slate-400 leading-relaxed font-bold text-[15px] space-y-6 max-w-3xl">
                                         <p>
-                                            Cookies are discrete data packets stored within your local architecture. They are critical for the Distribution Engine to maintain session persistence and operational continuity.
+                                            Cookies are small files saved in your browser. They help the app keep you signed in and work correctly.
                                         </p>
                                     </div>
                                 </div>
@@ -77,12 +77,12 @@ export default function CookiePolicy() {
                                 <div className="space-y-8">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center font-black text-sm shadow-xl shadow-amber-600/20">02</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_AUTHORIZED_NODE_CLASSIFICATION</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">Types of Cookies</h2>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         {[
-                                            { title: "ESSENTIAL_CORE", icon: Settings, desc: "Critical for authentication and session shielding. Cannot be decommissioned." },
-                                            { title: "PERFORMANCE_METRICS", icon: Database, desc: "Anonymized logs for platform optimization and latency management." }
+                                            { title: "ESSENTIAL", icon: Settings, desc: "Needed for login and core app features. These cannot be turned off." },
+                                            { title: "PERFORMANCE", icon: Database, desc: "Anonymous analytics that help us improve speed and reliability." }
                                         ].map((item, i) => (
                                             <div key={i} className="p-8 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl group hover:border-amber-500/30 transition-all">
                                                 <div className="w-12 h-12 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center text-amber-600 mb-6 border border-slate-100 dark:border-slate-800 shadow-xl group-hover:scale-110 transition-transform">
@@ -99,16 +99,16 @@ export default function CookiePolicy() {
                                 <div className="space-y-8">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 flex items-center justify-center font-black text-sm">03</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_EXTERNAL_DATA_SYNC</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">Third-Party Services</h2>
                                     </div>
                                     <div className="p-8 bg-slate-950 rounded-[2rem] border border-slate-800 relative overflow-hidden group">
                                         <div className="absolute inset-0 bg-grid-blueprint opacity-[0.05] pointer-events-none" />
                                         <div className="relative z-10 space-y-6">
                                             <p className="text-slate-400 text-[14px] font-bold leading-relaxed max-w-2xl">
-                                                Select third-party nodes are authorized to process micro-data on our behalf for high-fidelity service delivery:
+                                                We use these trusted services to run analytics and payments:
                                             </p>
                                             <div className="flex flex-wrap gap-4">
-                                                {["GOOGLE_ANALYTICS_V4", "DODO_PAYMENTS_GATEWAY"].map((node, i) => (
+                                                {["Google Analytics", "Dodo Payments"].map((node, i) => (
                                                     <div key={i} className="px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-white">
                                                         {node}
                                                     </div>
@@ -122,16 +122,16 @@ export default function CookiePolicy() {
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-black text-sm shadow-xl">04</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_NODE_MANAGEMENT_POLICY</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">Managing Cookies</h2>
                                     </div>
                                     <div className="text-slate-600 dark:text-slate-400 leading-relaxed font-bold text-[15px] space-y-6 max-w-3xl">
                                         <p>
-                                            Users can terminal-kill cookie storage via browser local settings. WARNING: Decommissioning essential cookies results in total operational failure of the Distribution Engine.
+                                            You can disable cookies in your browser settings, but essential cookies are required for login and core app features.
                                         </p>
                                         <div className="p-6 bg-slate-50 dark:bg-slate-950/80 border-l-4 border-amber-600 rounded-r-2xl flex items-start gap-5">
                                             <Info className="w-6 h-6 text-amber-600 mt-1 flex-shrink-0" />
                                             <p className="text-[12px] uppercase tracking-wide leading-relaxed font-black">
-                                                PROTOCOL_RECOMMENDATION: RETAIN ALL COKIE NODES FOR OPTIMAL ENGINE RESONANCE.
+                                                Recommendation: keep essential cookies enabled for the best experience.
                                             </p>
                                         </div>
                                     </div>

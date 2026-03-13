@@ -22,27 +22,21 @@ export const metadata: Metadata = {
     : 'http://localhost:3000'
   ),
   title: {
-    default: 'BuildInPublic - The Engine for Founders',
+    default: 'BuildInPublic - Turn Daily Work Into Social Posts',
     template: '%s | BuildInPublic'
   },
-  description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly.',
+  description: 'BuildInPublic helps founders turn daily notes into clear social posts and X threads in minutes.',
   applicationName: 'BuildInPublic',
   keywords: [
-    'build in public', 
-    'founder content engine', 
-    'X thread generator', 
-    'Twitter thread generator', 
-    'build log to social', 
-    'AI content creation', 
-    'founder marketing', 
-    'social media automation', 
-    'BuildInPublic AI',
-    'startup marketing',
-    'indie hacker tools',
-    'build in public tools',
-    'grow twitter audience',
-    'founder personal brand',
-    'AI writing assistant for founders'
+    'build in public',
+    'x thread generator',
+    'twitter thread generator',
+    'social post generator',
+    'founder content tool',
+    'startup marketing tool',
+    'indie hacker tool',
+    'build log to post',
+    'ai writing assistant'
   ],
   authors: [{ name: 'Entrext Labs', url: 'https://entrext.in' }],
   creator: 'Entrext Labs',
@@ -71,31 +65,28 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'BuildInPublic',
-    title: 'BuildInPublic - The Engine for Founders',
-    description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly. AI-powered thread generator for Twitter/X.',
+    title: 'BuildInPublic - Turn Daily Work Into Social Posts',
+    description: 'Write quick daily notes, then turn them into polished social posts and X threads.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'BuildInPublic - AI Content Transformation',
+        alt: 'BuildInPublic app dashboard',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BuildInPublic - AI Content Engine for Founders',
-    description: 'Transform your daily build logs into high-authority X (Twitter) threads instantly. Build in public on autopilot.',
+    title: 'BuildInPublic - Daily Notes to X Threads',
+    description: 'Turn daily progress notes into clear social posts in minutes.',
     creator: '@entrextlabs',
     site: '@entrextlabs',
     images: ['/twitter-image.png'],
   },
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
   },
   icons: {
     icon: [
@@ -112,12 +103,9 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
   },
   manifest: '/site.webmanifest',
-// Uncomment and update if you use Google Search Console or other webmaster tools
-// verification: {
-//   google: 'your-google-site-verification-id',
-//   yandex: 'your-yandex-verification-id',
-//   yahoo: 'your-yahoo-verification-id',
-// },
+  verification: {
+    google: 'googlebee6251a11ace561',
+  },
 }
 
 export default function RootLayout({
@@ -225,11 +213,11 @@ export default function RootLayout({
               "@type": "WebApplication",
               "name": "BuildInPublic",
               "alternateName": "BuildInPublic AI",
-              "description": "BuildInPublic is an AI-powered engine for founders building in public. Transform your daily build logs into high-authority X (Twitter) threads instantly.",
+              "description": "BuildInPublic helps founders turn daily notes into clear social posts and X threads.",
               "url": "https://buildinpublic.entrext.com",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web, Windows, macOS, Linux, Android, iOS",
-              "keywords": "build in public, founder content, X thread generator, Twitter thread generator, build log automation, AI writing assistant",
+              "keywords": "build in public, x thread generator, social post generator, ai writing assistant",
               "offers": {
                 "@type": "AggregateOffer",
                 "priceCurrency": "USD",
@@ -261,12 +249,10 @@ export default function RootLayout({
                 }
               },
               "featureList": [
-                "Build Log to X Thread Transformation",
-                "X Thread Generation & Optimization",
-                "Multi-Thread Synthesis",
-                "Custom Content Templates",
-                "Advanced AI Usage Statistics",
-                "Thread Analytics & Insights"
+                "Turn notes into social posts",
+                "Generate X threads",
+                "Save and reuse templates",
+                "Track your usage"
               ],
               "screenshot": "https://buildinpublic.entrext.com/og-image.png",
               "softwareVersion": "1.0.0"

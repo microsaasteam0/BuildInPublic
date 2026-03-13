@@ -68,10 +68,10 @@ export default function PrivacyPolicy() {
                                     </div>
                                     <div className="text-slate-600 dark:text-slate-400 leading-relaxed font-bold text-[15px] space-y-6 max-w-3xl">
                                         <p>
-                                            BuildInPublic (the "Distribution Engine") is co-engineered with the belief that transparency requires security. This Manifesto outlines our internal logic for handling your personal data across buildinpublic.entrext.com.
+                                            BuildInPublic values your privacy. This page explains what data we collect and how we use it.
                                         </p>
                                         <p>
-                                            By initializing our Services, you synchronize with this security architecture. We decommission any use of your data that does not align with your direct growth protocols.
+                                            By using our service, you agree to this policy.
                                         </p>
                                     </div>
                                 </div>
@@ -80,14 +80,14 @@ export default function PrivacyPolicy() {
                                 <div className="space-y-8">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-sm shadow-xl shadow-indigo-600/20">02</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_IDENTITY_ACQUISITION</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">What We Collect</h2>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         {[
-                                            { title: "ACCOUNT_SCHEMATIC", desc: "Names, identity emails, and OAuth authentication tokens." },
-                                            { title: "LATENCY_LOGS", desc: "IP addresses, browser schematics, and platform interaction sequences." },
-                                            { title: "INTEL_ASSETS", desc: "Text and URLs submitted for high-velocity repurposing." },
-                                            { title: "TRANSACTION_HASH", desc: "Payment metadata handled via Dodo Payments. We store zero card assets." }
+                                            { title: "ACCOUNT DETAILS", desc: "Your name, email, and login details." },
+                                            { title: "USAGE DATA", desc: "IP address, browser type, and app activity logs." },
+                                            { title: "YOUR CONTENT", desc: "Text and URLs you submit for writing and repurposing." },
+                                            { title: "PAYMENT INFO", desc: "Payment metadata from Dodo Payments. We do not store card numbers." }
                                         ].map((item, i) => (
                                             <div key={i} className="p-6 bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl group hover:border-indigo-500/30 transition-all">
                                                 <h3 className="text-[11px] font-black text-slate-900 dark:text-white mb-2 uppercase tracking-widest flex items-center gap-2">
@@ -104,16 +104,16 @@ export default function PrivacyPolicy() {
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 flex items-center justify-center font-black text-sm">03</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_OPERATIONAL_DIRECTIVES</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">How We Use Data</h2>
                                     </div>
                                     <ul className="grid md:grid-cols-2 gap-4">
                                         {[
-                                            "Protocol maintenance and provision",
-                                            "System status and change alerts",
-                                            "High-fidelity customer support",
-                                            "Usage sequence analysis for engine improvement",
-                                            "Operational monitoring and load balancing",
-                                            "Threat detection and integrity shielding"
+                                            "Run and improve the product",
+                                            "Send service and update emails",
+                                            "Provide customer support",
+                                            "Analyze usage to improve performance",
+                                            "Monitor uptime and system health",
+                                            "Detect abuse and prevent fraud"
                                         ].map((log, i) => (
                                             <li key={i} className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-tight">
                                                 <ChevronRight className="w-3 h-3 text-indigo-500" />
@@ -131,9 +131,9 @@ export default function PrivacyPolicy() {
                                             <Lock className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">IDENTITY_PROTECTION_LOCK</h3>
+                                            <h3 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">AI Data Protection</h3>
                                             <p className="text-slate-400 text-sm font-bold leading-relaxed max-w-xl">
-                                                Input assets are processed by enterprise-grade AI models. We implement a <span className="text-white underline decoration-indigo-500/50">ZERO_TRAINING_PROTOCOL</span>—your intellectual property is never utilized to enhance public models.
+                                                We process your content with trusted AI providers. Your content is not used to train public AI models.
                                             </p>
                                         </div>
                                     </div>

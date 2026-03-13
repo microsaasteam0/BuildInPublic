@@ -108,9 +108,9 @@ export default function TermsOfService() {
                                             <CheckCircle className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">INTEL_PROPERTY_SAFEGUARD</h3>
+                                            <h3 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">Your Content Is Yours</h3>
                                             <p className="text-slate-400 text-sm font-bold leading-relaxed max-w-xl">
-                                                You retain <span className="text-white underline decoration-indigo-500/50">TOTAL_SOVEREIGNTY</span> over assets uploaded and generated. BuildInPublic claims zero equity in your intellectual social capital.
+                                                You keep full ownership of what you upload and what the app generates for you.
                                             </p>
                                         </div>
                                     </div>
@@ -120,13 +120,13 @@ export default function TermsOfService() {
                                 <div className="space-y-8">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 flex items-center justify-center font-black text-sm">03</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_FINANCIAL_ARCHITECTURE</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">Billing</h2>
                                     </div>
                                     <div className="grid md:grid-cols-3 gap-6">
                                         {[
-                                            { title: "RECURRING_BILL", desc: "Periodic synchronization for Pro membership." },
-                                            { title: "NULL_CANCELLATION", desc: "User-initiated protocol termination via dashboard." },
-                                            { title: "REFUND_LIMITATION", desc: "Immediate value distribution = No refund capability." }
+                                            { title: "RENEWAL", desc: "Pro plans renew automatically based on your billing cycle." },
+                                            { title: "CANCELLATION", desc: "You can cancel anytime from your dashboard." },
+                                            { title: "REFUNDS", desc: "Refunds may be limited after a paid period starts." }
                                         ].map((item, i) => (
                                             <div key={i} className="p-6 bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl">
                                                 <h3 className="text-[10px] font-black text-slate-900 dark:text-white mb-2 uppercase tracking-widest">{item.title}</h3>
@@ -140,12 +140,12 @@ export default function TermsOfService() {
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center font-black text-sm shadow-xl shadow-amber-600/20">04</div>
-                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">_SYSTEM_LIMITATIONS</h2>
+                                        <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white">Service Limits</h2>
                                     </div>
                                     <div className="p-8 bg-amber-500/5 border border-amber-500/10 rounded-2xl flex items-start gap-6">
                                         <AlertTriangle className="w-6 h-6 text-amber-600 mt-1 flex-shrink-0 animate-pulse" />
                                         <p className="text-slate-600 dark:text-slate-400 text-xs font-bold leading-relaxed uppercase tracking-wide">
-                                            SERVICES OPERATED ON AN 'AS_IS' BASIS. ENTREXT LABS DISCLAIMS ALL WARRANTIES, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO OPERATIONAL FITNESS OR INTELLECTUAL NON-INFRINGEMENT.
+                                            The service is provided as-is. We work hard to keep it reliable, but we cannot guarantee it will always be uninterrupted or error-free.
                                         </p>
                                     </div>
                                 </div>
@@ -154,11 +154,11 @@ export default function TermsOfService() {
                                 <div className="pt-16 border-t border-slate-200 dark:border-slate-800">
                                     <div className="flex flex-col md:flex-row items-center justify-between gap-10">
                                         <div className="text-center md:text-left">
-                                            <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">PROTOCOL_ENQUIRY</h3>
-                                            <p className="text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-widest">Submit a dispatch for legal clarification.</p>
+                                            <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tighter">Need Help?</h3>
+                                            <p className="text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-widest">Contact us for billing or legal questions.</p>
                                         </div>
                                         <a href="mailto:business@entrext.in" className="group px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3">
-                                            Contact_Industrial_Legal
+                                            Contact Support
                                             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                         </a>
                                     </div>
@@ -171,7 +171,7 @@ export default function TermsOfService() {
                         <div className="text-center pt-8">
                             <Link href="/" className="inline-flex items-center gap-3 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] transition-all group">
                                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                                Exit_Service_Protocols
+                                Back to Home
                             </Link>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Blog - High-Authority Distribution Insights | BuildInPublic',
-    description: 'Master the art of building in public with BuildInPublic. Insights on transforming raw build logs and daily work into high-authority social content using neural synthesis.',
-    keywords: 'build in public strategies, founder marketing, social media growth, content transformation, X thread guides, LinkedIn for founders',
+    title: 'Blog | BuildInPublic',
+    description: 'Read simple guides on building in public, writing better posts, and growing your audience.',
+    keywords: 'build in public blog, founder marketing tips, x thread guides, social growth',
     openGraph: {
-        title: 'BuildInPublic Blog - Distribution Strategy & Founder Insights',
-        description: 'Expert advice on multiplying your distribution reach using intelligent neural synthesis automation.',
+        title: 'BuildInPublic Blog',
+        description: 'Practical guides for founders who want to share their work.',
         type: 'website',
     },
 }

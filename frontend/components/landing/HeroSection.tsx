@@ -60,9 +60,9 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                     className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter mb-6 sm:mb-8 leading-[0.95] text-slate-900 dark:text-white px-2"
                 >
-                    Grow Your <span className="text-gradient animate-pulse">Social Following</span> <br className="hidden sm:block" />
-                    As You <span className="text-indigo-500 relative inline-block">
-                        Build
+                    Turn Daily Work Into <span className="text-gradient animate-pulse">Social Posts</span> <br className="hidden sm:block" />
+                    You Can <span className="text-indigo-500 relative inline-block">
+                        Share
                         <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-indigo-500/20 rounded-full overflow-hidden">
                             <motion.div
                                 initial={{ x: '-100%' }}
@@ -81,7 +81,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                     transition={{ duration: 1.5, delay: 0.4 }}
                     className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-medium px-4"
                 >
-                    Turn your simple notes into great social posts. Share your daily wins in seconds.
+                    Write what you worked on today. We turn it into clear posts in seconds.
                 </motion.p>
 
                 {/* CTAs with Builder Glow */}

@@ -109,8 +109,8 @@ function AboutContent() {
                   <div className="w-12 h-12 rounded-xl bg-slate-900 dark:bg-white flex items-center justify-center mb-6 text-white dark:text-slate-900 shadow-lg group-hover:-rotate-6 transition-transform">
                     <Award className="w-6 h-6" />
                   </div>
-                  <h3 className="font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tight">Authority_Lock</h3>
-                  <p className="text-[13px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed">Synthetic Intelligence that preserves your unique nuance and brand schematic.</p>
+                  <h3 className="font-black text-slate-900 dark:text-white mb-3 uppercase tracking-tight">Keep Your Voice</h3>
+                  <p className="text-[13px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed">Our AI keeps your tone and writing style in every post.</p>
                 </div>
               </div>
             </motion.div>
@@ -126,15 +126,15 @@ function AboutContent() {
 
               <div className="flex items-center gap-3 mb-8 sm:mb-10 border-b border-slate-800 pb-6">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tighter">Founder_First_Schematic</h3>
+                <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tighter">Built for Founders</h3>
               </div>
 
               <div className="space-y-8">
                 {[
-                  { title: "LATENCY_REDUCTION", desc: "Save 5+ Hours of manual dispatch weekly." },
-                  { title: "ALGORITHMIC_SYNC", desc: "Content tailored for specific platform logic." },
-                  { title: "IDENTITY_RETENTION", desc: "Your unique perspective, scaled across channels." },
-                  { title: "DATA_DRIVEN_OUTPUT", desc: "Built using engagement patterns from top 1% creators." }
+                  { title: "SAVE TIME", desc: "Save 5+ hours every week on writing and posting." },
+                  { title: "PLATFORM FIT", desc: "Get posts adjusted for each social platform." },
+                  { title: "SOUND LIKE YOU", desc: "Keep your unique voice across every channel." },
+                  { title: "PROVEN FORMAT", desc: "Use post styles based on what works for creators." }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-5 group">
                     <div className="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
@@ -157,18 +157,18 @@ function AboutContent() {
                 <div className="w-3 h-3 rounded-full border border-indigo-500/30 flex items-center justify-center">
                   <div className="w-1 h-1 bg-indigo-500 rounded-full" />
                 </div>
-                BUILD_PRINCIPLES
+                OUR PRINCIPLES
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tighter">Logic Parameters</h2>
-              <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-[10px] sm:text-[11px] opacity-70">The operational directives behind our Distribution Engine.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tighter">How We Work</h2>
+              <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-[10px] sm:text-[11px] opacity-70">Simple rules that guide how we build and support the product.</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { icon: Shield, title: "DATA_INTEGRITY", desc: "Encrypted processing. Your intellectual property is never utilized for public training.", color: "indigo" },
-                { icon: Zap, title: "KINETIC_FLOW", desc: "Zero latency. Generate and dispatch protocols at the speed of thought.", color: "indigo" },
-                { icon: Users, title: "FOUNDER_SYNC", desc: "Co-engineered with direct input from the world's most transparent builders.", color: "indigo" },
-                { icon: Star, title: "SIGNAL_STRENGTH", desc: "Optimizing for high-impact resonance across the social spectrum.", color: "indigo" }
+                { icon: Shield, title: "PRIVACY", desc: "Your data is encrypted and never used to train public AI models.", color: "indigo" },
+                { icon: Zap, title: "SPEED", desc: "Create posts quickly so you can focus on your work.", color: "indigo" },
+                { icon: Users, title: "FOUNDER INPUT", desc: "Built with feedback from real founders and creators.", color: "indigo" },
+                { icon: Star, title: "QUALITY", desc: "Clear writing designed to perform well on social platforms.", color: "indigo" }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -199,11 +199,11 @@ function AboutContent() {
             <div className="relative z-10 w-full">
               <div className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full">
                 <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-ping" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400">Dispatch_Active</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400">We Are Here To Help</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-display font-black mb-8 sm:mb-10 tracking-tighter uppercase leading-none text-balance">Let's Build_Together</h2>
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-display font-black mb-8 sm:mb-10 tracking-tighter uppercase leading-none text-balance">Let's Build Together</h2>
               <p className="text-slate-400 mb-10 sm:mb-16 max-w-2xl mx-auto text-base sm:text-lg font-bold uppercase tracking-tight opacity-80 px-2">
-                Whether you are a visionary founder, a high-growth agency, or a strategic partner, our communication channels are open.
+                If you are a founder, team, or partner, reach out and we will help you get started.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 max-w-xs sm:max-w-none mx-auto">
@@ -212,7 +212,7 @@ function AboutContent() {
                   className="group w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 bg-white text-slate-900 rounded-2xl font-black uppercase tracking-widest text-[10px] sm:text-xs hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 shadow-2xl"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-y-1 shrink-0" />
-                  Contact_Support
+                  Contact Support
                 </button>
                 <button
                   onClick={() => window.open('mailto:business@entrext.in')}

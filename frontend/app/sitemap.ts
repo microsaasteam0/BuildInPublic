@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '../lib/blog-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://build-in-public-api.vercel.app';
+    const baseUrl = 'https://buildinpublic.entrext.com';
 
     const baseRoutes: MetadataRoute.Sitemap = [
         {
