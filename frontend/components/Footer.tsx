@@ -114,7 +114,7 @@ export default function Footer() {
             <div className="flex flex-col space-y-8">
               <Link href="/" className="flex items-center group gap-4 w-fit">
                 <div className="relative w-12 h-12 bg-zinc-100 dark:bg-slate-900 rounded-2xl shadow-2xl flex items-center justify-center p-2 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6">
-                  <Image src="/logo.png" alt="Logo" width={40} height={40} className="w-full h-full object-contain" />
+                  <Image src="/icon-32.png" alt="Logo" width={32} height={32} unoptimized className="w-full h-full object-contain" />
                 </div>
                 <span className="text-3xl font-display font-black tracking-tighter text-zinc-900 dark:text-white">
                   BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>

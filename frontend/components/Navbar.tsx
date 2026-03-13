@@ -122,10 +122,11 @@ export default function Navbar({
           <Link href="/" className="flex items-center group gap-2 sm:gap-3 flex-shrink-0">
             <div className="relative w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-slate-900 rounded-xl shadow-2xl shadow-indigo-500/10 flex items-center justify-center p-1.5 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
               <Image
-                src="/logo.png"
+                src="/icon-32.png"
                 alt="BuildInPublic Logo"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
+                unoptimized
                 className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent pointer-events-none" />

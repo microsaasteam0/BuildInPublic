@@ -3,7 +3,6 @@ import { Metadata } from 'next'
 import './globals.css'
 import ClientProviders from '../components/ClientProviders'
 import UpvoteWidget from '../components/UpvoteWidget'
-import Script from 'next/script'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -184,20 +183,38 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
       <body className={`${inter.variable} font-sans`}>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-189ZC0LVQB"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        {/* Google Analytics (deferred until user interaction/idle) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var loaded = false;
+                function loadAnalytics() {
+                  if (loaded) return;
+                  loaded = true;
 
-            gtag('config', 'G-189ZC0LVQB');
-          `}
-        </Script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);} 
+                  window.gtag = gtag;
+                  gtag('js', new Date());
+                  gtag('config', 'G-189ZC0LVQB');
+
+                  var s = document.createElement('script');
+                  s.async = true;
+                  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-189ZC0LVQB';
+                  document.head.appendChild(s);
+                }
+
+                var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+                events.forEach(function (evt) {
+                  window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
+                });
+
+                setTimeout(loadAnalytics, 12000);
+              })();
+            `,
+          }}
+        />
 
         {/* Structured Data for SEO/AI-SEO/AEO */}
         <script
