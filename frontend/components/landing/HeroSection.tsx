@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Sparkles, Shield, Zap, TrendingUp, CheckCircle, LogIn, ArrowRight, Activity, Cpu, Box, Terminal } from 'lucide-react'
 
 interface HeroSectionProps {
@@ -9,13 +8,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn, onSignUp }: HeroSectionProps) {
-    const [binaryData, setBinaryData] = useState('')
-
-    useEffect(() => {
-        // Generate binary noise only on client to prevent hydration mismatch
-        setBinaryData(Array(2000).fill(0).map(() => Math.random() > 0.5 ? '1' : '0').join(''))
-    }, [])
-
     return (
         <div className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-32 selection:bg-indigo-500/30">
 
@@ -30,9 +22,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                 </div>
 
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[600px] sm:h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent opacity-40 blur-[80px] sm:blur-[120px]" />
-                <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[80px] sm:blur-[120px] animate-pulse-slow font-mono text-[8px] text-indigo-500/10 select-none pointer-events-none break-all p-6 sm:p-10">
-                    {binaryData}
-                </div>
+                <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[80px] sm:blur-[120px] animate-pulse-slow pointer-events-none" />
             </div>
 
             <div className="container relative z-10 px-4 sm:px-6 mx-auto text-center">

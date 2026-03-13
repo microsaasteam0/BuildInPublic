@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import ThemeSwitcher from './ThemeSwitcher'
 import MobileMenu from './MobileMenu'
-import { motion, AnimatePresence } from 'framer-motion'
 import axios from 'axios'
 import { API_URL } from '@/lib/api-config'
 import { requestCache } from '@/lib/cache-util'
@@ -110,9 +109,7 @@ export default function Navbar({
   }
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
         ? 'bg-zinc-50/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-slate-800 shadow-sm py-2 sm:py-3'
         : 'bg-zinc-50/80 dark:bg-slate-950/80 backdrop-blur-sm py-3 sm:py-5'
@@ -140,18 +137,11 @@ export default function Navbar({
 
           {/* Desktop Navigation - Advanced Glass Center Pill */}
           <div className="hidden md:flex items-center gap-1 bg-white/50 dark:bg-slate-900/50 p-1 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.03)] dark:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
-            <AnimatePresence>
-              {navLinks.filter(link => link.show).map((link, i) => {
+              {navLinks.filter(link => link.show).map((link) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
 
                 return (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="relative"
-                  >
+                  <div key={link.name} className="relative">
                     <Link
                       href={link.href}
                       className={`relative px-4 lg:px-6 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 tracking-wide flex items-center gap-1.5 whitespace-nowrap overflow-hidden ${isActive
@@ -160,11 +150,7 @@ export default function Navbar({
                         }`}
                     >
                       {isActive && (
-                        <motion.div
-                          layoutId="nav-pill"
-                          className="absolute inset-0 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 z-0 rounded-xl"
-                          transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                        />
+                        <span className="absolute inset-0 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 z-0 rounded-xl" />
                       )}
 
                       {link.name === 'Community' && (
@@ -182,10 +168,9 @@ export default function Navbar({
                         </span>
                       )}
                     </Link>
-                  </motion.div>
+                  </div>
                 )
               })}
-            </AnimatePresence>
           </div>
 
           {/* Right Actions */}
@@ -197,16 +182,12 @@ export default function Navbar({
                 <div className="flex items-center gap-2 lg:gap-4">
                   {/* Usage Counter */}
                   {displayUsageStats && (
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="hidden lg:flex items-center px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-xl border border-indigo-500/20 shadow-sm"
-                    >
+                    <div className="hidden lg:flex items-center px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-xl border border-indigo-500/20 shadow-sm">
                       <Zap className={`w-3.5 h-3.5 mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
                       <span className="text-[12px] font-black text-indigo-600 dark:text-indigo-400 tracking-widest font-mono">
                         {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} POSTS LEFT
                       </span>
-                    </motion.div>
+                    </div>
                   )}
 
                   {/* Upgrade Pill */}
@@ -228,9 +209,7 @@ export default function Navbar({
                   </button>
 
                   {/* User Avatar */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <button
                     onClick={onUserDashboard}
                     aria-label="Open dashboard"
                     className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/10 hover:shadow-indigo-600/30 transition-all border-2 border-white dark:border-slate-800 relative overflow-hidden group/avatar"
@@ -251,7 +230,7 @@ export default function Navbar({
                     {displayUsageStats?.remaining_requests <= 1 && (
                       <span className="absolute top-0.5 right-0.5 h-2 w-2 bg-red-500 border border-white dark:border-slate-900 rounded-full animate-pulse"></span>
                     )}
-                  </motion.button>
+                  </button>
                 </div>
               ) : (
                 <div className="flex items-center gap-2 lg:gap-3">
@@ -288,6 +267,6 @@ export default function Navbar({
           </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   )
 }
