@@ -7,11 +7,7 @@ import Image from 'next/image'
 import toast from 'react-hot-toast'
 import { useAuth } from '../contexts/AuthContext'
 
-interface FooterProps {
-  onSupportClick?: () => void
-}
-
-export default function Footer({ onSupportClick }: FooterProps) {
+export default function Footer() {
   const { user, isAuthenticated } = useAuth()
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const [isSubscribing, setIsSubscribing] = useState(false)
@@ -208,17 +204,6 @@ export default function Footer({ onSupportClick }: FooterProps) {
                       </Link>
                     </li>
                   ))}
-                  {section.title === 'Company' && (
-                    <li>
-                      <button
-                        onClick={onSupportClick}
-                        className="text-[13px] font-black tracking-widest text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all flex items-center gap-2 group"
-                      >
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0">_</span>
-                        Support
-                      </button>
-                    </li>
-                  )}
                 </ul>
               </div>
             ))}

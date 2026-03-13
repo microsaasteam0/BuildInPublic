@@ -2,6 +2,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import { Metadata } from 'next'
 import './globals.css'
 import ClientProviders from '../components/ClientProviders'
+import UpvoteWidget from '../components/UpvoteWidget'
 import Script from 'next/script'
 
 const inter = Inter({
@@ -263,6 +264,7 @@ export default function RootLayout({
         <ClientProviders>
           {children}
         </ClientProviders>
+        <UpvoteWidget />
       </body>
     </html>
   )

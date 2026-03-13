@@ -8,6 +8,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Rocket, ShieldCheck, AlertOctagon, Terminal, Cpu } from 'lucide-react'
+import { syncUpvoteLogin } from '@/lib/upvote-sync'
 
 function GoogleCallbackContent() {
   const router = useRouter()
@@ -67,6 +68,7 @@ function GoogleCallbackContent() {
           window.dispatchEvent(new CustomEvent('auth-success', {
             detail: { user: authResponse.data.user }
           }))
+          syncUpvoteLogin(authResponse.data.user)
 
           setStatus('success')
           setMessage('SYNC_COMPLETE. REDIRECTING_TO_CONTROL_NODE...')
@@ -87,6 +89,7 @@ function GoogleCallbackContent() {
               window.dispatchEvent(new CustomEvent('auth-success', {
                 detail: { user: JSON.parse(storedUser) }
               }))
+              syncUpvoteLogin(JSON.parse(storedUser))
               setTimeout(() => window.location.replace('/'), 800)
             } else {
               setStatus('error')

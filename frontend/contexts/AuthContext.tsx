@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import { API_URL } from '@/lib/api-config'
 import toast from 'react-hot-toast'
+import { syncUpvoteLogin, syncUpvoteLogout } from '@/lib/upvote-sync'
 
 interface User {
   id: number
@@ -133,9 +134,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // console.log('📦 Stored user exists:', !!storedUser)
 
         if (storedToken && storedUser) {
+          const parsedUser = JSON.parse(storedUser)
           setToken(storedToken)
           setRefreshTokenValue(storedRefreshToken)
-          setUser(JSON.parse(storedUser))
+          setUser(parsedUser)
+          syncUpvoteLogin(parsedUser)
 
           // Set default authorization header
           axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
@@ -144,8 +147,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
           // Preload usage stats immediately after auth restoration
           setTimeout(() => {
-            preloadUsageStats(JSON.parse(storedUser))
-            preloadContentHistory(JSON.parse(storedUser))
+            preloadUsageStats(parsedUser)
+            preloadContentHistory(parsedUser)
           }, 100)
 
           // Only verify token occasionally and be more lenient with failures
@@ -260,6 +263,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         preloadContentHistory(userData)
       }, 100)
 
+      syncUpvoteLogin(userData)
+
       toast.success('IDENTITY_RECOGNIZED')
       return true
     } catch (error: any) {
@@ -317,6 +322,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         preloadUsageStats(userData)
         preloadContentHistory(userData)
       }, 100)
+
+      syncUpvoteLogin(userData)
 
       toast.success('ENGINE_SYNC_COMPLETE')
       return true
@@ -385,6 +392,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         preloadUsageStats(userData)
       }, 100)
 
+      syncUpvoteLogin(userData)
+
       toast.success('IDENTITY_REGISTERED_SUCCESS')
       return true
     } catch (error: any) {
@@ -444,6 +453,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUser(null)
     setLastLoginTime(null)
 
+    syncUpvoteLogout()
+
     // Remove authorization header
     delete axios.defaults.headers.common['Authorization']
 
@@ -487,10 +498,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const storedUser = localStorage.getItem('user')
 
     if (storedToken && storedUser) {
+      const parsedUser = JSON.parse(storedUser)
       setToken(storedToken)
       setRefreshTokenValue(storedRefreshToken)
-      setUser(JSON.parse(storedUser))
+      setUser(parsedUser)
       axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
+      syncUpvoteLogin(parsedUser)
       // console.log('✅ Auth restored from localStorage')
       return true
     }

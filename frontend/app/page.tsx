@@ -23,7 +23,6 @@ import PaymentModal from '../components/PaymentModal'
 import CustomTemplateModal from '../components/CustomTemplateModal'
 import TemplateSelector from '../components/TemplateSelector'
 import DashboardModal from '../components/DashboardModal'
-import SupportModal from '../components/SupportModal'
 import SubscriptionWarning from '../components/SubscriptionWarning'
 
 // New Landing Components
@@ -74,7 +73,6 @@ function HomeContent() {
   const [showTemplateSelector, setShowTemplateSelector] = useState(false)
   const [templateSelectorSource, setTemplateSelectorSource] = useState<string>('all')
   const [showDashboard, setShowDashboard] = useState(false)
-  const [showSupportModal, setShowSupportModal] = useState(false)
   const [enabledPlatforms, setEnabledPlatforms] = useState<string[]>(['twitter'])
   const [browserFingerprint, setBrowserFingerprint] = useState<any>(null)
 
@@ -447,7 +445,7 @@ function HomeContent() {
         )}
       </main>
 
-      <Footer onSupportClick={() => setShowSupportModal(true)} />
+      <Footer />
 
       {/* Modals */}
       <AuthModal
@@ -488,11 +486,6 @@ function HomeContent() {
           document.getElementById('repurpose-tool')?.scrollIntoView({ behavior: 'smooth' })
         }}
         defaultSource={templateSelectorSource}
-      />
-
-      <SupportModal
-        isOpen={showSupportModal}
-        onClose={() => setShowSupportModal(false)}
       />
 
     </div>
