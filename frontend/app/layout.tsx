@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import './globals.css'
 import ClientProviders from '../components/ClientProviders'
@@ -8,12 +8,6 @@ import Script from 'next/script'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-})
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-plus-jakarta',
   display: 'swap',
 })
 
@@ -189,7 +183,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon-48.png" type="image/png" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
-      <body className={`${inter.variable} ${plusJakarta.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-189ZC0LVQB"

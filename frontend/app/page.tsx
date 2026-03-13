@@ -117,15 +117,11 @@ function HomeContent() {
     return () => window.clearTimeout(timeoutId)
   }, [])
 
-  // Defer loading of the heavy repurpose tool on first paint for anonymous traffic.
+  // Load the heavy creator immediately for authenticated users only.
   useEffect(() => {
     if (isAuthenticated) {
       setShowRepurposeTool(true)
-      return
     }
-
-    const timeoutId = window.setTimeout(() => setShowRepurposeTool(true), 5000)
-    return () => window.clearTimeout(timeoutId)
   }, [isAuthenticated])
 
   // Load pending template or autosaved draft
