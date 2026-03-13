@@ -15,35 +15,29 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute inset-0 bg-grid-blueprint opacity-[0.4] dark:opacity-[0.2]" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/50 dark:to-black/50" />
-
-                {/* Moving Scanline */}
-                <div className="absolute inset-0 overflow-hidden opacity-20">
-                    <div className="w-full h-[2px] bg-indigo-500 animate-scanline shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
-                </div>
-
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[600px] sm:h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent opacity-40 blur-[80px] sm:blur-[120px]" />
-                <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[80px] sm:blur-[120px] animate-pulse-slow pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[600px] sm:h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent opacity-40" />
+                <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full pointer-events-none" />
             </div>
 
             <div className="container relative z-10 px-4 sm:px-6 mx-auto text-center">
 
                 {/* Animated Badge - Built with Kinetic Glow */}
-                <div className="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 mb-6 sm:mb-10 border border-indigo-500/30 rounded-full bg-indigo-500/5 backdrop-blur-xl shadow-2xl relative group animate-kinetic-glow cursor-pointer overflow-hidden">
+                <div className="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 mb-6 sm:mb-10 border border-indigo-500/30 rounded-full bg-indigo-500/5 shadow-2xl relative group cursor-pointer overflow-hidden">
                     <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-500 mr-1.5 sm:mr-2" />
                     <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 tracking-[0.1em] relative">
                         Build together
                     </span>
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3 animate-ping" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3" />
                 </div>
 
                 {/* Main Headline with Letter Staggering */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter mb-6 sm:mb-8 leading-[0.95] text-slate-900 dark:text-white px-2">
-                    Turn Daily Work Into <span className="text-gradient animate-pulse">Social Posts</span> <br className="hidden sm:block" />
+                    Turn Daily Work Into <span className="text-gradient">Social Posts</span> <br className="hidden sm:block" />
                     You Can <span className="text-indigo-500 relative inline-block">
                         Share
                         <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-indigo-500/20 rounded-full overflow-hidden">
-                            <div className="w-1/2 h-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)] animate-pulse" />
+                            <div className="w-1/2 h-full bg-indigo-500" />
                         </div>
                     </span>
                 </h1>
@@ -60,7 +54,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             onClick={onStartCreating}
                             className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-indigo-600 text-white font-black rounded-2xl shadow-2xl shadow-indigo-500/40 transition-all hover:scale-105 hover:bg-indigo-700 active:scale-95 overflow-hidden"
                         >
-                            <div className="absolute inset-0 shimmer-text opacity-20" />
+                            <div className="absolute inset-0 opacity-10" />
                             <div className="flex items-center justify-center gap-2 sm:gap-3 relative z-10">
                                 <Box className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform" />
                                 <span className="tracking-tight text-xs sm:text-sm">Go to dashboard</span>
@@ -73,7 +67,7 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                                 onClick={onSignUp}
                                 className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-indigo-600 text-white font-black rounded-2xl shadow-2xl shadow-indigo-500/40 transition-all hover:scale-105 hover:bg-indigo-700 active:scale-95 overflow-hidden"
                             >
-                                <div className="absolute inset-0 shimmer-text opacity-20" />
+                                <div className="absolute inset-0 opacity-10" />
                                 <div className="flex items-center justify-center gap-2 sm:gap-3 relative z-10">
                                     <span className="tracking-tight text-xs sm:text-sm">Start for free</span>
                                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

@@ -217,7 +217,7 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-3 text-[10px] font-black tracking-[0.3em] text-zinc-900 dark:text-white bg-zinc-100 dark:bg-slate-900 border border-zinc-200 dark:border-slate-800 px-6 py-3 rounded-2xl shadow-xl">
-            <span className="opacity-60">Built by</span>
+            <span className="text-zinc-700 dark:text-slate-300">Built by</span>
             <div className="w-[1px] h-3 bg-slate-200 dark:bg-slate-800" />
             <a href="https://entrext.in" target="_blank" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2">
               Entrext Labs

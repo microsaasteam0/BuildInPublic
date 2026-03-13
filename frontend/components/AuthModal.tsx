@@ -39,9 +39,10 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     setMounted(true)
   }, [])
 
-  // Load Google Identity Services
+  // Load Google Identity Services only when modal is open.
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (!isOpen || typeof window === 'undefined') return
+
       const script = document.createElement('script')
       script.src = 'https://accounts.google.com/gsi/client'
       script.async = true
@@ -66,8 +67,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
           callback: handleGoogleResponse,
         })
       }
-    }
-  }, [])
+  }, [isOpen])
 
   // Lock body scroll when modal is open
   useEffect(() => {
