@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /blog/
+Allow: /blog-images/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /verify-email
@@ -10,9 +12,6 @@ Disallow: /*?token=
 # Sitemap
 Sitemap: https://buildinpublic.entrext.com/sitemap.xml
 
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
 
 # Specific Bot Instructions
 User-agent: GPTBot

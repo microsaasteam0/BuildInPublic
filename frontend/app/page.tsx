@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { Sparkles, Loader2, Zap } from 'lucide-react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -28,9 +29,10 @@ import SubscriptionWarning from '../components/SubscriptionWarning'
 // New Landing Components
 // New Landing Components
 import HeroSection from '../components/landing/HeroSection'
-import HowItWorks from '../components/landing/HowItWorks'
-import Testimonials from '../components/landing/Testimonials'
-import RepurposeInterface from '../components/landing/RepurposeInterface'
+
+const HowItWorks = dynamic(() => import('../components/landing/HowItWorks'))
+const Testimonials = dynamic(() => import('../components/landing/Testimonials'))
+const RepurposeInterface = dynamic(() => import('../components/landing/RepurposeInterface'))
 
 interface SocialMediaResponse {
   twitter_thread: string[]
@@ -75,6 +77,7 @@ function HomeContent() {
   const [showDashboard, setShowDashboard] = useState(false)
   const [enabledPlatforms, setEnabledPlatforms] = useState<string[]>(['twitter'])
   const [browserFingerprint, setBrowserFingerprint] = useState<any>(null)
+  const [showSecondarySections, setShowSecondarySections] = useState(false)
 
   // Personalization State
   const [personalization, setPersonalization] = useState({
@@ -95,6 +98,22 @@ function HomeContent() {
 
   useEffect(() => {
     return () => { isMountedRef.current = false }
+  }, [])
+
+  // Defer below-the-fold landing sections to keep initial mobile rendering lighter.
+  useEffect(() => {
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+
+    if (w.requestIdleCallback) {
+      const id = w.requestIdleCallback(() => setShowSecondarySections(true))
+      return () => w.cancelIdleCallback?.(id)
+    }
+
+    const timeoutId = window.setTimeout(() => setShowSecondarySections(true), 1200)
+    return () => window.clearTimeout(timeoutId)
   }, [])
 
   // Load pending template or autosaved draft
@@ -394,8 +413,12 @@ function HomeContent() {
                   onSignIn={() => { setShowAuthModal(true); setAuthModalMode('login') }}
                   onSignUp={() => { setShowAuthModal(true); setAuthModalMode('register') }}
                 />
-                <HowItWorks />
-                <Testimonials />
+                {showSecondarySections && (
+                  <>
+                    <HowItWorks />
+                    <Testimonials />
+                  </>
+                )}
               </>
             )}
 

@@ -211,52 +211,75 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "BuildInPublic",
-              "alternateName": "BuildInPublic AI",
-              "description": "BuildInPublic helps founders turn daily notes into clear social posts and X threads.",
-              "url": "https://buildinpublic.entrext.com",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web, Windows, macOS, Linux, Android, iOS",
-              "keywords": "build in public, x thread generator, social post generator, ai writing assistant",
-              "offers": {
-                "@type": "AggregateOffer",
-                "priceCurrency": "USD",
-                "lowPrice": "0",
-                "highPrice": "15.00",
-                "offerCount": "2",
-                "offers": [
-                  {
-                    "@type": "Offer",
-                    "name": "Free Plan",
-                    "price": "0",
-                    "priceCurrency": "USD"
+              "@graph": [
+                {
+                  "@type": "WebApplication",
+                  "@id": "https://buildinpublic.entrext.com/#app",
+                  "name": "BuildInPublic",
+                  "alternateName": "BuildInPublic AI",
+                  "description": "BuildInPublic helps founders turn daily notes into clear social posts and X threads.",
+                  "url": "https://buildinpublic.entrext.com",
+                  "applicationCategory": "BusinessApplication",
+                  "operatingSystem": "Web, Windows, macOS, Linux, Android, iOS",
+                  "keywords": "build in public, x thread generator, social post generator, ai writing assistant",
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "USD",
+                    "lowPrice": "0",
+                    "highPrice": "15.00",
+                    "offerCount": "2",
+                    "offers": [
+                      {
+                        "@type": "Offer",
+                        "name": "Free Plan",
+                        "price": "0",
+                        "priceCurrency": "USD"
+                      },
+                      {
+                        "@type": "Offer",
+                        "name": "Pro Plan",
+                        "price": "15.00",
+                        "priceCurrency": "USD"
+                      }
+                    ]
                   },
-                  {
-                    "@type": "Offer",
-                    "name": "Pro Plan",
-                    "price": "15.00",
-                    "priceCurrency": "USD"
+                  "featureList": [
+                    "Turn notes into social posts",
+                    "Generate X threads",
+                    "Save and reuse templates",
+                    "Track your usage"
+                  ],
+                  "screenshot": "https://buildinpublic.entrext.com/og-image.png",
+                  "softwareVersion": "1.0.0",
+                  "publisher": {
+                    "@id": "https://buildinpublic.entrext.com/#org"
                   }
-                ]
-              },
-              "creator": {
-                "@type": "Organization",
-                "name": "Entrext Labs",
-                "url": "https://entrext.in",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://buildinpublic.entrext.com/logo.png"
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://buildinpublic.entrext.com/#org",
+                  "name": "Entrext Labs",
+                  "url": "https://entrext.in",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://buildinpublic.entrext.com/logo.png"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://buildinpublic.entrext.com/#website",
+                  "url": "https://buildinpublic.entrext.com",
+                  "name": "BuildInPublic",
+                  "publisher": {
+                    "@id": "https://buildinpublic.entrext.com/#org"
+                  },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://buildinpublic.entrext.com/blog?query={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
                 }
-              },
-              "featureList": [
-                "Turn notes into social posts",
-                "Generate X threads",
-                "Save and reuse templates",
-                "Track your usage"
-              ],
-              "screenshot": "https://buildinpublic.entrext.com/og-image.png",
-              "softwareVersion": "1.0.0"
+              ]
             })
           }}
         />

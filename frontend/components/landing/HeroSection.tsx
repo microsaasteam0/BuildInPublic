@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { Sparkles, Shield, Zap, TrendingUp, CheckCircle, LogIn, ArrowRight, Activity, Cpu, Box, Terminal } from 'lucide-react'
 
 interface HeroSectionProps {
@@ -39,58 +38,33 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
             <div className="container relative z-10 px-4 sm:px-6 mx-auto text-center">
 
                 {/* Animated Badge - Built with Kinetic Glow */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 mb-6 sm:mb-10 border border-indigo-500/30 rounded-full bg-indigo-500/5 backdrop-blur-xl shadow-2xl relative group animate-kinetic-glow cursor-pointer overflow-hidden"
-                >
+                <div className="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 mb-6 sm:mb-10 border border-indigo-500/30 rounded-full bg-indigo-500/5 backdrop-blur-xl shadow-2xl relative group animate-kinetic-glow cursor-pointer overflow-hidden">
                     <div className="absolute inset-0 bg-indigo-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-500 mr-1.5 sm:mr-2" />
                     <span className="text-[9px] sm:text-[10px] font-black text-indigo-600 dark:text-indigo-400 tracking-[0.1em] relative">
                         Build together
                     </span>
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 sm:ml-3 animate-ping" />
-                </motion.div>
+                </div>
 
                 {/* Main Headline with Letter Staggering */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter mb-6 sm:mb-8 leading-[0.95] text-slate-900 dark:text-white px-2"
-                >
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter mb-6 sm:mb-8 leading-[0.95] text-slate-900 dark:text-white px-2">
                     Turn Daily Work Into <span className="text-gradient animate-pulse">Social Posts</span> <br className="hidden sm:block" />
                     You Can <span className="text-indigo-500 relative inline-block">
                         Share
                         <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-indigo-500/20 rounded-full overflow-hidden">
-                            <motion.div
-                                initial={{ x: '-100%' }}
-                                animate={{ x: '100%' }}
-                                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                                className="w-1/2 h-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)]"
-                            />
+                            <div className="w-1/2 h-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)] animate-pulse" />
                         </div>
                     </span>
-                </motion.h1>
+                </h1>
 
                 {/* Sub-headline with Shimmer Effect */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, delay: 0.4 }}
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-medium px-4"
-                >
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-700 dark:text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-medium px-4">
                     Write what you worked on today. We turn it into clear posts in seconds.
-                </motion.p>
+                </p>
 
                 {/* CTAs with Builder Glow */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16 sm:mb-24 px-4"
-                >
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16 sm:mb-24 px-4">
                     {isAuthenticated ? (
                         <button
                             onClick={onStartCreating}
@@ -127,15 +101,10 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             </button>
                         </>
                     )}
-                </motion.div>
+                </div>
 
                 {/* Trust Matrix - Interactive Grid */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4"
-                >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4">
                     {[
                         { icon: Zap, title: "Fast", desc: "Posts in seconds", color: "indigo" },
                         { icon: Cpu, title: "Simple", desc: "No complex tools", color: "purple" },
@@ -146,11 +115,11 @@ export default function HeroSection({ isAuthenticated, onStartCreating, onSignIn
                             <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-${card.color}-500/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 text-${card.color}-500 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                                 <card.icon className="w-6 h-6 sm:w-7 sm:h-7" />
                             </div>
-                            <h3 className="font-black text-lg sm:text-xl mb-2 text-zinc-900 dark:text-white tracking-tight">{card.title}</h3>
-                            <p className="text-xs sm:text-sm text-zinc-500 dark:text-slate-500 font-medium leading-relaxed">{card.desc}</p>
+                            <h2 className="font-black text-lg sm:text-xl mb-2 text-zinc-900 dark:text-white tracking-tight">{card.title}</h2>
+                            <p className="text-xs sm:text-sm text-zinc-700 dark:text-slate-300 font-medium leading-relaxed">{card.desc}</p>
                         </div>
                     ))}
-                </motion.div>
+                </div>
 
             </div>
         </div>

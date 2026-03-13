@@ -232,6 +232,7 @@ export default function Navbar({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={onUserDashboard}
+                    aria-label="Open dashboard"
                     className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/10 hover:shadow-indigo-600/30 transition-all border-2 border-white dark:border-slate-800 relative overflow-hidden group/avatar"
                   >
                     {user?.profile_picture && isValidImageUrl(user.profile_picture) ? (

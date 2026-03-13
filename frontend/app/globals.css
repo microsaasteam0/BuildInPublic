@@ -370,6 +370,27 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Disable heavy decorative animations on mobile to improve LCP/TBT. */
+  .animate-scanline,
+  .animate-kinetic-glow,
+  .animate-pulse-slow,
+  .animate-ping,
+  .shimmer-text,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scanline,
+  .animate-kinetic-glow,
+  .animate-pulse-slow,
+  .animate-ping,
+  .shimmer-text,
+  .animate-pulse {
+    animation: none !important;
+  }
 }
 
 /* Tablet optimizations */

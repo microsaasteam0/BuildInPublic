@@ -17,6 +17,7 @@ declare global {
 export default function UpvoteWidget() {
   const [userData, setUserData] = useState<UpvoteUser | null>(null)
   const [remountKey, setRemountKey] = useState(0)
+  const [shouldLoadWidget, setShouldLoadWidget] = useState(false)
 
   const fetchSession = useCallback(async () => {
     try {
@@ -58,6 +59,42 @@ export default function UpvoteWidget() {
     }
   }, [fetchSession])
 
+  useEffect(() => {
+    const enableWidget = () => setShouldLoadWidget(true)
+    const timerId = window.setTimeout(enableWidget, 15000)
+
+    window.addEventListener('mousemove', enableWidget, { once: true })
+    window.addEventListener('touchstart', enableWidget, { once: true })
+    window.addEventListener('keydown', enableWidget, { once: true })
+
+    return () => {
+      window.clearTimeout(timerId)
+      window.removeEventListener('mousemove', enableWidget)
+      window.removeEventListener('touchstart', enableWidget)
+      window.removeEventListener('keydown', enableWidget)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!shouldLoadWidget) return
+
+    const setIframeTitles = () => {
+      const iframes = document.querySelectorAll('.upvote-widget iframe')
+      iframes.forEach((iframe, idx) => {
+        if (!iframe.getAttribute('title')) {
+          iframe.setAttribute('title', `Product feedback widget ${idx + 1}`)
+        }
+      })
+    }
+
+    setIframeTitles()
+
+    const observer = new MutationObserver(() => setIframeTitles())
+    observer.observe(document.body, { childList: true, subtree: true })
+
+    return () => observer.disconnect()
+  }, [shouldLoadWidget])
+
   return (
     <div key={remountKey}>
       <div
@@ -67,7 +104,7 @@ export default function UpvoteWidget() {
         data-email={userData?.email || ''}
         data-position="right"
       />
-      <Script src="https://upvote.entrext.com/widget.js" strategy="afterInteractive" />
+      {shouldLoadWidget && <Script src="https://upvote.entrext.com/widget.js" strategy="lazyOnload" />}
     </div>
   )
 }

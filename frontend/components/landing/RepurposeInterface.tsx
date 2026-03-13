@@ -257,6 +257,7 @@ export default function RepurposeInterface({
                                                         input.value = '';
                                                     }
                                                 }}
+                                                aria-label="Add task"
                                                 className="p-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-600/20 active:scale-95"
                                             >
                                                 <Plus className="w-5 h-5" />
@@ -285,6 +286,7 @@ export default function RepurposeInterface({
                                                                 newTasks[idx].completed = !newTasks[idx].completed
                                                                 setTasks(newTasks)
                                                             }}
+                                                            aria-label={task.completed ? 'Mark task as incomplete' : 'Mark task as complete'}
                                                             className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${task.completed
                                                                 ? 'bg-emerald-500 border-emerald-500 text-white'
                                                                 : 'border-zinc-300 dark:border-slate-600 text-indigo-500 group-hover/item:border-indigo-500'
@@ -304,6 +306,7 @@ export default function RepurposeInterface({
                                                                 newTasks.splice(idx, 1)
                                                                 setTasks(newTasks)
                                                             }}
+                                                            aria-label="Remove task"
                                                             className="text-slate-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity"
                                                         >
                                                             <X className="w-4 h-4" />

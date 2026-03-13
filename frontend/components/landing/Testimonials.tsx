@@ -78,7 +78,7 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-500 dark:text-slate-400 font-medium text-lg max-w-2xl mx-auto"
+                        className="text-slate-700 dark:text-slate-300 font-medium text-lg max-w-2xl mx-auto"
                     >
                         Join builders who are growing their audience with simple daily posts.
                     </motion.p>
@@ -102,8 +102,8 @@ export default function Testimonials() {
                                     {t.initials}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 dark:text-white leading-none">{t.name}</h4>
-                                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-widest font-black">{t.role}</p>
+                                    <h3 className="font-bold text-slate-900 dark:text-white leading-none">{t.name}</h3>
+                                    <p className="text-xs text-slate-700 dark:text-slate-300 mt-1 uppercase tracking-widest font-black">{t.role}</p>
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@ export default function Testimonials() {
                                 ))}
                             </div>
 
-                            <p className="text-slate-600 dark:text-slate-300 italic leading-relaxed text-sm lg:text-base">
+                            <p className="text-slate-700 dark:text-slate-200 italic leading-relaxed text-sm lg:text-base">
                                 "{t.content}"
                             </p>
                         </motion.div>

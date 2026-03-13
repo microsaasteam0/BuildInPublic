@@ -48,7 +48,7 @@ export default function HowItWorks() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg font-medium"
+                        className="text-slate-700 dark:text-slate-300 max-w-2xl mx-auto text-lg font-medium"
                     >
                         From notes to posts in 3 easy steps.
                     </motion.p>

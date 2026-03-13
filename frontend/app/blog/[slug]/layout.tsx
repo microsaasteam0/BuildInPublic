@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             description: post.excerpt,
             type: 'article',
             url: `/blog/${post.slug}`,
+            siteName: 'BuildInPublic',
             publishedTime: post.publishedAt,
             authors: [post.author.name],
             images: [
@@ -51,10 +52,79 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             title: post.title,
             description: post.excerpt,
             images: [post.image],
+            creator: '@entrextlabs',
+            site: '@entrextlabs',
         },
     }
 }
 
-export default function BlogPostLayout({ children }: Props) {
-    return <>{children}</>
+export default function BlogPostLayout({ params, children }: Props) {
+    const post = getPostBySlug(params.slug)
+
+    if (!post) {
+        return <>{children}</>
+    }
+
+    const blogPostingSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        image: [post.image],
+        datePublished: post.publishedAt,
+        dateModified: post.publishedAt,
+        author: {
+            '@type': 'Person',
+            name: post.author.name,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'BuildInPublic',
+            url: 'https://buildinpublic.entrext.com',
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://buildinpublic.entrext.com/blog/${post.slug}`,
+        },
+        keywords: post.tags.join(', '),
+    }
+
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://buildinpublic.entrext.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://buildinpublic.entrext.com/blog',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: post.title,
+                item: `https://buildinpublic.entrext.com/blog/${post.slug}`,
+            },
+        ],
+    }
+
+    return (
+        <>
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+            />
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            {children}
+        </>
+    )
 }
