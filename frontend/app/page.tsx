@@ -78,6 +78,7 @@ function HomeContent() {
   const [enabledPlatforms, setEnabledPlatforms] = useState<string[]>(['twitter'])
   const [browserFingerprint, setBrowserFingerprint] = useState<any>(null)
   const [showSecondarySections, setShowSecondarySections] = useState(false)
+  const [showRepurposeTool, setShowRepurposeTool] = useState(false)
 
   // Personalization State
   const [personalization, setPersonalization] = useState({
@@ -115,6 +116,17 @@ function HomeContent() {
     const timeoutId = window.setTimeout(() => setShowSecondarySections(true), 1200)
     return () => window.clearTimeout(timeoutId)
   }, [])
+
+  // Defer loading of the heavy repurpose tool on first paint for anonymous traffic.
+  useEffect(() => {
+    if (isAuthenticated) {
+      setShowRepurposeTool(true)
+      return
+    }
+
+    const timeoutId = window.setTimeout(() => setShowRepurposeTool(true), 5000)
+    return () => window.clearTimeout(timeoutId)
+  }, [isAuthenticated])
 
   // Load pending template or autosaved draft
   useEffect(() => {
@@ -409,7 +421,12 @@ function HomeContent() {
               <>
                 <HeroSection
                   isAuthenticated={isAuthenticated}
-                  onStartCreating={() => document.getElementById('repurpose-tool')?.scrollIntoView({ behavior: 'smooth' })}
+                  onStartCreating={() => {
+                    setShowRepurposeTool(true)
+                    setTimeout(() => {
+                      document.getElementById('repurpose-tool')?.scrollIntoView({ behavior: 'smooth' })
+                    }, 50)
+                  }}
                   onSignIn={() => { setShowAuthModal(true); setAuthModalMode('login') }}
                   onSignUp={() => { setShowAuthModal(true); setAuthModalMode('register') }}
                 />
@@ -422,35 +439,51 @@ function HomeContent() {
               </>
             )}
 
-            <RepurposeInterface
-              isAuthenticated={isAuthenticated}
-              user={user}
-              usageStats={usageStats}
-              featureGate={featureGate}
-              content={content}
-              setContent={setContent}
-              url={url}
-              setUrl={setUrl}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              isLoading={isLoading}
-              handleSubmit={handleSubmit}
-              results={results}
-              transformProgress={transformProgress}
-              currentProcessingStep={currentProcessingStep}
-              handleSaveContent={(t, type, c) => handleSaveContent(t, type, c, true)}
-              personalization={personalization}
-              setPersonalization={setPersonalization}
-              showPersonalization={showPersonalization}
-              setShowPersonalization={setShowPersonalization}
-              onShowAuthModal={(mode) => { setShowAuthModal(true); setAuthModalMode(mode) }}
-              onShowPaymentModal={() => setShowPaymentModal(true)}
-              onShowDashboard={() => setShowDashboard(true)}
-              onStartOnboarding={() => setShowOnboarding(true)}
-              onShowCustomTemplateModal={() => setShowCustomTemplateModal(true)}
-              onShowTemplateSelector={() => { setTemplateSelectorSource('all'); setShowTemplateSelector(true) }}
-              setTemplateSelectorSource={setTemplateSelectorSource}
-            />
+            {showRepurposeTool ? (
+              <RepurposeInterface
+                isAuthenticated={isAuthenticated}
+                user={user}
+                usageStats={usageStats}
+                featureGate={featureGate}
+                content={content}
+                setContent={setContent}
+                url={url}
+                setUrl={setUrl}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                isLoading={isLoading}
+                handleSubmit={handleSubmit}
+                results={results}
+                transformProgress={transformProgress}
+                currentProcessingStep={currentProcessingStep}
+                handleSaveContent={(t, type, c) => handleSaveContent(t, type, c, true)}
+                personalization={personalization}
+                setPersonalization={setPersonalization}
+                showPersonalization={showPersonalization}
+                setShowPersonalization={setShowPersonalization}
+                onShowAuthModal={(mode) => { setShowAuthModal(true); setAuthModalMode(mode) }}
+                onShowPaymentModal={() => setShowPaymentModal(true)}
+                onShowDashboard={() => setShowDashboard(true)}
+                onStartOnboarding={() => setShowOnboarding(true)}
+                onShowCustomTemplateModal={() => setShowCustomTemplateModal(true)}
+                onShowTemplateSelector={() => { setTemplateSelectorSource('all'); setShowTemplateSelector(true) }}
+                setTemplateSelectorSource={setTemplateSelectorSource}
+              />
+            ) : (
+              <section id="repurpose-tool" className="container mx-auto px-4 pb-24">
+                <div className="max-w-4xl mx-auto rounded-3xl border border-zinc-200 dark:border-slate-800 bg-zinc-100/60 dark:bg-slate-900/40 p-8 text-center">
+                  <p className="text-sm sm:text-base text-zinc-700 dark:text-slate-300 font-semibold">
+                    The creator loads on demand to keep mobile performance fast.
+                  </p>
+                  <button
+                    onClick={() => setShowRepurposeTool(true)}
+                    className="mt-5 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold"
+                  >
+                    Open Creator
+                  </button>
+                </div>
+              </section>
+            )}
           </div>
         )}
 

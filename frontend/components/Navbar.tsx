@@ -257,7 +257,7 @@ export default function Navbar({
                 <div className="flex items-center gap-2 lg:gap-3">
                   <button
                     onClick={handleSignIn}
-                    className="text-[10px] lg:text-xs font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 tracking-[0.15em] lg:tracking-[0.2em] px-3 lg:px-4 py-2 transition-colors font-mono whitespace-nowrap"
+                    className="text-[10px] lg:text-xs font-black text-zinc-700 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 tracking-[0.15em] lg:tracking-[0.2em] px-3 lg:px-4 py-2 transition-colors font-mono whitespace-nowrap"
                   >
                     Log in
                   </button>
