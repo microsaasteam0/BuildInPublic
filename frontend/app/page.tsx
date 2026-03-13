@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef, Suspense } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Sparkles, Loader2, Zap } from 'lucide-react'
+import { Sparkles, Zap } from 'lucide-react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
@@ -47,7 +47,6 @@ function HomeContent() {
   const featureGate = useFeatureGate()
   const { autoSaveEnabled } = useUserPreferences()
   const { isProcessingPayment, setIsProcessingPayment } = usePaymentProcessing()
-  const searchParams = useSearchParams()
   const router = useRouter()
   const isMountedRef = useRef(true)
 
@@ -545,13 +544,5 @@ function HomeContent() {
 }
 
 export default function Home() {
-  return (
-    <Suspense fallback={
-      <div className="flex items-center justify-center min-h-screen bg-slate-50 dark:bg-black">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
-      </div>
-    }>
-      <HomeContent />
-    </Suspense>
-  )
+  return <HomeContent />
 }
