@@ -26,16 +26,41 @@ export const metadata: Metadata = {
     template: '%s | BuildInPublic'
   },
   description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly.',
-  keywords: ['build in public', 'founder content engine', 'X thread generator', 'Twitter thread generator', 'build log to social', 'AI content creation', 'founder marketing', 'social media automation', 'BuildInPublic AI'],
+  applicationName: 'BuildInPublic',
+  keywords: [
+    'build in public', 
+    'founder content engine', 
+    'X thread generator', 
+    'Twitter thread generator', 
+    'build log to social', 
+    'AI content creation', 
+    'founder marketing', 
+    'social media automation', 
+    'BuildInPublic AI',
+    'startup marketing',
+    'indie hacker tools',
+    'build in public tools',
+    'grow twitter audience',
+    'founder personal brand',
+    'AI writing assistant for founders'
+  ],
   authors: [{ name: 'Entrext Labs', url: 'https://entrext.in' }],
   creator: 'Entrext Labs',
   publisher: 'Entrext Labs',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  category: 'business',
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -47,25 +72,30 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'BuildInPublic',
     title: 'BuildInPublic - The Engine for Founders',
-    description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly.',
+    description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly. AI-powered thread generator for Twitter/X.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'BuildInPublic - AI Content Transformation',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BuildInPublic - The Engine for Founders',
-    description: 'The public engine for modern founders. Turn your build logs into high-authority social content instantly.',
+    title: 'BuildInPublic - AI Content Engine for Founders',
+    description: 'Transform your daily build logs into high-authority X (Twitter) threads instantly. Build in public on autopilot.',
     creator: '@entrextlabs',
+    site: '@entrextlabs',
     images: ['/twitter-image.png'],
   },
   alternates: {
     canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
   },
   icons: {
     icon: [
@@ -74,9 +104,20 @@ export const metadata: Metadata = {
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
-    apple: '/icon-192.png',
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'BuildInPublic',
+    statusBarStyle: 'default',
   },
   manifest: '/site.webmanifest',
+// Uncomment and update if you use Google Search Console or other webmaster tools
+// verification: {
+//   google: 'your-google-site-verification-id',
+//   yandex: 'your-yandex-verification-id',
+//   yahoo: 'your-yahoo-verification-id',
+// },
 }
 
 export default function RootLayout({
@@ -162,7 +203,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${plusJakarta.variable} font-sans`}>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-0YNCEFQQ80"
+          src="https://www.googletagmanager.com/gtag/js?id=G-189ZC0LVQB"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -171,7 +212,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-0YNCEFQQ80');
+            gtag('config', 'G-189ZC0LVQB');
           `}
         </Script>
 
