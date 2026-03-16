@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     'build log to post',
     'ai writing assistant'
   ],
-  authors: [{ name: 'Entrext Labs', url: 'https://entrext.in' }],
-  creator: 'Entrext Labs',
-  publisher: 'Entrext Labs',
+  authors: [{ name: 'BuildInPublic Team', url: 'https://entrext.com' }],
+  creator: 'BuildInPublic Team',
+  publisher: 'BuildInPublic',
   formatDetection: {
     email: false,
     address: false,
@@ -269,8 +269,8 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "@id": "https://buildinpublic.entrext.com/#org",
-                  "name": "Entrext Labs",
-                  "url": "https://entrext.in",
+                  "name": "BuildInPublic",
+                  "url": "https://buildinpublic.entrext.com",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://buildinpublic.entrext.com/logo.png"
