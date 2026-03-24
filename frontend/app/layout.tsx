@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '/',
+    url: 'https://buildinpublic.entrext.com',
     siteName: 'BuildInPublic',
     title: 'BuildInPublic - Turn Daily Work Into Social Posts',
     description: 'Write quick daily notes, then turn them into polished social posts and X threads.',
