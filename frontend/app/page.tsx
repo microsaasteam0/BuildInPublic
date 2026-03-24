@@ -32,7 +32,7 @@ import HeroSection from '../components/landing/HeroSection'
 
 const HowItWorks = dynamic(() => import('../components/landing/HowItWorks'))
 const Testimonials = dynamic(() => import('../components/landing/Testimonials'))
-const RepurposeInterface = dynamic(() => import('../components/landing/RepurposeInterface'))
+const RepurposeInterface = dynamic(() => import('../components/landing/RepurposeInterface'), { ssr: false })
 
 interface SocialMediaResponse {
   twitter_thread: string[]

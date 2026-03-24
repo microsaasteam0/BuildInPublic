@@ -76,37 +76,81 @@ export default function RepurposeInterface({
     setTemplateSelectorSource
 }: RepurposeInterfaceProps) {
 
-    const [tasks, setTasks] = useState<Task[]>([])
-    const [eveningReflection, setEveningReflection] = useState('')
+    const [tasks, setTasks] = useState<Task[]>(() => {
+        const normalizedContent = (content || '').trim()
+        if (!normalizedContent) return []
+        try {
+            const parts = normalizedContent.split('EVENING REFLECTION:')
+            const morningPart = parts[0].replace('MORNING PLAN:', '').trim()
+            const lines = morningPart.split('\n').filter(line => line.trim())
+            return lines.map(line => {
+                const completed = line.toLowerCase().includes('[x]')
+                const text = line.replace(/\[.?\]/g, '').trim()
+                return {
+                    id: Math.random().toString(36).substr(2, 9),
+                    text,
+                    completed
+                }
+            }).filter(t => t.text)
+        } catch (e) {
+            return []
+        }
+    })
+
+    const [eveningReflection, setEveningReflection] = useState(() => {
+        const normalizedContent = (content || '').trim()
+        if (!normalizedContent) return ''
+        try {
+            const parts = normalizedContent.split('EVENING REFLECTION:')
+            return parts.length > 1 ? parts[1].trim() : ''
+        } catch (e) {
+            return ''
+        }
+    })
+
+    const isInternalChange = useRef(false)
 
     // Sync from parent content prop to local state (restoration/template loading)
     useEffect(() => {
+        if (isInternalChange.current) {
+            isInternalChange.current = false
+            return
+        }
+
+        // Normalize content for comparison
+        const normalizedContent = (content || '').trim()
+        if (!normalizedContent) {
+            if (tasks.length > 0) setTasks([])
+            if (eveningReflection) setEveningReflection('')
+            return
+        }
+
         // Construct current local representation to check for changes
         const morningString = tasks.map(t => `${t.completed ? '[x]' : '[ ]'} ${t.text}`).join('\n')
         const currentLocal = `MORNING PLAN:\n${morningString}\n\nEVENING REFLECTION:\n${eveningReflection}`.trim()
 
-        // Normalize content for comparison
-        const normalizedContent = (content || '').trim()
-
-        // Only update if content is different (external change) and not empty (unless we want to clear)
-        if (normalizedContent !== currentLocal && normalizedContent) {
+        // Only update if content is different (external change)
+        if (normalizedContent !== currentLocal) {
             try {
                 const parts = normalizedContent.split('EVENING REFLECTION:')
                 const morningPart = parts[0].replace('MORNING PLAN:', '').trim()
                 const eveningPart = parts.length > 1 ? parts[1].trim() : ''
 
-                const newTasks = morningPart.split('\n')
-                    .filter(line => line.trim())
-                    .map(line => {
-                        const completed = line.toLowerCase().includes('[x]')
-                        const text = line.replace(/\[.?\]/g, '').trim()
-                        return {
-                            id: Math.random().toString(36).substr(2, 9),
-                            text,
-                            completed
-                        }
-                    })
-                    .filter(t => t.text)
+                const lines = morningPart.split('\n').filter(line => line.trim())
+                
+                // Try to preserve existing tasks/IDs if text matches to avoid remounting
+                const newTasks = lines.map(line => {
+                    const completed = line.toLowerCase().includes('[x]')
+                    const text = line.replace(/\[.?\]/g, '').trim()
+                    
+                    // Look for existing task with same text to preserve ID
+                    const existing = tasks.find(t => t.text === text && t.completed === completed)
+                    return existing || {
+                        id: Math.random().toString(36).substr(2, 9),
+                        text,
+                        completed
+                    }
+                }).filter(t => t.text)
 
                 setTasks(newTasks)
                 setEveningReflection(eveningPart)
@@ -120,7 +164,10 @@ export default function RepurposeInterface({
     useEffect(() => {
         const morningString = tasks.map(t => `${t.completed ? '[x]' : '[ ]'} ${t.text}`).join('\n')
         const combined = `MORNING PLAN:\n${morningString}\n\nEVENING REFLECTION:\n${eveningReflection}`
-        if (content !== combined) {
+        
+        // Use normalized comparison to avoid loops
+        if (content.trim() !== combined.trim()) {
+            isInternalChange.current = true
             setContent(combined)
         }
     }, [tasks, eveningReflection, setContent])
@@ -283,7 +330,7 @@ export default function RepurposeInterface({
                                                         <button
                                                             onClick={() => {
                                                                 const newTasks = [...tasks]
-                                                                newTasks[idx].completed = !newTasks[idx].completed
+                                                                newTasks[idx] = { ...newTasks[idx], completed: !newTasks[idx].completed }
                                                                 setTasks(newTasks)
                                                             }}
                                                             aria-label={task.completed ? 'Mark task as incomplete' : 'Mark task as complete'}
