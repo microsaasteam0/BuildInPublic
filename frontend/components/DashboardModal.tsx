@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
-import { User, Settings, History, Heart, BarChart3, Crown, LogOut, Save, Trash2, Star, Download, Eye, Filter, Edit2, Check, X, FileText, Copy, RefreshCw, Zap, TrendingUp, Clock, Sparkles, ArrowRight, Twitter, Plus, Sun, Moon, CheckCircle } from 'lucide-react'
+import { User, Settings, History, Heart, BarChart3, Crown, LogOut, Save, Trash2, Star, Download, Eye, Filter, Edit2, Check, X, FileText, Copy, RefreshCw, Zap, TrendingUp, Clock, Sparkles, ArrowRight, Twitter, Plus, Sun, Moon, CheckCircle, Brain } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../contexts/AuthContext'
 import { useFeatureGate } from '../hooks/useFeatureGate'
@@ -77,6 +77,11 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
   const [filterType, setFilterType] = useState('all')
   const [viewingContent, setViewingContent] = useState<SavedContent | null>(null)
   const [deletingContent, setDeletingContent] = useState<SavedContent | null>(null)
+  
+  // Memory state
+  const [userMemory, setUserMemory] = useState('')
+  const [isSavingMemory, setIsSavingMemory] = useState(false)
+  const [isLoadingMemory, setIsLoadingMemory] = useState(false)
 
   // Profile editing state
   const [isEditingProfile, setIsEditingProfile] = useState(false)
@@ -523,7 +528,8 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
         loadSectionData('content')
       } else if (activeSection === 'history' && contentHistory.length === 0) {
         loadSectionData('history')
-      } else {
+      } else if (activeSection === 'memory') {
+        loadMemory()
       }
     }
   }, [activeSection, isOpen, user])
@@ -689,6 +695,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
 
   const handleCancelSubscription = async () => {
     setCancelLoading(true)
+
     try {
       // Set flag to indicate this is a manual cancellation
       sessionStorage.setItem('manual_cancellation', 'true')
@@ -728,6 +735,31 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
       toast.error('ERROR_SESSION_TERMINATION_FAILURE')
     } finally {
       setCancelLoading(false)
+    }
+  }
+
+  const loadMemory = async () => {
+    setIsLoadingMemory(true)
+    try {
+      const response = await axios.get(`${API_URL}/api/v1/memory`)
+      setUserMemory(response.data.content || '')
+    } catch (error) {
+      console.error('Error loading memory:', error)
+    } finally {
+      setIsLoadingMemory(false)
+    }
+  }
+
+  const handleUpdateMemory = async () => {
+    setIsSavingMemory(true)
+    try {
+      await axios.put(`${API_URL}/api/v1/memory`, { content: userMemory })
+      toast.success('AI Memory synchronized')
+    } catch (error) {
+      console.error('Error updating memory:', error)
+      toast.error('Failed to sync memory')
+    } finally {
+      setIsSavingMemory(false)
     }
   }
 
@@ -1210,17 +1242,20 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
             </button>
 
             <button
-              onClick={() => setActiveSection('templates')}
-              className={`flex flex-col items-center gap-1 px-2 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 relative ${activeSection === 'templates'
+              onClick={() => {
+                setActiveSection('memory')
+                loadMemory()
+              }}
+              className={`flex flex-col items-center gap-1 px-2 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 relative ${activeSection === 'memory'
                 ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 shadow-sm'
                 : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200/50 dark:hover:bg-slate-700/50'
                 }`}
             >
               <div className="relative">
-                <Edit2 className="w-4 h-4" />
+                <Brain className="w-4 h-4" />
                 {user?.is_premium && <Crown className="w-2.5 h-2.5 absolute -top-0.5 -right-0.5 text-yellow-500" />}
               </div>
-              <span className="text-[9px] leading-tight">Templates</span>
+              <span className="text-[9px] leading-tight">Memory</span>
             </button>
 
             <button
@@ -1313,7 +1348,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                 { id: 'overview', name: 'Your Stats', icon: BarChart3, color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
                 { id: 'content', name: 'Saved Posts', icon: Save, count: savedContent.length, color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
                 { id: 'history', name: 'History', icon: History, count: contentHistory.length, color: 'text-purple-500', bg: 'bg-purple-500/10' },
-                { id: 'templates', name: 'Templates', icon: FileText, pro: true, color: 'text-amber-500', bg: 'bg-amber-500/10' },
+                { id: 'memory', name: 'AI Memory', icon: Brain, pro: true, color: 'text-amber-500', bg: 'bg-amber-500/10' },
                 { id: 'settings', name: 'Settings', icon: Settings, color: 'text-slate-500', bg: 'bg-slate-500/10' },
               ].map((item) => (
                 <button
@@ -1424,7 +1459,7 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                   )}
                 </span>
               )}
-              {activeSection === 'templates' && 'Templates'}
+              {activeSection === 'memory' && 'AI Memory Storage'}
               {activeSection === 'settings' && 'Account Settings'}
             </h1>
             <div className="flex items-center gap-3">
@@ -2173,30 +2208,88 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
             }
 
             {
-              activeSection === 'templates' && (
-                <div>
+              activeSection === 'memory' && (
+                <div className="space-y-8">
                   {!user?.is_premium ? (
                     <div className="text-center py-16 px-4 bg-white/5 dark:bg-slate-900 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] sm:rounded-[3.5rem] relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px] opacity-20" />
+                      <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 pointer-events-none" />
                       <div className="w-20 h-20 sm:w-24 sm:h-24 bg-amber-500/10 rounded-[2rem] sm:rounded-[2.5rem] flex items-center justify-center mx-auto mb-6 relative">
                         <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full animate-pulse" />
                         <Crown className="w-10 h-10 sm:w-12 sm:h-12 text-amber-500 relative z-10" />
                       </div>
-                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-3 font-mono truncate px-2">RESTRICTED_PROTOCOL</h4>
-                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tighter">Enterprise Templates</h3>
+                      <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-3 font-mono truncate px-2">AUTH_RESTRICTED</h4>
+                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tighter">AI Memory Vault</h3>
                       <p className="text-slate-500 dark:text-slate-400 max-w-xs mx-auto font-mono text-xs uppercase tracking-wider leading-relaxed mb-8 px-2">
-                        Custom blueprint generation and template architecture require an active Pro License.
+                        Persistent context storage and personality synchronization require an active Pro License.
                       </p>
                       <button
                         onClick={() => router.push('/pricing')}
                         className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-amber-500/20 flex items-center justify-center gap-3 mx-auto active:scale-95"
                       >
                         <Zap className="w-4 h-4 fill-current flex-shrink-0" />
-                        Acquire Pro License
+                        Upgrade to Pro
                       </button>
                     </div>
                   ) : (
-                    <CustomTemplateManager />
+                    <div className="bg-white dark:bg-slate-900/50 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 pointer-events-none" />
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-between mb-8">
+                          <div>
+                            <h4 className="text-[10px] font-black text-indigo-500 uppercase tracking-[0.4em] mb-2 font-mono">MEMORY_MODULE</h4>
+                            <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">Persistent Context</h3>
+                          </div>
+                          <div className="p-3 bg-indigo-500/10 rounded-2xl">
+                            <Brain className="w-6 h-6 text-indigo-500" />
+                          </div>
+                        </div>
+
+                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 font-medium leading-relaxed max-w-xl">
+                          Tell the AI about yourself, your business, and your preferences. This information will be remembered across all your future generations to ensure consistency.
+                        </p>
+
+                        <div className="space-y-6">
+                          <div className="relative">
+                            <textarea
+                              value={userMemory}
+                              onChange={(e) => setUserMemory(e.target.value)}
+                              placeholder="Describe your brand, tone, common phrases, or background info here..."
+                              className="w-full h-80 px-6 py-6 bg-zinc-50 dark:bg-white/[0.02] border border-zinc-200 dark:border-white/10 rounded-3xl text-slate-900 dark:text-white focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 font-mono text-sm leading-relaxed resize-none hide-scrollbar"
+                            />
+                            {isLoadingMemory && (
+                              <div className="absolute inset-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm flex items-center justify-center rounded-3xl">
+                                <RefreshCw className="w-8 h-8 text-indigo-500 animate-spin" />
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="flex items-center justify-between gap-4">
+                             <div className="flex items-center gap-3 text-slate-400 text-[10px] font-black uppercase tracking-widest font-mono">
+                               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                               System Synced
+                             </div>
+                             <button
+                               onClick={handleUpdateMemory}
+                               disabled={isSavingMemory || isLoadingMemory}
+                               className="px-10 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-indigo-500/20 active:scale-95 flex items-center gap-3"
+                             >
+                               {isSavingMemory ? (
+                                 <>
+                                   <RefreshCw className="w-4 h-4 animate-spin" />
+                                   Synchronizing...
+                                 </>
+                               ) : (
+                                 <>
+                                   <Save className="w-4 h-4" />
+                                   Save Memory
+                                 </>
+                               )}
+                             </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </div>
               )

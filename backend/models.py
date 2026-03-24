@@ -205,3 +205,15 @@ class GuestUsage(Base):
     # Additional tracking fields to prevent abuse
     session_id = Column(String, nullable=True)
     device_info = Column(Text, nullable=True)  # JSON string with device details
+
+class UserMemory(Base):
+    __tablename__ = "user_memory"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=False, unique=True)
+    memory_content = Column(Text, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    
+    # Relationships
+    user = relationship("User")

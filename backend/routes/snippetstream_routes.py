@@ -16,7 +16,7 @@ import asyncio
 
 from database import get_db
 from auth import get_current_active_user
-from models import User, ContentGeneration, UsageStats
+from models import User, ContentGeneration, UsageStats, UserMemory
 from feature_gates import get_feature_gate
 
 from utils import (
@@ -168,7 +168,7 @@ def fetch_content_from_url(url: str) -> str:
 # ----------------------------------------------------
 # Twitter Thread Generator (Async)
 # ----------------------------------------------------
-async def create_twitter_thread_async(content: str, context: Optional[Dict] = None) -> List[str]:
+async def create_twitter_thread_async(content: str, context: Optional[Dict] = None, memory: str = "") -> List[str]:
 
     system_prompt = """
 You are a "Build in Public" expert for founders.
@@ -203,6 +203,9 @@ Rules:
 If the input is just a general topic, write a thread about "Why building [Topic] in public is hard but worth it."
 """
 
+    if memory:
+        system_prompt += f"\n\nUSER PERSISTENT MEMORY (Always respect this context):\n{memory}\n"
+
     if context:
         system_prompt += f"\n\nPersonalization Context:\n"
         if context.get('audience'): system_prompt += f"- Audience: {context['audience']}\n"
@@ -232,7 +235,7 @@ If the input is just a general topic, write a thread about "Why building [Topic]
 # ----------------------------------------------------
 # LinkedIn Post Generator (Async)
 # ----------------------------------------------------
-async def create_linkedin_post_async(content: str, context: Optional[Dict] = None) -> str:
+async def create_linkedin_post_async(content: str, context: Optional[Dict] = None, memory: str = "") -> str:
 
     system_prompt = """
 You are a "Build in Public" strategist for LinkedIn.
@@ -260,6 +263,9 @@ Formatting Rules:
 Input Content:
 """
 
+    if memory:
+        system_prompt += f"\n\nUSER PERSISTENT MEMORY (Always respect this context):\n{memory}\n"
+
     if context:
          # ... (keep existing context checks)
          pass
@@ -280,7 +286,7 @@ Input Content:
 # ----------------------------------------------------
 # Instagram Carousel Generator (Async)
 # ----------------------------------------------------
-async def create_instagram_carousel_async(content: str, context: Optional[Dict] = None) -> List[str]:
+async def create_instagram_carousel_async(content: str, context: Optional[Dict] = None, memory: str = "") -> List[str]:
 
     system_prompt = """
 You are a visual storyteller for founders.
@@ -307,6 +313,9 @@ Format:
 
 Strictly return ONLY the slides separated by blank lines.
 """
+
+    if memory:
+        system_prompt += f"\n\nUSER PERSISTENT MEMORY (Always respect this context):\n{memory}\n"
 
     if context:
         # ... (keep existing context checks)
@@ -353,6 +362,12 @@ async def repurpose_content(
         if request.url and not feature_gate.can_process_urls():
             raise HTTPException(status_code=403, detail="URL processing is Pro feature")
 
+        # Fetch User Memory (Pro feature)
+        user_memory = ""
+        if current_user.is_premium:
+            memory_obj = db.query(UserMemory).filter(UserMemory.user_id == current_user.id).first()
+            user_memory = memory_obj.memory_content if memory_obj else ""
+
         # Content input
         if request.url:
             content = fetch_content_from_url(str(request.url))
@@ -387,15 +402,15 @@ async def repurpose_content(
         task_names = []
         
         if "twitter" in enabled or "x" in enabled:
-            tasks.append(create_twitter_thread_async(content, request.context))
+            tasks.append(create_twitter_thread_async(content, request.context, user_memory))
             task_names.append("twitter")
         
         if "linkedin" in enabled:
-            tasks.append(create_linkedin_post_async(content, request.context))
+            tasks.append(create_linkedin_post_async(content, request.context, user_memory))
             task_names.append("linkedin")
             
         if "instagram" in enabled:
-            tasks.append(create_instagram_carousel_async(content, request.context))
+            tasks.append(create_instagram_carousel_async(content, request.context, user_memory))
             task_names.append("instagram")
         
         if not tasks:

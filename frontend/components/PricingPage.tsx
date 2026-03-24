@@ -144,7 +144,7 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       features: [
         '2 Daily Posts [X/Twitter]',
         'Basic Post Creation',
-        'Standard Templates',
+        'Standard Post Formatting',
         '24-Hour History',
         'Basic Tone Settings'
       ],
@@ -165,12 +165,12 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       badge: 'RECOMMENDED',
       features: [
         '20 Daily Posts [X/Twitter]',
+        'Persistent AI Memory',
         'Advanced Content Analysis',
         'Automated Thread Creation',
         'Unlimited Saved Posts',
         'Custom AI Voice Profiles',
         'Priority Processing',
-        'Early Access: New Formats',
         'Export to Markdown & JSON'
       ],
       limitations: [],
@@ -197,8 +197,8 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       answer: "Yes. Your notes and posts are private and never shared with others."
     },
     {
-      question: 'How does saving posts work?',
-      answer: "You can save any post forever. Pro users can look back at everything they've built."
+      question: 'How does AI Memory work?',
+      answer: "AI Memory allows you to save information about yourself, your brand, or your business. Our AI then uses this 'memory' to ensure all your posts feel consistent and on-brand."
     }
   ]
 

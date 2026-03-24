@@ -8,13 +8,16 @@ from .admin_routes import router as admin_router
 from .dev_routes import dev_router
 from .export_routes import export_router
 from .support_routes import router as support_router
+from .memory_routes import memory_router
 
 def register_routes(app):
     app.include_router(auth_router, prefix="/api/v1/auth", tags=["Authentication"])
     app.include_router(content_router, prefix="/api/v1/content", tags=["Content Management"])
     app.include_router(payment_router, prefix="/api/v1/payment", tags=["Payment & Subscriptions"])
     app.include_router(export_router, tags=["Export"])
-    app.include_router(template_router, tags=["Custom Templates"])
+    app.include_router(memory_router, prefix="/api/v1/memory", tags=["AI Memory"])
+    # Templates removed as requested
+    # app.include_router(template_router, tags=["Custom Templates"])
     app.include_router(public_router, tags=["Public Only"])
     app.include_router(admin_router, tags=["Admin"])
     app.include_router(support_router, tags=["Support"])
