@@ -4,8 +4,10 @@ import {
     Sparkles, Twitter,
     Loader2, Copy, Check, Star, Zap, Shield, Users, TrendingUp, Clock,
     ChevronRight, Play, ArrowRight, HelpCircle, CheckCircle, AlertCircle,
-    User, LogIn, Settings, Crown, Lock, X, Plus, MessageSquare, Globe, Mail
+    User, LogIn, Settings, Crown, Lock, X, Plus, MessageSquare, Globe, Mail, Brain, History, Save, RefreshCw
 } from 'lucide-react'
+import { API_URL } from '@/lib/api-config'
+import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { XDisplay } from '../FormattedText'
 import { Download } from 'lucide-react'
@@ -109,6 +111,32 @@ export default function RepurposeInterface({
     })
 
     const isInternalChange = useRef(false)
+    const [userMemory, setUserMemory] = useState('')
+    const [recentHistory, setRecentHistory] = useState<any[]>([])
+    const [isLoadingContext, setIsLoadingContext] = useState(false)
+    const [showContextWindow, setShowContextWindow] = useState(false)
+
+    // Load AI Context for premium users
+    useEffect(() => {
+        if (isAuthenticated && user?.is_premium) {
+            const loadAIContext = async () => {
+                setIsLoadingContext(true)
+                try {
+                    const [memoryRes, historyRes] = await Promise.all([
+                        axios.get(`${API_URL}/api/v1/memory`),
+                        axios.get(`${API_URL}/api/v1/content/history`)
+                    ])
+                    setUserMemory(memoryRes.data.content || '')
+                    setRecentHistory(historyRes.data.slice(0, 3) || [])
+                } catch (error) {
+                    console.error('Failed to load AI context:', error)
+                } finally {
+                    setIsLoadingContext(false)
+                }
+            }
+            loadAIContext()
+        }
+    }, [isAuthenticated, user?.is_premium])
 
     // Sync from parent content prop to local state (restoration/template loading)
     useEffect(() => {
@@ -415,32 +443,96 @@ export default function RepurposeInterface({
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-muted/30 rounded-2xl border border-border/50">
-                                                <div>
-                                                    <label className="text-xs font-semibold text-muted-foreground tracking-wider mb-2 block">Target audience</label>
-                                                    <input
-                                                        type="text"
-                                                        value={personalization.audience}
-                                                        onChange={(e) => setPersonalization({ ...personalization, audience: e.target.value })}
-                                                        placeholder="e.g. Founders, Developers..."
-                                                        className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
-                                                    />
+                                            <div className="space-y-4">
+                                                {/* AI Context Window - Premium ONLY */}
+                                                {user?.is_premium && (
+                                                    <div className="bg-indigo-500/5 border border-indigo-500/10 rounded-2xl overflow-hidden mb-4">
+                                                        <button 
+                                                            onClick={() => setShowContextWindow(!showContextWindow)}
+                                                            className="w-full px-5 py-3 flex items-center justify-between hover:bg-indigo-500/10 transition-colors"
+                                                        >
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="p-1.5 bg-indigo-500/10 rounded-lg">
+                                                                    <Brain className="w-4 h-4 text-indigo-500" />
+                                                                </div>
+                                                                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500">AI Context Module (Active)</span>
+                                                            </div>
+                                                            <div className="flex items-center gap-2">
+                                                                <span className="text-[8px] font-mono text-indigo-400 capitalize">{showContextWindow ? 'Minimize' : 'Expand Context'}</span>
+                                                                <ChevronRight className={`w-3 h-3 text-indigo-400 transition-transform ${showContextWindow ? 'rotate-90' : ''}`} />
+                                                            </div>
+                                                        </button>
+                                                        
+                                                        {showContextWindow && (
+                                                            <div className="px-5 pb-5 pt-2 space-y-4 border-t border-indigo-500/10 bg-indigo-500/[0.02]">
+                                                                {/* Static Memory */}
+                                                                <div className="space-y-2">
+                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                                                                        <div className="w-1 h-1 rounded-full bg-indigo-500" />
+                                                                        Static Reality (Vault)
+                                                                    </div>
+                                                                    <div className="p-3 bg-white/5 border border-white/5 rounded-xl font-mono text-[10px] text-slate-400 leading-relaxed max-h-32 overflow-y-auto hide-scrollbar">
+                                                                        {userMemory || 'No static context defined in Vault.'}
+                                                                    </div>
+                                                                </div>
+
+                                                                {/* Dynamic History */}
+                                                                <div className="space-y-2">
+                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                                                                        <div className="w-1 h-1 rounded-full bg-fuchsia-500" />
+                                                                        Dynamic History (Past 3 Generations)
+                                                                    </div>
+                                                                    <div className="space-y-2">
+                                                                        {recentHistory.length > 0 ? (
+                                                                            recentHistory.map((h, i) => (
+                                                                                <div key={i} className="px-3 py-2 bg-white/5 border border-white/5 rounded-xl flex items-center justify-between gap-4">
+                                                                                    <p className="text-[10px] font-bold text-slate-500 truncate italic">
+                                                                                        "{h.original_content.substring(0, 50)}..."
+                                                                                    </p>
+                                                                                    <span className="text-[8px] font-black text-slate-600 shrink-0">{new Date(h.created_at).toLocaleDateString()}</span>
+                                                                                </div>
+                                                                            ))
+                                                                        ) : (
+                                                                            <p className="text-[10px] font-mono text-slate-600 pl-3">No recent production cycles found.</p>
+                                                                        )}
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div className="pt-2 border-t border-indigo-500/5 flex items-center gap-2">
+                                                                    <Zap className="w-3 h-3 text-emerald-500 animate-pulse" />
+                                                                    <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest">Context Synchronized with Neural Network</span>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                )}
+
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-muted/30 rounded-2xl border border-border/50">
+                                                    <div>
+                                                        <label className="text-xs font-semibold text-muted-foreground tracking-wider mb-2 block">Target audience</label>
+                                                        <input
+                                                            type="text"
+                                                            value={personalization.audience}
+                                                            onChange={(e) => setPersonalization({ ...personalization, audience: e.target.value })}
+                                                            placeholder="e.g. Founders, Developers..."
+                                                            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">Post style</label>
+                                                        <select
+                                                            value={personalization.tone}
+                                                            onChange={(e) => setPersonalization({ ...personalization, tone: e.target.value })}
+                                                            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
+                                                        >
+                                                            <option>Professional</option>
+                                                            <option>Casual</option>
+                                                            <option>Enthusiastic</option>
+                                                            <option>Witty</option>
+                                                            <option>Direct</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">Post style</label>
-                                                    <select
-                                                        value={personalization.tone}
-                                                        onChange={(e) => setPersonalization({ ...personalization, tone: e.target.value })}
-                                                        className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
-                                                    >
-                                                        <option>Professional</option>
-                                                        <option>Casual</option>
-                                                        <option>Enthusiastic</option>
-                                                        <option>Witty</option>
-                                                        <option>Direct</option>
-                                                    </select>
-                                                </div>
-                                                {/* Add more fields as needed but keep it clean */}
                                             </div>
                                         </motion.div>
                                     )}
