@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Check, X, Crown, Users, Sparkles, BarChart3, Heart, Plus, Minus, Zap, Shield, ArrowRight, Star, Quote, Terminal, Box, Cpu, Workflow, Database, Brackets, Activity, Lock, Rocket, Network } from 'lucide-react'
+import { Check, X, Crown, Users, Sparkles, BarChart3, Heart, Plus, Minus, Zap, Shield, ArrowRight, Star, Quote, Terminal, Box, Cpu, Workflow, Database, Brackets, Activity, Lock, Rocket, Network, Brain } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 import PaymentModal from './PaymentModal'
 import AuthModal from './AuthModal'
@@ -145,7 +145,7 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
         '2 Daily Posts [X/Twitter]',
         'Basic Post Creation',
         'Standard Post Formatting',
-        '24-Hour History',
+        '24-Hour Context Memory',
         'Basic Tone Settings'
       ],
       limitations: [
@@ -165,11 +165,11 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
       badge: 'RECOMMENDED',
       features: [
         '20 Daily Posts [X/Twitter]',
-        'Persistent AI Memory',
+        'Persistent AI Memory [Vault]',
+        'Dynamic Generation History',
         'Advanced Content Analysis',
         'Automated Thread Creation',
         'Unlimited Saved Posts',
-        'Custom AI Voice Profiles',
         'Priority Processing',
         'Export to Markdown & JSON'
       ],
@@ -198,7 +198,7 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
     },
     {
       question: 'How does AI Memory work?',
-      answer: "AI Memory allows you to save information about yourself, your brand, or your business. Our AI then uses this 'memory' to ensure all your posts feel consistent and on-brand."
+      answer: "AI Memory has two parts: Static Reality (where you save your brand/bio) and Dynamic History (where the AI remembers your last 3 days of posts). This ensures your content stays consistent without you needing to repeat yourself."
     }
   ]
 
@@ -399,9 +399,9 @@ export default function PricingPage({ onSignUp }: PricingPageProps) {
                 {[
                   { name: 'LATENCY', free: 'STD', pro: 'ULTRA_LOW', icon: Zap },
                   { name: 'LOG_ANALYSIS', free: false, pro: true, icon: Database },
-                  { name: 'INGESTION', free: '10K', pro: '50K', icon: Cpu },
-                  { name: 'RETENTION', free: '24H', pro: 'LIFETIME', icon: Lock },
-                  { name: 'SCHEMATICS', free: false, pro: true, icon: Brackets },
+                  { name: 'POST_LIMIT', free: '2/DAY', pro: '20/DAY', icon: Cpu },
+                  { name: 'HISTORY', free: '24H', pro: 'LIFETIME', icon: Lock },
+                  { name: 'AI_MEMORY', free: '24H', pro: 'FULL', icon: Brain },
                   { name: 'DISTRIBUTION', free: false, pro: true, icon: Network },
                 ].map((row, i) => (
                   <tr key={i} className="hover:bg-indigo-600/[0.04] border-b border-slate-200/50 dark:border-white/[0.03] last:border-0 transition-all group/row font-mono relative overflow-hidden">

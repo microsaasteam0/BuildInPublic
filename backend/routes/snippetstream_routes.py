@@ -201,6 +201,8 @@ Rules:
 - Return ONLY the 10 tweets.
 
 If the input is just a general topic, write a thread about "Why building [Topic] in public is hard but worth it."
+
+You should also look at the PAST GENERATIONS HISTORY (if provided) to ensure the tone, brand, and story continuation are consistent with previous updates.
 """
 
     if memory:
@@ -258,7 +260,7 @@ Formatting Rules:
 - Use short paragraphs (1-2 lines).
 - 3 Bullet points for the lesson.
 - No hashtags in the body (only 3 at the end).
-- Tone: Professional but authentic/vulnerable.
+- Tone: Keep it professional but with a strong "Build in Public" vibe. If PAST GENERATIONS HISTORY is available, use it to maintain a consistent narrative arc.
 
 Input Content:
 """
@@ -311,7 +313,7 @@ Format:
   Line 1: EMOJI + TITLE (Uppercase)
   Line 2: Short description
 
-Strictly return ONLY the slides separated by blank lines.
+Strictly return ONLY the slides separated by blank lines. Use the PAST GENERATIONS HISTORY to keep the visual storytelling consistent with previous days.
 """
 
     if memory:
@@ -364,9 +366,34 @@ async def repurpose_content(
 
         # Fetch User Memory (Pro feature)
         user_memory = ""
+        past_generations_context = ""
+        
         if current_user.is_premium:
+            # 1. Static Memory (User defined)
             memory_obj = db.query(UserMemory).filter(UserMemory.user_id == current_user.id).first()
             user_memory = memory_obj.memory_content if memory_obj else ""
+            
+            # 2. Dynamic Memory (Past generations)
+            past_gens = db.query(ContentGeneration).filter(
+                ContentGeneration.user_id == current_user.id
+            ).order_by(ContentGeneration.created_at.desc()).limit(3).all()
+            
+            if past_gens:
+                past_generations_context = "\nPAST GENERATIONS HISTORY:\n"
+                for i, gen in enumerate(past_gens):
+                    past_generations_context += f"--- History Item {i+1} ---\n"
+                    past_generations_context += f"Input: {gen.original_content[:200]}...\n"
+                    # Include a snippet of what was generated
+                    if gen.linkedin_post:
+                        past_generations_context += f"Output Preview: {gen.linkedin_post[:200]}...\n"
+                    elif gen.twitter_thread:
+                        past_generations_context += f"Output Preview: {gen.twitter_thread[:200]}...\n"
+                past_generations_context += "--------------------------\n"
+
+        # Combine both memories
+        combined_memory = user_memory
+        if past_generations_context:
+            combined_memory += "\n" + past_generations_context
 
         # Content input
         if request.url:
@@ -402,15 +429,15 @@ async def repurpose_content(
         task_names = []
         
         if "twitter" in enabled or "x" in enabled:
-            tasks.append(create_twitter_thread_async(content, request.context, user_memory))
+            tasks.append(create_twitter_thread_async(content, request.context, combined_memory))
             task_names.append("twitter")
         
         if "linkedin" in enabled:
-            tasks.append(create_linkedin_post_async(content, request.context, user_memory))
+            tasks.append(create_linkedin_post_async(content, request.context, combined_memory))
             task_names.append("linkedin")
             
         if "instagram" in enabled:
-            tasks.append(create_instagram_carousel_async(content, request.context, user_memory))
+            tasks.append(create_instagram_carousel_async(content, request.context, combined_memory))
             task_names.append("instagram")
         
         if not tasks:
