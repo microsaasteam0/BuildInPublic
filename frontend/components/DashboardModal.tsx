@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
-import { User, Settings, History, Heart, BarChart3, Crown, LogOut, Save, Trash2, Star, Download, Eye, Filter, Edit2, Check, X, FileText, Copy, RefreshCw, Zap, TrendingUp, Clock, Sparkles, ArrowRight, Twitter, Plus, Sun, Moon, CheckCircle, Brain } from 'lucide-react'
+import { User, Settings, History, Heart, BarChart3, Crown, LogOut, Save, Trash2, Star, Download, Eye, Filter, Edit2, Check, X, FileText, Copy, RefreshCw, Zap, TrendingUp, Clock, Sparkles, ArrowRight, Twitter, Plus, Sun, Moon, CheckCircle, Brain, PlayCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../contexts/AuthContext'
 import { useFeatureGate } from '../hooks/useFeatureGate'
@@ -1342,55 +1342,50 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
           </div>
 
           {/* Navigation Menu */}
-          < nav className="flex-1 px-2 py-4" >
-            <div className="space-y-1.5">
+          <nav className="flex-1 px-2 py-4 relative z-10">
+            <div className="space-y-2">
               {[
-                { id: 'overview', name: 'Your Stats', icon: BarChart3, color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
-                { id: 'content', name: 'Saved Posts', icon: Save, count: savedContent.length, color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
-                { id: 'history', name: 'History', icon: History, count: contentHistory.length, color: 'text-purple-500', bg: 'bg-purple-500/10' },
-                { id: 'memory', name: 'AI Memory', icon: Brain, pro: true, color: 'text-amber-500', bg: 'bg-amber-500/10' },
-                { id: 'settings', name: 'Settings', icon: Settings, color: 'text-slate-500', bg: 'bg-slate-500/10' },
+                { id: 'overview', name: 'Dashboard', icon: BarChart3 },
+                { id: 'content', name: 'Saved_Posts', icon: Save, count: savedContent.length },
+                { id: 'history', name: 'History', icon: History, count: contentHistory.length },
+                { id: 'memory', name: 'My_Style', icon: Brain, pro: true },
+                { id: 'tutorial', name: 'Tutorial', icon: PlayCircle },
+                { id: 'settings', name: 'Settings', icon: Settings },
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => {
                     setActiveSection(item.id)
                     if (item.id === 'content' || item.id === 'history') loadSectionData(item.id)
+                    if (item.id === 'memory') loadMemory()
                   }}
-                  className={`w-full group flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 relative overflow-hidden ${activeSection === item.id
-                    ? 'text-indigo-600 dark:text-indigo-400 font-bold bg-white dark:bg-slate-800 shadow-sm border border-zinc-200 dark:border-slate-700'
-                    : 'text-zinc-600 dark:text-slate-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-slate-800/50'
+                  className={`w-full flex items-center gap-3 px-5 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all duration-300 group/nav ${activeSection === item.id
+                    ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 translate-x-2'
+                    : 'text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-slate-900/50'
                     }`}
                 >
-                  {/* Active Indicator */}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute left-0 top-2 bottom-2 w-1.5 bg-indigo-500 rounded-r-full"
-                    />
-                  )}
-
-                  <div className={`p-2 rounded-lg transition-colors ${activeSection === item.id ? item.bg : 'group-hover:bg-slate-200 dark:group-hover:bg-slate-700/50'}`}>
-                    <item.icon className={`w-5 h-5 ${activeSection === item.id ? item.color : 'text-slate-400 dark:text-slate-500'}`} />
-                  </div>
-
-                  <span className="flex-1 text-left text-sm">{item.name}</span>
-
+                  <item.icon className={`w-4 h-4 transition-transform duration-300 group-hover/nav:scale-110 ${activeSection === item.id ? 'animate-pulse' : ''}`} />
+                  <span className="flex-1 text-left">{item.name}</span>
+                  
                   {item.count !== undefined && item.count > 0 && (
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${activeSection === item.id
-                      ? 'bg-indigo-500 text-white'
-                      : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}>
+                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black ${activeSection === item.id
+                      ? 'bg-white/20 text-white'
+                      : 'bg-zinc-200 dark:bg-slate-800 text-slate-500'}`}>
                       {item.count}
                     </span>
                   )}
 
                   {item.pro && !user?.is_premium && (
-                    <Crown className="w-3 h-3 text-amber-500" />
+                    <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                  )}
+
+                  {activeSection === item.id && (
+                    <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_10px_white]" />
                   )}
                 </button>
               ))}
             </div>
-          </nav >
+          </nav>
 
           {/* Sidebar Footer - Usage Ring */}
           {
@@ -1436,32 +1431,21 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
         {/* Main Content Area - Responsive Layout */}
         < div className="flex-1 flex flex-col min-h-0 hide-scrollbar" >
           {/* Header - Hidden on mobile since we have tab navigation */}
-          < div className="hidden sm:flex items-center justify-between p-8 border-b border-zinc-200 dark:border-slate-800" >
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">
-              {activeSection === 'overview' && 'Your Progress'}
-              {activeSection === 'content' && (
-                <span className="flex items-center gap-2">
-                  Saved Posts
-                  {savedContent.length > 0 && (
-                    <span className="px-2 py-1 bg-blue-500/20 text-blue-600 dark:text-blue-400 text-sm rounded-full">
-                      {getFilteredContent().length} {getFilteredContent().length !== savedContent.length && `of ${savedContent.length}`}
-                    </span>
-                  )}
-                </span>
-              )}
-              {activeSection === 'history' && (
-                <span className="flex items-center gap-2">
-                  Past Posts
-                  {contentHistory.length > 0 && (
-                    <span className="px-2 py-1 bg-purple-500/20 text-purple-600 dark:text-purple-400 text-sm rounded-full">
-                      {contentHistory.length}
-                    </span>
-                  )}
-                </span>
-              )}
-              {activeSection === 'memory' && 'AI Memory Storage'}
-              {activeSection === 'settings' && 'Account Settings'}
-            </h1>
+          <div className="hidden sm:flex items-center justify-between p-10 border-b border-zinc-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl relative z-10">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+                <span className="text-[10px] font-black text-indigo-500 uppercase tracking-[0.4em] font-mono">AI_Ready</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-display font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
+                {activeSection === 'overview' && 'Dashboard'}
+                {activeSection === 'content' && 'Saved_Posts'}
+                {activeSection === 'history' && 'History'}
+                {activeSection === 'memory' && 'My_Style'}
+                {activeSection === 'tutorial' && 'Tutorial'}
+                {activeSection === 'settings' && 'Settings'}
+              </h1>
+            </div>
             <div className="flex items-center gap-3">
               {/* Refresh Stats/Data Button */}
               {(activeSection === 'overview' || activeSection === 'content' || activeSection === 'history') && (
@@ -2291,6 +2275,54 @@ export default function DashboardModal({ isOpen, onClose, externalUsageStats }: 
                       </div>
                     </div>
                   )}
+                </div>
+              )
+            }
+
+            {
+              activeSection === 'tutorial' && (
+                <div className="space-y-8 animate-fade-in">
+                  <div className="bg-white/50 dark:bg-slate-900/50 border border-zinc-200 dark:border-white/5 rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 backdrop-blur-sm relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform duration-700">
+                      <PlayCircle className="w-24 h-24" />
+                    </div>
+
+                    <div className="mb-8 relative z-10">
+                      <h4 className="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-2 font-mono">SYSTEM_GUIDE</h4>
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">Video Walkthrough</h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-xl">
+                        Master the art of content repurposing. Watch this 2-minute guide to learn how to turn your daily notes into high-performing social media threads.
+                      </p>
+                    </div>
+
+                    <div className="relative z-10">
+                      <div className="aspect-video rounded-[2rem] overflow-hidden bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/h4TbpIRWrp8?rel=0&modestbranding=1"
+                          title="App Tutorial"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                    </div>
+
+                    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                      {[
+                        { title: 'Step 1: Input', desc: 'Paste your raw notes or a URL.' },
+                        { title: 'Step 2: Context', desc: 'Add tone, audience, and goals.' },
+                        { title: 'Step 3: Export', desc: 'Copy and share your threads.' }
+                      ].map((step, i) => (
+                        <div key={i} className="p-6 bg-zinc-50 dark:bg-white/[0.02] border border-zinc-200 dark:border-white/5 rounded-2xl">
+                          <h5 className="font-black text-[10px] text-indigo-500 uppercase tracking-widest mb-2">{step.title}</h5>
+                          <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">{step.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )
             }

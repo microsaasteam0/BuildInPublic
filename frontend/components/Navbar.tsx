@@ -120,18 +120,19 @@ export default function Navbar({
 
           {/* Logo - Industrial Identity Frame */}
           <Link href="/" className="flex items-center group gap-2 sm:gap-3 flex-shrink-0">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-slate-900 rounded-xl shadow-2xl shadow-indigo-500/10 flex items-center justify-center p-1.5 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-slate-900 rounded-xl shadow-2xl shadow-indigo-500/10 flex items-center justify-center p-1.5 border border-zinc-200 dark:border-slate-800 transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 overflow-hidden">
               <Image
                 src="/icon-32.png"
                 alt="BuildInPublic Logo"
                 width={32}
                 height={32}
                 unoptimized
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain relative z-10"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12" />
             </div>
-            <span className="text-base sm:text-xl md:text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white whitespace-nowrap">
+            <span className="text-base sm:text-xl md:text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white whitespace-nowrap uppercase">
               BuildIn<span className="text-indigo-600 dark:text-indigo-400">Public</span>
             </span>
           </Link>
@@ -181,40 +182,42 @@ export default function Navbar({
             <div className="hidden md:flex items-center space-x-2 lg:space-x-4 pl-2 lg:pl-4 border-l border-slate-200 dark:border-slate-800/50">
               {isAuthenticated ? (
                 <div className="flex items-center gap-2 lg:gap-4">
-                  {/* Usage Counter */}
+                  {/* Usage Counter - High Contrast Industrial */}
                   {displayUsageStats && (
-                    <div className="hidden lg:flex items-center px-3 py-1.5 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-xl border border-indigo-500/20 shadow-sm">
-                      <Zap className={`w-3.5 h-3.5 mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-500 fill-indigo-500/20 animate-pulse'}`} />
-                      <span className="text-[12px] font-black text-indigo-600 dark:text-indigo-400 tracking-widest font-mono">
-                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} POSTS LEFT
+                    <div className="hidden lg:flex items-center px-4 py-2 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-xl border border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.1)] group/usage">
+                      <Zap className={`w-3.5 h-3.5 mr-2 ${displayUsageStats.remaining_requests === 0 ? 'text-slate-400' : 'text-indigo-400 fill-indigo-400/20 animate-pulse'}`} />
+                      <span className="text-[11px] font-black text-indigo-500 dark:text-indigo-300 tracking-[0.2em] font-mono">
+                        {displayUsageStats.remaining_requests}/{displayUsageStats.rate_limit} <span className="opacity-50">POSTS LEFT</span>
                       </span>
                     </div>
                   )}
 
-                  {/* Upgrade Pill */}
+                  {/* Upgrade Pill - Gold Kinetic */}
                   {!user?.is_premium && (
-                    <Link href="/pricing" className="px-2 lg:px-3 py-1.5 bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center gap-1.5 lg:gap-2 hover:bg-amber-500/20 transition-all hover:scale-105 group/upgrade">
-                      <Crown className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-amber-500 group-hover:rotate-12 transition-transform" />
-                      <span className="text-[10px] lg:text-[12px] font-black text-amber-600 dark:text-amber-500 tracking-widest font-mono hidden lg:inline">Upgrade</span>
+                    <Link href="/pricing" className="px-3 lg:px-4 py-2 bg-gradient-to-br from-amber-400/20 to-orange-500/10 dark:from-amber-400/10 dark:to-orange-500/5 border border-amber-500/30 rounded-xl flex items-center gap-2 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105 group/upgrade relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/upgrade:translate-x-full transition-transform duration-1000 skew-x-12" />
+                      <Crown className="w-3.5 h-3.5 text-amber-500 group-hover:rotate-12 transition-transform" />
+                      <span className="text-[11px] font-black text-amber-600 dark:text-amber-400 tracking-[0.2em] font-mono hidden lg:inline">UPGRADE</span>
                     </Link>
                   )}
 
-                  {/* Sign Out Button */}
+                  {/* Sign Out Button - Muted to Alert */}
                   <button
                     onClick={logout}
-                    className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl text-xs font-black transition-all border border-transparent hover:border-red-200 dark:hover:border-red-500/20 font-mono tracking-widest"
+                    className="hidden lg:flex items-center gap-2 px-3 py-2 text-slate-400 hover:text-rose-500 hover:bg-rose-500/5 dark:hover:bg-rose-500/10 rounded-xl text-[11px] font-black transition-all border border-transparent hover:border-rose-500/20 font-mono tracking-[0.2em]"
                     title="Sign Out"
                   >
                     <LogOut className="w-4 h-4" />
-                    <span>EXIT</span>
+                    <span>LOGOUT</span>
                   </button>
 
-                  {/* User Avatar */}
+                  {/* User Avatar - Premium Gradient */}
                   <button
                     onClick={onUserDashboard}
                     aria-label="Open dashboard"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/10 hover:shadow-indigo-600/30 transition-all border-2 border-white dark:border-slate-800 relative overflow-hidden group/avatar"
+                    className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all border-2 border-white dark:border-slate-800 relative overflow-hidden group/avatar"
                   >
+                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/avatar:opacity-100 transition-opacity" />
                     {user?.profile_picture && isValidImageUrl(user.profile_picture) ? (
                       <Image
                         src={user.profile_picture}
@@ -223,13 +226,13 @@ export default function Navbar({
                         className="object-cover group-hover/avatar:scale-110 transition-transform duration-500"
                       />
                     ) : (
-                      <span className="font-black text-xs font-mono">
+                      <span className="font-black text-xs font-mono relative z-10">
                         {user?.email?.charAt(0).toUpperCase() || 'U'}
                       </span>
                     )}
                     {/* Notification dot if generations low */}
                     {displayUsageStats?.remaining_requests <= 1 && (
-                      <span className="absolute top-0.5 right-0.5 h-2 w-2 bg-red-500 border border-white dark:border-slate-900 rounded-full animate-pulse"></span>
+                      <span className="absolute top-1 right-1 h-2 w-2 bg-rose-500 border border-white dark:border-slate-900 rounded-full animate-ping"></span>
                     )}
                   </button>
                 </div>

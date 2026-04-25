@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-    Sparkles, Twitter,
+    Sparkles, Twitter, FileText,
     Loader2, Copy, Check, Star, Zap, Shield, Users, TrendingUp, Clock,
-    ChevronRight, Play, ArrowRight, HelpCircle, CheckCircle, AlertCircle,
+    ChevronRight, ChevronDown, Play, ArrowRight, HelpCircle, CheckCircle, AlertCircle,
     User, LogIn, Settings, Crown, Lock, X, Plus, MessageSquare, Globe, Mail, Brain, History, Save, RefreshCw
 } from 'lucide-react'
 import { API_URL } from '@/lib/api-config'
@@ -115,6 +115,8 @@ export default function RepurposeInterface({
     const [recentHistory, setRecentHistory] = useState<any[]>([])
     const [isLoadingContext, setIsLoadingContext] = useState(false)
     const [showContextWindow, setShowContextWindow] = useState(false)
+    const [showToneDropdown, setShowToneDropdown] = useState(false)
+    const toneDropdownRef = useRef<HTMLDivElement>(null)
 
     // Load AI Context for premium users
     useEffect(() => {
@@ -137,6 +139,17 @@ export default function RepurposeInterface({
             loadAIContext()
         }
     }, [isAuthenticated, user?.is_premium])
+
+    // Handle clicks outside dropdown
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (toneDropdownRef.current && !toneDropdownRef.current.contains(event.target as Node)) {
+                setShowToneDropdown(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
 
     // Sync from parent content prop to local state (restoration/template loading)
     useEffect(() => {
@@ -265,7 +278,7 @@ export default function RepurposeInterface({
                 transition={{ duration: 0.8 }}
                 className="max-w-5xl mx-auto"
             >
-                <div className="bg-zinc-50 dark:bg-[#020617] rounded-[3rem] overflow-hidden shadow-4xl relative border border-zinc-200 dark:border-slate-800 group">
+                <div className="bg-zinc-50 dark:bg-[#020617] rounded-[3rem] shadow-4xl relative border border-zinc-200 dark:border-slate-800 group">
                     {/* Blueprint Overlay */}
                     <div className="absolute inset-0 bg-grid-blueprint-light opacity-5 pointer-events-none" />
 
@@ -342,52 +355,65 @@ export default function RepurposeInterface({
                                         {/* Task List */}
                                         <div className="flex-1 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
                                             {tasks.length === 0 ? (
-                                                <div className="h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 text-sm italic">
-                                                    <span className="text-2xl mb-2 opacity-50">📝</span>
-                                                    No tasks yet. Add your first task.
-                                                </div>
+                                                <motion.div 
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    className="h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 text-sm py-10"
+                                                >
+                                                    <div className="w-16 h-16 bg-zinc-200/50 dark:bg-slate-800/50 rounded-2xl flex items-center justify-center mb-4 border border-zinc-300 dark:border-slate-700 animate-pulse-slow">
+                                                        <FileText className="w-8 h-8 opacity-20" />
+                                                    </div>
+                                                    <p className="font-bold tracking-widest uppercase text-[10px] opacity-50 font-mono">No active tasks</p>
+                                                    <p className="text-[9px] mt-1 opacity-30 font-medium">Input a daily goal above to begin.</p>
+                                                </motion.div>
                                             ) : (
-                                                tasks.map((task, idx) => (
-                                                    <div
-                                                        key={task.id}
-                                                        className={`group/item flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border transition-all ${task.completed
-                                                            ? 'bg-emerald-500/5 border-emerald-500/10 opacity-70'
-                                                            : 'bg-zinc-200/50 dark:bg-slate-800/30 border-transparent hover:border-indigo-500/30 hover:bg-white dark:hover:bg-slate-800'
-                                                            }`}
-                                                    >
-                                                        <button
-                                                            onClick={() => {
-                                                                const newTasks = [...tasks]
-                                                                newTasks[idx] = { ...newTasks[idx], completed: !newTasks[idx].completed }
-                                                                setTasks(newTasks)
-                                                            }}
-                                                            aria-label={task.completed ? 'Mark task as incomplete' : 'Mark task as complete'}
-                                                            className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-colors ${task.completed
-                                                                ? 'bg-emerald-500 border-emerald-500 text-white'
-                                                                : 'border-zinc-300 dark:border-slate-600 text-indigo-500 group-hover/item:border-indigo-500'
+                                                <AnimatePresence mode="popLayout">
+                                                    {tasks.map((task, idx) => (
+                                                        <motion.div
+                                                            key={task.id}
+                                                            layout
+                                                            initial={{ opacity: 0, x: -20 }}
+                                                            animate={{ opacity: 1, x: 0 }}
+                                                            exit={{ opacity: 0, scale: 0.95 }}
+                                                            className={`group/item flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border transition-all duration-300 ${task.completed
+                                                                ? 'bg-emerald-500/[0.03] border-emerald-500/10 opacity-70'
+                                                                : 'bg-white dark:bg-slate-800/20 border-zinc-200 dark:border-slate-800 hover:border-indigo-500/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:translate-x-1'
                                                                 }`}
                                                         >
-                                                            <Check className={`w-3.5 h-3.5 transition-opacity ${task.completed ? 'opacity-100' : 'opacity-0 group-hover/item:opacity-30'}`} />
-                                                        </button>
-                                                        <span className={`flex-1 text-xs font-black tracking-widest transition-all ${task.completed
-                                                            ? 'text-slate-400 dark:text-slate-600 line-through'
-                                                            : 'text-zinc-900 dark:text-slate-300'
-                                                            }`}>
-                                                            {task.text}
-                                                        </span>
-                                                        <button
-                                                            onClick={() => {
-                                                                const newTasks = [...tasks]
-                                                                newTasks.splice(idx, 1)
-                                                                setTasks(newTasks)
-                                                            }}
-                                                            aria-label="Remove task"
-                                                            className="text-slate-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity"
-                                                        >
-                                                            <X className="w-4 h-4" />
-                                                        </button>
-                                                    </div>
-                                                ))
+                                                            <button
+                                                                onClick={() => {
+                                                                    const newTasks = [...tasks]
+                                                                    newTasks[idx] = { ...newTasks[idx], completed: !newTasks[idx].completed }
+                                                                    setTasks(newTasks)
+                                                                }}
+                                                                aria-label={task.completed ? 'Mark task as incomplete' : 'Mark task as complete'}
+                                                                className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-all duration-500 ${task.completed
+                                                                    ? 'bg-emerald-500 border-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                                                                    : 'border-zinc-300 dark:border-slate-600 text-indigo-500 group-hover/item:border-indigo-500'
+                                                                    }`}
+                                                            >
+                                                                <Check className={`w-3.5 h-3.5 transition-all duration-500 ${task.completed ? 'scale-100 opacity-100' : 'scale-50 opacity-0 group-hover/item:opacity-30'}`} />
+                                                            </button>
+                                                            <span className={`flex-1 text-xs font-bold tracking-tight transition-all duration-500 ${task.completed
+                                                                ? 'text-slate-400 dark:text-slate-600 line-through'
+                                                                : 'text-zinc-900 dark:text-slate-300'
+                                                                }`}>
+                                                                {task.text}
+                                                            </span>
+                                                            <button
+                                                                onClick={() => {
+                                                                    const newTasks = [...tasks]
+                                                                    newTasks.splice(idx, 1)
+                                                                    setTasks(newTasks)
+                                                                }}
+                                                                aria-label="Remove task"
+                                                                className="text-slate-300 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-all duration-300 p-1"
+                                                            >
+                                                                <X className="w-4 h-4" />
+                                                            </button>
+                                                        </motion.div>
+                                                    ))}
+                                                </AnimatePresence>
                                             )}
                                         </div>
                                     </div>
@@ -397,12 +423,12 @@ export default function RepurposeInterface({
                             {/* Evening Input */}
                             <div className="relative group">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 rounded-[2rem] opacity-0 group-hover:opacity-100 transition duration-1000"></div>
-                                <div className="relative bg-zinc-100 dark:bg-slate-900 rounded-[2rem] overflow-hidden h-full border border-zinc-200 dark:border-slate-800 group-hover:shadow-xl group-hover:border-indigo-500/30 transition-all flex flex-col">
-                                    <div className="bg-zinc-200/50 dark:bg-slate-800/50 p-4 border-b border-zinc-200 dark:border-slate-800 flex items-center gap-3">
-                                        <div className="p-2 bg-indigo-500/10 rounded-xl">
-                                            <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                                <div className="relative bg-zinc-100 dark:bg-slate-900 rounded-[2.5rem] h-full border border-zinc-200 dark:border-slate-800 group-hover:shadow-xl group-hover:border-indigo-500/30 transition-all flex flex-col shadow-sm">
+                                    <div className="bg-zinc-200/50 dark:bg-slate-800/50 p-5 border-b border-zinc-200 dark:border-slate-800 flex items-center gap-4 rounded-t-[2.5rem]">
+                                        <div className="p-2.5 bg-indigo-500/10 rounded-xl border border-indigo-500/20 shadow-inner">
+                                            <Sparkles className="w-4 h-4 text-indigo-500" />
                                         </div>
-                                        <span className="font-black text-zinc-900 dark:text-white text-[10px] sm:text-[11px] tracking-widest uppercase">Reflection</span>
+                                        <span className="font-black text-zinc-900 dark:text-white text-[11px] tracking-[0.2em] uppercase font-mono">Day_Review</span>
                                     </div>
                                     <textarea
                                         value={eveningReflection}
@@ -421,16 +447,16 @@ export default function RepurposeInterface({
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                                     <button
                                         onClick={() => setShowPersonalization(!showPersonalization)}
-                                        className="flex items-center text-xs sm:text-sm font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 transition-colors tracking-widest"
+                                        className="flex items-center text-xs sm:text-sm font-black text-zinc-500 dark:text-slate-400 hover:text-indigo-500 transition-colors tracking-widest uppercase font-mono"
                                     >
                                         <Settings className="w-3.5 h-3.5 mr-2" />
-                                        {showPersonalization ? 'Hide' : 'Show'} settings
+                                        {showPersonalization ? 'Close' : 'Setup'} generation
                                     </button>
 
                                     <div className="flex gap-2">
-                                        <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/5 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-500/10 dark:border-slate-700 text-[10px] font-black tracking-widest">
+                                        <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/5 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-500/10 dark:border-slate-700 text-[10px] font-black tracking-widest uppercase font-mono">
                                             <Twitter className="w-3.5 h-3.5" />
-                                            Platform: Twitter
+                                            Post to X
                                         </div>
                                     </div>
                                 </div>
@@ -441,96 +467,116 @@ export default function RepurposeInterface({
                                             initial={{ height: 0, opacity: 0 }}
                                             animate={{ height: 'auto', opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden"
+                                            className={showToneDropdown ? "z-50" : "overflow-hidden"}
                                         >
                                             <div className="space-y-4">
                                                 {/* AI Context Window - Premium ONLY */}
                                                 {user?.is_premium && (
-                                                    <div className="bg-indigo-500/5 border border-indigo-500/10 rounded-2xl overflow-hidden mb-4">
+                                                    <div className="bg-white dark:bg-slate-900/50 border border-zinc-200 dark:border-slate-800 rounded-2xl overflow-hidden mb-4 shadow-sm">
                                                         <button 
                                                             onClick={() => setShowContextWindow(!showContextWindow)}
-                                                            className="w-full px-5 py-3 flex items-center justify-between hover:bg-indigo-500/10 transition-colors"
+                                                            className="w-full px-5 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-slate-800 transition-colors"
                                                         >
                                                             <div className="flex items-center gap-3">
                                                                 <div className="p-1.5 bg-indigo-500/10 rounded-lg">
                                                                     <Brain className="w-4 h-4 text-indigo-500" />
                                                                 </div>
-                                                                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500">AI Context Module (Active)</span>
+                                                                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500 font-mono">My_Context</span>
                                                             </div>
                                                             <div className="flex items-center gap-2">
-                                                                <span className="text-[8px] font-mono text-indigo-400 capitalize">{showContextWindow ? 'Minimize' : 'Expand Context'}</span>
-                                                                <ChevronRight className={`w-3 h-3 text-indigo-400 transition-transform ${showContextWindow ? 'rotate-90' : ''}`} />
+                                                                <span className="text-[8px] font-mono text-slate-400 uppercase">{showContextWindow ? 'Secure' : 'Access'}</span>
+                                                                <ChevronRight className={`w-3 h-3 text-slate-400 transition-transform ${showContextWindow ? 'rotate-90' : ''}`} />
                                                             </div>
                                                         </button>
                                                         
                                                         {showContextWindow && (
-                                                            <div className="px-5 pb-5 pt-2 space-y-4 border-t border-indigo-500/10 bg-indigo-500/[0.02]">
+                                                            <div className="px-5 pb-5 pt-2 space-y-4 border-t border-zinc-200 dark:border-slate-800 bg-zinc-50/50 dark:bg-slate-900/30">
                                                                 {/* Static Memory */}
                                                                 <div className="space-y-2">
-                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 font-mono">
                                                                         <div className="w-1 h-1 rounded-full bg-indigo-500" />
-                                                                        Static Reality (Vault)
+                                                                        My_Memory
                                                                     </div>
-                                                                    <div className="p-3 bg-white/5 border border-white/5 rounded-xl font-mono text-[10px] text-slate-400 leading-relaxed max-h-32 overflow-y-auto hide-scrollbar">
-                                                                        {userMemory || 'No static context defined in Vault.'}
+                                                                    <div className="p-3 bg-white dark:bg-slate-950 border border-zinc-200 dark:border-slate-800 rounded-xl font-mono text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed max-h-32 overflow-y-auto custom-scrollbar">
+                                                                        {userMemory || 'No saved context found.'}
                                                                     </div>
                                                                 </div>
 
                                                                 {/* Dynamic History */}
                                                                 <div className="space-y-2">
-                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
+                                                                    <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 font-mono">
                                                                         <div className="w-1 h-1 rounded-full bg-fuchsia-500" />
-                                                                        Dynamic History (Past 3 Generations)
+                                                                        Recent_Posts
                                                                     </div>
                                                                     <div className="space-y-2">
                                                                         {recentHistory.length > 0 ? (
                                                                             recentHistory.map((h, i) => (
-                                                                                <div key={i} className="px-3 py-2 bg-white/5 border border-white/5 rounded-xl flex items-center justify-between gap-4">
+                                                                                <div key={i} className="px-3 py-2 bg-white dark:bg-slate-950 border border-zinc-200 dark:border-slate-800 rounded-xl flex items-center justify-between gap-4">
                                                                                     <p className="text-[10px] font-bold text-slate-500 truncate italic">
                                                                                         "{h.original_content.substring(0, 50)}..."
                                                                                     </p>
-                                                                                    <span className="text-[8px] font-black text-slate-600 shrink-0">{new Date(h.created_at).toLocaleDateString()}</span>
+                                                                                    <span className="text-[8px] font-black text-slate-400 shrink-0 font-mono">{new Date(h.created_at).toLocaleDateString()}</span>
                                                                                 </div>
                                                                             ))
                                                                         ) : (
-                                                                            <p className="text-[10px] font-mono text-slate-600 pl-3">No recent production cycles found.</p>
+                                                                            <p className="text-[10px] font-mono text-slate-400 pl-3">No recent production cycles found.</p>
                                                                         )}
                                                                     </div>
                                                                 </div>
                                                                 
-                                                                <div className="pt-2 border-t border-indigo-500/5 flex items-center gap-2">
+                                                                <div className="pt-2 border-t border-zinc-200 dark:border-slate-800 flex items-center gap-2">
                                                                     <Zap className="w-3 h-3 text-emerald-500 animate-pulse" />
-                                                                    <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest">Context Synchronized with Neural Network</span>
+                                                                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest font-mono">Status: Connected</span>
                                                                 </div>
                                                             </div>
                                                         )}
                                                     </div>
                                                 )}
 
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-muted/30 rounded-2xl border border-border/50">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-zinc-100/50 dark:bg-slate-900/50 rounded-2xl border border-zinc-200 dark:border-slate-800">
                                                     <div>
-                                                        <label className="text-xs font-semibold text-muted-foreground tracking-wider mb-2 block">Target audience</label>
+                                                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block font-mono">Audience</label>
                                                         <input
                                                             type="text"
                                                             value={personalization.audience}
                                                             onChange={(e) => setPersonalization({ ...personalization, audience: e.target.value })}
                                                             placeholder="e.g. Founders, Developers..."
-                                                            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
+                                                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-zinc-200 dark:border-slate-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none text-xs font-bold tracking-tight transition-all"
                                                         />
                                                     </div>
-                                                    <div>
-                                                        <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">Post style</label>
-                                                        <select
-                                                            value={personalization.tone}
-                                                            onChange={(e) => setPersonalization({ ...personalization, tone: e.target.value })}
-                                                            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 outline-none text-sm"
+                                                    <div className="relative" ref={toneDropdownRef}>
+                                                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block font-mono">Voice_Tone</label>
+                                                        <button
+                                                            onClick={() => setShowToneDropdown(!showToneDropdown)}
+                                                            className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-zinc-200 dark:border-slate-800 hover:border-indigo-500/50 transition-all text-xs font-bold"
                                                         >
-                                                            <option>Professional</option>
-                                                            <option>Casual</option>
-                                                            <option>Enthusiastic</option>
-                                                            <option>Witty</option>
-                                                            <option>Direct</option>
-                                                        </select>
+                                                            <span className="text-zinc-900 dark:text-slate-300">{personalization.tone}</span>
+                                                            <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${showToneDropdown ? 'rotate-180' : ''}`} />
+                                                        </button>
+                                                        
+                                                        <AnimatePresence>
+                                                            {showToneDropdown && (
+                                                                <motion.div
+                                                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                                    animate={{ opacity: 1, y: 5, scale: 1 }}
+                                                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                                    className="absolute top-full left-0 right-0 z-[100] mt-2 bg-white dark:bg-slate-900 border border-zinc-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden py-1"
+                                                                >
+                                                                    {['Professional', 'Casual', 'Enthusiastic', 'Witty', 'Direct'].map((tone) => (
+                                                                        <button
+                                                                            key={tone}
+                                                                            onClick={() => {
+                                                                                setPersonalization({ ...personalization, tone })
+                                                                                setShowToneDropdown(false)
+                                                                            }}
+                                                                            className={`w-full text-left px-5 py-3 text-xs font-bold transition-colors hover:bg-indigo-500/5 ${personalization.tone === tone ? 'text-indigo-500 bg-indigo-500/5' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}
+                                                                        >
+                                                                            {tone}
+                                                                        </button>
+                                                                    ))}
+                                                                </motion.div>
+                                                            )}
+                                                        </AnimatePresence>
                                                     </div>
                                                 </div>
                                             </div>
@@ -546,21 +592,20 @@ export default function RepurposeInterface({
                                 <div className="text-center w-full px-4">
                                     <button
                                         onClick={() => onShowAuthModal('register')}
-                                        className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-base sm:text-lg rounded-2xl shadow-2xl shadow-indigo-600/20 hover:scale-[1.03] active:scale-95 transition-all duration-300 uppercase tracking-[0.1em] sm:tracking-[0.2em] relative overflow-hidden group/btn"
+                                        className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 bg-indigo-600 hover:bg-indigo-500 text-white font-black text-base sm:text-lg rounded-2xl shadow-[0_0_30px_rgba(79,70,229,0.3)] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] active:scale-95 transition-all duration-300 uppercase tracking-[0.2em] relative overflow-hidden group/btn"
                                     >
-                                        <div className="absolute inset-x-0 top-0 h-1 bg-white/20 blur-sm opacity-0 group-hover/btn:opacity-100 group-hover/btn:animate-scanline" />
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 skew-x-12" />
                                         <div className="flex items-center justify-center">
-                                            <Zap className="w-5 h-5 mr-3 sm:mr-4 fill-current" />
-                                            Create Posts
+                                            <Zap className="w-5 h-5 mr-3 sm:mr-4 fill-current animate-kinetic-glow" />
+                                            Generate_Now
                                         </div>
                                     </button>
-                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-500 tracking-widest sm:tracking-[0.4em] px-2 truncate">Start for free. No credit card needed.</p>
+                                    <p className="mt-6 text-[8px] sm:text-[10px] font-black text-zinc-400 tracking-[0.4em] px-2 uppercase font-mono opacity-50">Build_In_Public.v1 • No credit card</p>
                                 </div>
                             ) : (
                                 <div className="w-full flex flex-col items-center">
                                     <button
                                         onClick={() => {
-                                            // ... existing validation
                                             if (tasks.length === 0) {
                                                 toast.error('Please add at least one task.')
                                                 return
@@ -582,29 +627,29 @@ export default function RepurposeInterface({
                                             handleSubmit()
                                         }}
                                         disabled={isLoading || (usageStats?.remaining_requests <= 0 && !user?.is_premium)}
-                                        className="group relative w-full sm:w-auto px-10 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 text-white font-black text-base sm:text-xl rounded-[1.25rem] sm:rounded-2xl shadow-xl hover:shadow-primary/25 hover:scale-105 transition-all disabled:opacity-70 disabled:cursor-not-allowed overflow-hidden uppercase tracking-widest"
+                                        className="group relative w-full sm:w-auto px-10 sm:px-16 py-4 sm:py-5 bg-zinc-900 dark:bg-white text-white dark:text-slate-900 font-black text-base sm:text-xl rounded-[1.25rem] sm:rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all disabled:opacity-70 disabled:cursor-not-allowed overflow-hidden uppercase tracking-widest border border-zinc-700 dark:border-zinc-200"
                                     >
                                         {isLoading ? (
                                             <div className="flex items-center justify-center">
                                                 <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 mr-3 animate-spin" />
-                                                <span className="text-sm sm:text-base">Generating...</span>
+                                                <span className="text-sm sm:text-base font-mono">Processing...</span>
                                             </div>
                                         ) : (
-                                            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
-                                                <div className="flex items-center gap-2">
-                                                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                                                    <span className="text-sm sm:text-base">Generate posts</span>
+                                            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
+                                                <div className="flex items-center gap-3">
+                                                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-kinetic-glow" />
+                                                    <span className="text-sm sm:text-base">Generate Posts</span>
                                                 </div>
                                                 {usageStats && (
-                                                    <span className="text-[9px] sm:text-[10px] opacity-80 font-black bg-black/20 px-2.5 py-1 rounded-lg border border-white/10 tracking-tighter">
-                                                        ({usageStats.remaining_requests}/{usageStats.rate_limit} left)
+                                                    <span className="text-[9px] sm:text-[10px] opacity-60 font-black px-2.5 py-1 rounded-lg border border-current tracking-tighter font-mono">
+                                                        [{usageStats.remaining_requests}/{usageStats.rate_limit}]
                                                     </span>
                                                 )}
                                             </div>
                                         )}
 
-                                        {/* Button shimmers */}
-                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                                        {/* Button glint */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-zinc-900/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></div>
                                     </button>
 
                                     {/* Progress Bar */}
